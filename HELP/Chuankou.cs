@@ -19,7 +19,6 @@ namespace DXApplication2.HELP
                 {
                     sp.Close();
                 }
-                Console.WriteLine(comboBoxEdit4.Text);
                 sp.Encoding = System.Text.Encoding.ASCII;
                 sp.BaudRate = int.Parse(comboBoxEdit4.Text);
                 sp.Open();

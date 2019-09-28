@@ -9,9 +9,25 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DXApplication2</RootNamespace>
-    <AssemblyName>DXApplication2</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AssemblyName>华珑宝</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -22,6 +38,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,19 +48,33 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AipSdk, Version=3.6.14.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\Baidu.AI.3.6.14\lib\net45\AipSdk.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Apache.NMS, Version=1.5.1.2739, Culture=neutral, PublicKeyToken=82756feee3957618, processorArchitecture=MSIL">
-      <HintPath>packages\Apache.NMS.1.5.1\lib\net40\Apache.NMS.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Apache.NMS.ActiveMQ, Version=1.5.6.2746, Culture=neutral, PublicKeyToken=82756feee3957618, processorArchitecture=MSIL">
-      <HintPath>packages\Apache.NMS.ActiveMQ.1.5.6\lib\net40\Apache.NMS.ActiveMQ.dll</HintPath>
+    <Reference Include="AipSdk, Version=3.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Baidu.AI.3.3.1\lib\net40\AipSdk.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="DevExpress.BonusSkins.v15.2" />
@@ -62,45 +93,34 @@
     <Reference Include="DevExpress.XtraRichEdit.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraScheduler.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraScheduler.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="Distracey, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Distracey.1.0.4.0\lib\net45\Distracey.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Distracey.Log4Net, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Distracey.Log4Net.1.0.4.0\lib\net45\Distracey.Log4Net.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="DevExpress.XtraTreeList.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevExpress.XtraTreeList.v15.2.dll</HintPath>
     </Reference>
     <Reference Include="GalaSoft.MvvmLight.WPF4, Version=0.0.0.0, Culture=neutral, PublicKeyToken=63eb5c012e0b3c1c, processorArchitecture=MSIL" />
     <Reference Include="IKVM.OpenJDK.Core, Version=7.2.4630.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL" />
     <Reference Include="IKVM.Runtime, Version=7.2.4630.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL" />
     <Reference Include="IKVM.Runtime.JNI, Version=7.2.4630.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL" />
-    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    <Reference Include="log4net, Version=1.2.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>packages\log4net.2.0.2\lib\net40-full\log4net.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="md5, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>packages\Newtonsoft.Json.10.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="System.Net.Http.Formatting, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.AspNet.WebApi.Client.5.2.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Http, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.AspNet.WebApi.Core.5.2.2\lib\net45\System.Web.Http.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
+    <Reference Include="System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Extensions.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -110,7 +130,7 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="ThoughtWorks.QRCode, Version=1.0.2774.19990, Culture=neutral, processorArchitecture=MSIL" />
-    <Reference Include="WindowsFormsControlLibrary2, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="WinFormPage, Version=1.0.7205.25890, Culture=neutral, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\B_currencysetting.cs" />
@@ -119,9 +139,11 @@
     <Compile Include="BLL\B_quicksetting.cs" />
     <Compile Include="BLL\B_User.cs" />
     <Compile Include="BLL\B_PrintSetting.cs" />
+    <Compile Include="BLL\B_paymentmethod.cs" />
     <Compile Include="DAL\D_currencysetting.cs" />
     <Compile Include="DAL\D_graspsetting.cs" />
     <Compile Include="DAL\D_Order.cs" />
+    <Compile Include="DAL\D_paymentmethod.cs" />
     <Compile Include="DAL\D_print.cs" />
     <Compile Include="DAL\D_printsetting.cs" />
     <Compile Include="DAL\D_User.cs" />
@@ -133,7 +155,9 @@
     <Compile Include="HELP\Class1.cs" />
     <Compile Include="HELP\ComUtility.cs" />
     <Compile Include="HELP\ControlHelp.cs" />
+    <Compile Include="HELP\ConvertJson.cs" />
     <Compile Include="HELP\EncryptionMD5.cs" />
+    <Compile Include="HELP\FileOperate.cs" />
     <Compile Include="HELP\Helper.cs" />
     <Compile Include="HELP\Hook.cs" />
     <Compile Include="HELP\http.cs" />
@@ -150,22 +174,43 @@
     <Compile Include="HELP\Log.cs" />
     <Compile Include="HELP\MouseHook.cs" />
     <Compile Include="HELP\my_sql.cs" />
+    <Compile Include="HELP\orderlist.cs" />
+    <Compile Include="HELP\PagerArgs.cs" />
     <Compile Include="HELP\print3.cs" />
     <Compile Include="HELP\jietu.cs" />
     <Compile Include="HELP\QRcode.cs" />
+    <Compile Include="HELP\WaitFormService.cs" />
+    <Compile Include="HELP\截图帮助类.cs" />
+    <Compile Include="MODEL\OrderEvery.cs" />
+    <Compile Include="MODEL\orderinfo.cs" />
+    <Compile Include="MODEL\orderLIst.cs" />
     <Compile Include="MODEL\PrintRow.cs" />
     <Compile Include="HELP\Setting.cs" />
     <Compile Include="HELP\TimeHelper.cs" />
-    <Compile Include="Service References\ServiceReference1\Reference.cs">
+    <Compile Include="MODEL\StoreName.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="UL\Login.cs">
+    <Compile Include="Settings.cs" />
+    <Compile Include="UL\WaitForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UL\Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="UL\WaitForm.designer.cs">
+      <DependentUpon>WaitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UL\支付详情.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UL\支付详情.Designer.cs">
+      <DependentUpon>支付详情.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UL\登录.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UL\登录.Designer.cs">
+      <DependentUpon>登录.cs</DependentUpon>
     </Compile>
     <Compile Include="MODEL\baudrate.cs" />
     <Compile Include="MODEL\cashier.cs" />
@@ -181,29 +226,29 @@
     <Compile Include="MODEL\ShortcutKeys.cs" />
     <Compile Include="MODEL\Store.cs" />
     <Compile Include="MODEL\User.cs" />
-    <Compile Include="UL\Daili.cs">
+    <Compile Include="UL\代理.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UL\Daili.Designer.cs">
-      <DependentUpon>Daili.cs</DependentUpon>
+    <Compile Include="UL\代理.Designer.cs">
+      <DependentUpon>代理.cs</DependentUpon>
     </Compile>
-    <Compile Include="UL\UpdPwd.cs">
+    <Compile Include="UL\修改密码.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UL\UpdPwd.Designer.cs">
-      <DependentUpon>UpdPwd.cs</DependentUpon>
+    <Compile Include="UL\修改密码.Designer.cs">
+      <DependentUpon>修改密码.cs</DependentUpon>
     </Compile>
-    <Compile Include="UL\XuanFu.cs">
+    <Compile Include="UL\悬浮.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UL\XuanFu.Designer.cs">
-      <DependentUpon>XuanFu.cs</DependentUpon>
+    <Compile Include="UL\悬浮.Designer.cs">
+      <DependentUpon>悬浮.cs</DependentUpon>
     </Compile>
-    <Compile Include="UL\Main.cs">
+    <Compile Include="UL\主页.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UL\Main.Designer.cs">
-      <DependentUpon>Main.cs</DependentUpon>
+    <Compile Include="UL\主页.Designer.cs">
+      <DependentUpon>主页.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -213,38 +258,49 @@
     <Compile Include="UL\截图窗体.designer.cs">
       <DependentUpon>截图窗体.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UL\Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="UL\退出.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UL\退出.Designer.cs">
+      <DependentUpon>退出.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UL\WaitForm.resx">
+      <DependentUpon>WaitForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UL\Daili.resx">
-      <DependentUpon>Daili.cs</DependentUpon>
+    <EmbeddedResource Include="UL\支付详情.resx">
+      <DependentUpon>支付详情.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UL\UpdPwd.resx">
-      <DependentUpon>UpdPwd.cs</DependentUpon>
+    <EmbeddedResource Include="UL\登录.resx">
+      <DependentUpon>登录.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UL\XuanFu.resx">
-      <DependentUpon>XuanFu.cs</DependentUpon>
+    <EmbeddedResource Include="UL\代理.resx">
+      <DependentUpon>代理.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UL\Main.resx">
-      <DependentUpon>Main.cs</DependentUpon>
+    <EmbeddedResource Include="UL\修改密码.resx">
+      <DependentUpon>修改密码.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UL\悬浮.resx">
+      <DependentUpon>悬浮.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UL\主页.resx">
+      <DependentUpon>主页.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="UL\截图窗体.resx">
       <DependentUpon>截图窗体.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UL\退出.resx">
+      <DependentUpon>退出.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="HELP\log4net.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -255,10 +311,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Service References\ServiceReference1\DXApplication2.ServiceReference1.HelloWorldResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReference1\WebService1.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\images\alipay.png" />
@@ -603,9 +655,6 @@
     <None Include="bin\Debug\images\log.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="bin\Debug\images\windows\icon-cancel-btn.png" />
   </ItemGroup>
   <ItemGroup>
@@ -645,29 +694,168 @@
     <None Include="bin\Debug\images\setting\icon-set-foucs.png" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
+    <None Include="bin\Debug\images\pay1.png" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\ServiceReference1\" />
+    <None Include="bin\Debug\images\pay2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
+    <None Include="bin\Debug\images\redundqrcode1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ServiceReference1\configuration.svcinfo" />
+    <None Include="bin\Debug\images\redundqrcode2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ServiceReference1\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
+    <None Include="bin\Debug\images\scancode1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\标志logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\2yajin2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\bg1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\BG2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\bg2_95.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\bg3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\bitbug_favicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\bt1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\bt2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\bt3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\daohang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\dd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\dingdan1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\img.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\logo_ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\shangpin1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\shehzi1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\shoukuan1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\TOUXIANG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\tuikuan1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\yajin1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\zbg1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\zbg2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\2shangpin2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\2shehzi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\2shoukuan1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\2tuikuan2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\2dingdan1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\money\icon-alipay-no-discount.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\money\icon-switch-common.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\微信图片_20190910163548.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_deposit_grew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_member_store_shoukuan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_the_order.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lbg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_f.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\2yajinD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\2dingdanA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\2shehziE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\2shoukuanB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\2tuikuanC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\zhifubao%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\weixin%403x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
-  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
-    <Error Condition="!Exists('packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
-    <Error Condition="Exists('packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
-  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

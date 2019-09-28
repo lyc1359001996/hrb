@@ -42,7 +42,7 @@ namespace OCR.ImageRecognition
             }
             catch (Exception ex)
             {
-                Console.WriteLine("识别图像错误:"+ex.Message);
+                Log4NetHelper.WriteErrorLog(ex.Message);
             }
             return "";
         }

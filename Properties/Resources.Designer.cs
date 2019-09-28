@@ -63,9 +63,9 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap alipay {
+        internal static System.Drawing.Bitmap _2dingdan1 {
             get {
-                object obj = ResourceManager.GetObject("alipay", resourceCulture);
+                object obj = ResourceManager.GetObject("_2dingdan1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,109 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap alipay1 {
+        internal static System.Drawing.Bitmap _2dingdanA {
             get {
-                object obj = ResourceManager.GetObject("alipay1", resourceCulture);
+                object obj = ResourceManager.GetObject("_2dingdanA", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap _2shangpin2 {
+            get {
+                object obj = ResourceManager.GetObject("_2shangpin2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap _2shehzi {
+            get {
+                object obj = ResourceManager.GetObject("_2shehzi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap _2shehziE {
+            get {
+                object obj = ResourceManager.GetObject("_2shehziE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap _2shoukuan1 {
+            get {
+                object obj = ResourceManager.GetObject("_2shoukuan1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap _2shoukuanB {
+            get {
+                object obj = ResourceManager.GetObject("_2shoukuanB", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap _2tuikuan2 {
+            get {
+                object obj = ResourceManager.GetObject("_2tuikuan2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap _2tuikuanC {
+            get {
+                object obj = ResourceManager.GetObject("_2tuikuanC", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap _2yajin2 {
+            get {
+                object obj = ResourceManager.GetObject("_2yajin2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap _2yajinD {
+            get {
+                object obj = ResourceManager.GetObject("_2yajinD", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap alipay {
+            get {
+                object obj = ResourceManager.GetObject("alipay", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,16 +193,6 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap background_receipts1 {
-            get {
-                object obj = ResourceManager.GetObject("background_receipts1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap background_refund_code {
             get {
                 object obj = ResourceManager.GetObject("background_refund_code", resourceCulture);
@@ -113,9 +203,89 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap background_refund_code1 {
+        internal static System.Drawing.Bitmap bg {
             get {
-                object obj = ResourceManager.GetObject("background_refund_code1", resourceCulture);
+                object obj = ResourceManager.GetObject("bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap bg1 {
+            get {
+                object obj = ResourceManager.GetObject("bg1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap BG2 {
+            get {
+                object obj = ResourceManager.GetObject("BG2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap bg2_95 {
+            get {
+                object obj = ResourceManager.GetObject("bg2_95", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap bg3 {
+            get {
+                object obj = ResourceManager.GetObject("bg3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 (图标) 的 System.Drawing.Icon 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Icon bitbug_favicon {
+            get {
+                object obj = ResourceManager.GetObject("bitbug_favicon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap bt1 {
+            get {
+                object obj = ResourceManager.GetObject("bt1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap bt2 {
+            get {
+                object obj = ResourceManager.GetObject("bt2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap bt3 {
+            get {
+                object obj = ResourceManager.GetObject("bt3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +303,9 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap card1 {
+        internal static System.Drawing.Bitmap daohang {
             get {
-                object obj = ResourceManager.GetObject("card1", resourceCulture);
+                object obj = ResourceManager.GetObject("daohang", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +323,9 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap dayinji1 {
+        internal static System.Drawing.Bitmap dd {
             get {
-                object obj = ResourceManager.GetObject("dayinji1", resourceCulture);
+                object obj = ResourceManager.GetObject("dd", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,16 +343,6 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap deposit_icon1 {
-            get {
-                object obj = ResourceManager.GetObject("deposit_icon1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap deposit_logo {
             get {
                 object obj = ResourceManager.GetObject("deposit_logo", resourceCulture);
@@ -193,9 +353,9 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap deposit_logo1 {
+        internal static System.Drawing.Bitmap dingdan1 {
             get {
-                object obj = ResourceManager.GetObject("deposit_logo1", resourceCulture);
+                object obj = ResourceManager.GetObject("dingdan1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,16 +373,6 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap HowMuch1 {
-            get {
-                object obj = ResourceManager.GetObject("HowMuch1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap icon_account {
             get {
                 object obj = ResourceManager.GetObject("icon_account", resourceCulture);
@@ -233,29 +383,9 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap icon_account1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_account1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap icon_added {
             get {
                 object obj = ResourceManager.GetObject("icon_added", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_added1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_added1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -283,16 +413,6 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap icon_alipay_large1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_alipay_large1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap icon_alipay_no_discount {
             get {
                 object obj = ResourceManager.GetObject("icon_alipay_no_discount", resourceCulture);
@@ -313,29 +433,9 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap icon_alipay1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_alipay1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap icon_amount_refunded {
             get {
                 object obj = ResourceManager.GetObject("icon_amount_refunded", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_amount_refunded1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_amount_refunded1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -363,39 +463,9 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap icon_bank_card_little1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_bank_card_little1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_bank_card1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_bank_card1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap icon_calendar {
             get {
                 object obj = ResourceManager.GetObject("icon_calendar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_calendar1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_calendar1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -433,39 +503,9 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap icon_card_coupons_click1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_card_coupons_click1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_card_coupons1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_card_coupons1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap icon_chuzhichenggong {
             get {
                 object obj = ResourceManager.GetObject("icon_chuzhichenggong", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_chuzhichenggong1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_chuzhichenggong1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -483,29 +523,9 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap icon_close_black1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_close_black1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap icon_close_white {
             get {
                 object obj = ResourceManager.GetObject("icon_close_white", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_close_white1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_close_white1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -543,26 +563,6 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap icon_collection_click1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_collection_click1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_collection1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_collection1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap icon_consumption_stage {
             get {
                 object obj = ResourceManager.GetObject("icon_consumption_stage", resourceCulture);
@@ -576,26 +576,6 @@ namespace DXApplication2.Properties {
         internal static System.Drawing.Bitmap icon_consumption_stage_little {
             get {
                 object obj = ResourceManager.GetObject("icon_consumption_stage_little", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_consumption_stage_little1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_consumption_stage_little1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_consumption_stage1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_consumption_stage1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -643,26 +623,6 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap icon_delete_input_box1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_delete_input_box1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_delete1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_delete1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap icon_deposit_grew {
             get {
                 object obj = ResourceManager.GetObject("icon_deposit_grew", resourceCulture);
@@ -686,16 +646,6 @@ namespace DXApplication2.Properties {
         internal static System.Drawing.Bitmap icon_deposit_white {
             get {
                 object obj = ResourceManager.GetObject("icon_deposit_white", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_deposit_white1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_deposit_white1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -733,16 +683,6 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap icon_freez_success1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_freez_success1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap icon_fukuanma {
             get {
                 object obj = ResourceManager.GetObject("icon_fukuanma", resourceCulture);
@@ -753,29 +693,9 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap icon_fukuanma1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_fukuanma1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap icon_gift_background {
             get {
                 object obj = ResourceManager.GetObject("icon_gift_background", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_gift_background1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_gift_background1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -813,29 +733,9 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap icon_head_portrait1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_head_portrait1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap icon_integral {
             get {
                 object obj = ResourceManager.GetObject("icon_integral", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_integral1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_integral1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -853,16 +753,6 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap icon_jiahao1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_jiahao1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap icon_jianhao {
             get {
                 object obj = ResourceManager.GetObject("icon_jianhao", resourceCulture);
@@ -873,29 +763,9 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap icon_jianhao1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_jianhao1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap icon_kaquan {
             get {
                 object obj = ResourceManager.GetObject("icon_kaquan", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_kaquan1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_kaquan1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -923,16 +793,6 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap icon_line_item_wechat1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_line_item_wechat1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap icon_member {
             get {
                 object obj = ResourceManager.GetObject("icon_member", resourceCulture);
@@ -953,29 +813,9 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap icon_member_click1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_member_click1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap icon_member_large {
             get {
                 object obj = ResourceManager.GetObject("icon_member_large", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_member_large1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_member_large1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -993,29 +833,9 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap icon_member_search1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_member_search1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap icon_member_store_fukuanma {
             get {
                 object obj = ResourceManager.GetObject("icon_member_store_fukuanma", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_member_store_fukuanma1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_member_store_fukuanma1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1053,16 +873,6 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap icon_member_store_value_mobile1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_member_store_value_mobile1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap icon_member_stored_value_card {
             get {
                 object obj = ResourceManager.GetObject("icon_member_stored_value_card", resourceCulture);
@@ -1083,49 +893,9 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap icon_member_stored_value_card_big1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_member_stored_value_card_big1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_member_stored_value_card1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_member_stored_value_card1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_member1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_member1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap icon_minimize_black {
             get {
                 object obj = ResourceManager.GetObject("icon_minimize_black", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_minimize_black1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_minimize_black1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1143,16 +913,6 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap icon_minimize_gray1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_minimize_gray1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap icon_minimize_white {
             get {
                 object obj = ResourceManager.GetObject("icon_minimize_white", resourceCulture);
@@ -1163,29 +923,9 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap icon_minimize_white1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_minimize_white1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap icon_modify {
             get {
                 object obj = ResourceManager.GetObject("icon_modify", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_modify1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_modify1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1206,16 +946,6 @@ namespace DXApplication2.Properties {
         internal static System.Drawing.Bitmap icon_no_data {
             get {
                 object obj = ResourceManager.GetObject("icon_no_data", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_no_data1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_no_data1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1253,29 +983,9 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap icon_order_amoun1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_order_amoun1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap icon_order_list_alipay {
             get {
                 object obj = ResourceManager.GetObject("icon_order_list_alipay", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_order_list_alipay1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_order_list_alipay1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1293,16 +1003,6 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap icon_order_list_wechat1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_order_list_wechat1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap icon_orders {
             get {
                 object obj = ResourceManager.GetObject("icon_orders", resourceCulture);
@@ -1313,29 +1013,9 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap icon_orders1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_orders1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap icon_password {
             get {
                 object obj = ResourceManager.GetObject("icon_password", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_password1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_password1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1363,26 +1043,6 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap icon_refund_click1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_refund_click1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_refund1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_refund1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap icon_set_foucs {
             get {
                 object obj = ResourceManager.GetObject("icon_set_foucs", resourceCulture);
@@ -1403,16 +1063,6 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap icon_shoukuan1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_shoukuan1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap icon_single_box {
             get {
                 object obj = ResourceManager.GetObject("icon_single_box", resourceCulture);
@@ -1426,26 +1076,6 @@ namespace DXApplication2.Properties {
         internal static System.Drawing.Bitmap icon_single_box_click {
             get {
                 object obj = ResourceManager.GetObject("icon_single_box_click", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_single_box_click1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_single_box_click1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_single_box1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_single_box1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1483,16 +1113,6 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap icon_switch1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_switch1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap icon_the_order {
             get {
                 object obj = ResourceManager.GetObject("icon_the_order", resourceCulture);
@@ -1506,16 +1126,6 @@ namespace DXApplication2.Properties {
         internal static System.Drawing.Bitmap icon_the_order_click {
             get {
                 object obj = ResourceManager.GetObject("icon_the_order_click", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_the_order_click1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_the_order_click1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1543,16 +1153,6 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap icon_tip1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_tip1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap icon_wechat {
             get {
                 object obj = ResourceManager.GetObject("icon_wechat", resourceCulture);
@@ -1566,26 +1166,6 @@ namespace DXApplication2.Properties {
         internal static System.Drawing.Bitmap icon_wechat_large {
             get {
                 object obj = ResourceManager.GetObject("icon_wechat_large", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_wechat_large1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_wechat_large1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_wechat1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_wechat1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1613,39 +1193,9 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap icon_wing_pay_little1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_wing_pay_little1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap icon_wing_pay1 {
             get {
                 object obj = ResourceManager.GetObject("icon_wing_pay1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_wing_pay11 {
-            get {
-                object obj = ResourceManager.GetObject("icon_wing_pay11", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_wing_pay2 {
-            get {
-                object obj = ResourceManager.GetObject("icon_wing_pay2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1683,9 +1233,9 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap icon_yinlian_stage_little1 {
+        internal static System.Drawing.Bitmap img {
             get {
-                object obj = ResourceManager.GetObject("icon_yinlian_stage_little1", resourceCulture);
+                object obj = ResourceManager.GetObject("img", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1693,9 +1243,9 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap icon_yinlian_stage1 {
+        internal static System.Drawing.Bitmap lbg {
             get {
-                object obj = ResourceManager.GetObject("icon_yinlian_stage1", resourceCulture);
+                object obj = ResourceManager.GetObject("lbg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1703,9 +1253,9 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap icon_yinlian1 {
+        internal static System.Drawing.Bitmap lg {
             get {
-                object obj = ResourceManager.GetObject("icon_yinlian1", resourceCulture);
+                object obj = ResourceManager.GetObject("lg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1731,26 +1281,6 @@ namespace DXApplication2.Properties {
         }
         
         /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap ll11 {
-            get {
-                object obj = ResourceManager.GetObject("ll11", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap ll2 {
-            get {
-                object obj = ResourceManager.GetObject("ll2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   查找类似于 (图标) 的 System.Drawing.Icon 类型的本地化资源。
         /// </summary>
         internal static System.Drawing.Icon log {
@@ -1771,21 +1301,21 @@ namespace DXApplication2.Properties {
         }
         
         /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        ///   查找类似于 (图标) 的 System.Drawing.Icon 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap login_close {
+        internal static System.Drawing.Icon log2 {
             get {
-                object obj = ResourceManager.GetObject("login_close", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                object obj = ResourceManager.GetObject("log2", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap login_close1 {
+        internal static System.Drawing.Bitmap login_close {
             get {
-                object obj = ResourceManager.GetObject("login_close1", resourceCulture);
+                object obj = ResourceManager.GetObject("login_close", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1803,29 +1333,9 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap login_password1 {
-            get {
-                object obj = ResourceManager.GetObject("login_password1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap loginUser {
             get {
                 object obj = ResourceManager.GetObject("loginUser", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap loginUser1 {
-            get {
-                object obj = ResourceManager.GetObject("loginUser1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1843,9 +1353,9 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap logo_old {
+        internal static System.Drawing.Bitmap logo_f {
             get {
-                object obj = ResourceManager.GetObject("logo_old", resourceCulture);
+                object obj = ResourceManager.GetObject("logo_f", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1853,79 +1363,9 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap logo_old1 {
+        internal static System.Drawing.Bitmap logo_ok {
             get {
-                object obj = ResourceManager.GetObject("logo_old1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap logo_white {
-            get {
-                object obj = ResourceManager.GetObject("logo_white", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap logo_white1 {
-            get {
-                object obj = ResourceManager.GetObject("logo_white1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap logo1 {
-            get {
-                object obj = ResourceManager.GetObject("logo1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap logo11 {
-            get {
-                object obj = ResourceManager.GetObject("logo11", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap logo2 {
-            get {
-                object obj = ResourceManager.GetObject("logo2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap logo21 {
-            get {
-                object obj = ResourceManager.GetObject("logo21", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap logo3 {
-            get {
-                object obj = ResourceManager.GetObject("logo3", resourceCulture);
+                object obj = ResourceManager.GetObject("logo_ok", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1943,69 +1383,9 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap main_logo_old {
-            get {
-                object obj = ResourceManager.GetObject("main_logo_old", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap main_logo_old1 {
-            get {
-                object obj = ResourceManager.GetObject("main_logo_old1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap main_logo1 {
-            get {
-                object obj = ResourceManager.GetObject("main_logo1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap main_logo11 {
-            get {
-                object obj = ResourceManager.GetObject("main_logo11", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap main_logo2 {
-            get {
-                object obj = ResourceManager.GetObject("main_logo2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap member_card_bg_jifen {
             get {
                 object obj = ResourceManager.GetObject("member_card_bg_jifen", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap member_card_bg_jifen1 {
-            get {
-                object obj = ResourceManager.GetObject("member_card_bg_jifen1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2023,29 +1403,9 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap member_card_bg_new1 {
-            get {
-                object obj = ResourceManager.GetObject("member_card_bg_new1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap newexit {
             get {
                 object obj = ResourceManager.GetObject("newexit", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap newexit1 {
-            get {
-                object obj = ResourceManager.GetObject("newexit1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2063,29 +1423,9 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap off1 {
-            get {
-                object obj = ResourceManager.GetObject("off1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap on {
             get {
                 object obj = ResourceManager.GetObject("on", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap on1 {
-            get {
-                object obj = ResourceManager.GetObject("on1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2103,29 +1443,9 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap order1 {
-            get {
-                object obj = ResourceManager.GetObject("order1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap page_back {
             get {
                 object obj = ResourceManager.GetObject("page_back", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap page_back1 {
-            get {
-                object obj = ResourceManager.GetObject("page_back1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2153,9 +1473,9 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap pay_ding1 {
+        internal static System.Drawing.Bitmap pay1 {
             get {
-                object obj = ResourceManager.GetObject("pay_ding1", resourceCulture);
+                object obj = ResourceManager.GetObject("pay1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2163,9 +1483,9 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap pay1 {
+        internal static System.Drawing.Bitmap pay11 {
             get {
-                object obj = ResourceManager.GetObject("pay1", resourceCulture);
+                object obj = ResourceManager.GetObject("pay11", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2183,29 +1503,9 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap pay3 {
-            get {
-                object obj = ResourceManager.GetObject("pay3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap receipt {
             get {
                 object obj = ResourceManager.GetObject("receipt", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap receipt1 {
-            get {
-                object obj = ResourceManager.GetObject("receipt1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2233,6 +1533,16 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap redundqrcode2 {
+            get {
+                object obj = ResourceManager.GetObject("redundqrcode2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap refund {
             get {
                 object obj = ResourceManager.GetObject("refund", resourceCulture);
@@ -2243,29 +1553,9 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap refund1 {
-            get {
-                object obj = ResourceManager.GetObject("refund1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap scan {
             get {
                 object obj = ResourceManager.GetObject("scan", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap scan1 {
-            get {
-                object obj = ResourceManager.GetObject("scan1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2303,9 +1593,29 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap setting1 {
+        internal static System.Drawing.Bitmap shangpin1 {
             get {
-                object obj = ResourceManager.GetObject("setting1", resourceCulture);
+                object obj = ResourceManager.GetObject("shangpin1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap shehzi1 {
+            get {
+                object obj = ResourceManager.GetObject("shehzi1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap shoukuan1 {
+            get {
+                object obj = ResourceManager.GetObject("shoukuan1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2323,16 +1633,6 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap systemPay1 {
-            get {
-                object obj = ResourceManager.GetObject("systemPay1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap teller {
             get {
                 object obj = ResourceManager.GetObject("teller", resourceCulture);
@@ -2343,9 +1643,19 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap teller1 {
+        internal static System.Drawing.Bitmap TOUXIANG {
             get {
-                object obj = ResourceManager.GetObject("teller1", resourceCulture);
+                object obj = ResourceManager.GetObject("TOUXIANG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap tuikuan1 {
+            get {
+                object obj = ResourceManager.GetObject("tuikuan1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2363,9 +1673,9 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap wechat1 {
+        internal static System.Drawing.Bitmap weixin_3x {
             get {
-                object obj = ResourceManager.GetObject("wechat1", resourceCulture);
+                object obj = ResourceManager.GetObject("weixin_3x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2383,29 +1693,9 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap weixin11 {
-            get {
-                object obj = ResourceManager.GetObject("weixin11", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap weixin2 {
             get {
                 object obj = ResourceManager.GetObject("weixin2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap weixin21 {
-            get {
-                object obj = ResourceManager.GetObject("weixin21", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2423,16 +1713,6 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap welcome1 {
-            get {
-                object obj = ResourceManager.GetObject("welcome1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap xiaopiao {
             get {
                 object obj = ResourceManager.GetObject("xiaopiao", resourceCulture);
@@ -2443,9 +1723,29 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap xiaopiao1 {
+        internal static System.Drawing.Bitmap yajin1 {
             get {
-                object obj = ResourceManager.GetObject("xiaopiao1", resourceCulture);
+                object obj = ResourceManager.GetObject("yajin1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap zbg1 {
+            get {
+                object obj = ResourceManager.GetObject("zbg1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap zbg2 {
+            get {
+                object obj = ResourceManager.GetObject("zbg2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2463,9 +1763,19 @@ namespace DXApplication2.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap zhifubao1 {
+        internal static System.Drawing.Bitmap zhifubao_3x {
             get {
-                object obj = ResourceManager.GetObject("zhifubao1", resourceCulture);
+                object obj = ResourceManager.GetObject("zhifubao_3x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 微信图片_20190910163548 {
+            get {
+                object obj = ResourceManager.GetObject("微信图片_20190910163548", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

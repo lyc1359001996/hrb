@@ -42,9 +42,9 @@ public class Des3
             // Return the encrypted buffer.
             return ret;
         }
-        catch (CryptographicException e)
+        catch (CryptographicException e1)
         {
-            Console.WriteLine("A Cryptographic error occurred: {0}", e.Message);
+            Log4NetHelper.WriteErrorLog(e1.Message);
             return null;
         }
     }
@@ -78,9 +78,9 @@ public class Des3
             //Convert the buffer into a string and return it.
             return fromEncrypt;
         }
-        catch (CryptographicException e)
+        catch (CryptographicException e1)
         {
-            Console.WriteLine("A Cryptographic error occurred: {0}", e.Message);
+            Log4NetHelper.WriteErrorLog(e1.Message);
             return null;
         }
     }
@@ -120,9 +120,9 @@ public class Des3
             // Return the encrypted buffer.
             return ret;
         }
-        catch (CryptographicException e)
+        catch (CryptographicException e1)
         {
-            Console.WriteLine("A Cryptographic error occurred: {0}", e.Message);
+            Log4NetHelper.WriteErrorLog(e1.Message);
             return null;
         }
     }
@@ -156,9 +156,9 @@ public class Des3
             //Convert the buffer into a string and return it.
             return fromEncrypt;
         }
-        catch (CryptographicException e)
+        catch (CryptographicException e1)
         {
-            Console.WriteLine("A Cryptographic error occurred: {0}", e.Message);
+            Log4NetHelper.WriteErrorLog(e1.Message);
             return null;
         }
     }
@@ -173,17 +173,9 @@ public class Des3
         byte[] key = Convert.FromBase64String("YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4");
         byte[] iv = new byte[] { 1, 2, 3, 4, 5, 6, 7, 8 };      //当模式为ECB时，IV无用
         byte[] data = utf8.GetBytes("中国ABCabc123");
-        System.Console.WriteLine("ECB模式:");
         byte[] str1 = Des3.Des3EncodeECB(key, iv, data);
         byte[] str2 = Des3.Des3DecodeECB(key, iv, str1);
-        System.Console.WriteLine(Convert.ToBase64String(str1));
-        System.Console.WriteLine(System.Text.Encoding.UTF8.GetString(str2));
-        System.Console.WriteLine();
-        System.Console.WriteLine("CBC模式:");
         byte[] str3 = Des3.Des3EncodeCBC(key, iv, data);
         byte[] str4 = Des3.Des3DecodeCBC(key, iv, str3);
-        System.Console.WriteLine(Convert.ToBase64String(str3));
-        System.Console.WriteLine(utf8.GetString(str4));
-        System.Console.WriteLine();
     }
 }

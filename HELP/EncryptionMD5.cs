@@ -12,7 +12,7 @@ namespace Common.Utilities
     /// MD5
     /// 单向加密
     /// </summary>
-    public class EncryptionMD5
+    public class Encryption
     {
         /// <summary>
         /// 获得一个字符串的加密密文
@@ -123,5 +123,26 @@ namespace Common.Utilities
             result = EncryptStringSHA1(plainText).Equals(encryptText);
             return result;
         }
+
+        /// <summary> 
+        /// MD5 加密字符串 
+        /// </summary> 
+        /// <param name="rawPass">源字符串</param> 
+        /// <returns>加密后字符串</returns> 
+        public string MD5E(string rawPass)
+        {
+            // 创建MD5类的默认实例：MD5CryptoServiceProvider 
+            MD5 md5 = MD5.Create();
+            byte[] bs = Encoding.UTF8.GetBytes(rawPass);
+            byte[] hs = md5.ComputeHash(bs);
+            StringBuilder sb = new StringBuilder();
+            foreach (byte b in hs)
+            {
+                // 以十六进制格式格式化 
+                sb.Append(b.ToString("x2"));
+            }
+            return sb.ToString();
+        }
+
     }
 }

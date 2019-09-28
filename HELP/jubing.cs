@@ -23,10 +23,10 @@ namespace DXApplication2.HELP
         public static extern int SendMessage(int hwnd, int wMsg, int wParam, string lParam);
         bool isMouseUp = false;
         Point pi = new Point();
-        Point p = new Point();
+        //Point p = new Point();
         int hwnd;
         StringBuilder name = new StringBuilder(256);
-        string WM_SETTEXT = "&HC";
+        //string WM_SETTEXT = "&HC";
         string Name = "";
         public string timer()
         {

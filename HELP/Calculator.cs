@@ -21,7 +21,7 @@ namespace DXApplication2.HELP
 
         public string Del(TextEdit TextEdit)
         {
-            return TextEdit.Text= TextEdit.Text.Remove(TextEdit.Text.Length-1,1);
+            return TextEdit.Text.Remove(TextEdit.Text.Length-1,1);
         }
     }
 }

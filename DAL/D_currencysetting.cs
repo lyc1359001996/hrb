@@ -35,7 +35,7 @@ namespace DXApplication2.DAL
 
         public int UpdSetting(int SelfStart, int AutomaticUpgrade, int PushNotice, int SuspensionWindow, int ScanningCallUp, decimal SweepTimeout, int VoiceAnnouncements, int JiangXiaoHe_VoiceAnnouncements, int JiangXiaoHe,string UserId)
         {
-           return my_sql.updateSql("UPDATE `currencysetting` SET `SelfStart`='"+SelfStart+"', `AutomaticUpgrade`='"+AutomaticUpgrade+"', `PushNotice`='"+PushNotice+"', `SuspensionWindow`='"+SuspensionWindow+"', `ScanningCallUp`='2', `SweepTimeout`='"+SweepTimeout+"', `VoiceAnnouncements`='"+VoiceAnnouncements+"', `JiangXiaoHe_VoiceAnnouncements`='"+JiangXiaoHe_VoiceAnnouncements+"', `JiangXiaoHe`='"+JiangXiaoHe+"' WHERE (`UserId`='"+UserId+"');");
+           return my_sql.updateSql("UPDATE `currencysetting` SET `SelfStart`='"+SelfStart+"', `AutomaticUpgrade`='"+AutomaticUpgrade+"', `PushNotice`='"+PushNotice+"', `SuspensionWindow`='"+SuspensionWindow+"', `ScanningCallUp`='"+ScanningCallUp+"', `SweepTimeout`='"+SweepTimeout+"', `VoiceAnnouncements`='"+VoiceAnnouncements+"', `JiangXiaoHe_VoiceAnnouncements`='"+JiangXiaoHe_VoiceAnnouncements+"', `JiangXiaoHe`='"+JiangXiaoHe+"' WHERE (`UserId`='"+UserId+"');");
         }
     }
 }

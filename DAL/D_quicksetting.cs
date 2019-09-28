@@ -26,7 +26,6 @@ namespace DXApplication2.DAL
 
         public quicksetting SelectSetting(string UserId)
         {
-            Console.WriteLine("SELECT FastSwitchState,GraspShortcutKeys1,GraspShortcutKeys2,ReceivablesShortcutKeys1,ReceivablesShortcutKeys2,OrderShortcutKeys1,OrderShortcutKeys2,RefundShortcutKeys1,RefundShortcutKeys2,PipelinePrinting1,PipelinePrinting2,ViewShortcuts1,ViewShortcuts2,ArouseConcealment1,ArouseConcealment2,ClosingProcess1,ClosingProcess2,SwitchingAccounts1,SwitchingAccounts2 FROM quicksetting WHERE UserId='" + UserId + "';");
             dt= my_sql.listTable("SELECT FastSwitchState,GraspShortcutKeys1,GraspShortcutKeys2,ReceivablesShortcutKeys1,ReceivablesShortcutKeys2,OrderShortcutKeys1,OrderShortcutKeys2,RefundShortcutKeys1,RefundShortcutKeys2,PipelinePrinting1,PipelinePrinting2,ViewShortcuts1,ViewShortcuts2,ArouseConcealment1,ArouseConcealment2,ClosingProcess1,ClosingProcess2,SwitchingAccounts1,SwitchingAccounts2 FROM quicksetting WHERE UserId='"+UserId+"';");
             quicksetting.FastSwitchState=int.Parse(dt.Rows[0][0].ToString());
             quicksetting.GraspShortcutKeys1= int.Parse(dt.Rows[0][1].ToString());

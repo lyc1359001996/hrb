@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DXApplication2;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,11 +7,17 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using thsoft_core;
 
 namespace QQ截图工具
 {
     public partial class Cutter : Form
     {
+        IniFile ini = new IniFile(@"config\set.ini");
+        //Image copyBmp = null;
+        //Point newPoint = new Point();
+        //Graphics g = null;
+        //Pen p = null;
         public Cutter()
         {
             InitializeComponent();
@@ -139,8 +146,21 @@ namespace QQ截图工具
                 g1.Dispose();
                 // 释放拷贝图片，防止内存被大量消耗
                 copyBmp.Dispose();
+                ini.IniWriteValue("mySqlCon2", "jietu",DownPoint.X + ":" + DownPoint.Y + ":" + width + ":" + height);
             }
         }
+
+        public void jietu(string str)
+        {
+            try
+            {
+                Image image= Class11.captureScreen(int.Parse(str.Split(':')[0].ToString()), int.Parse(str.Split(':')[1].ToString()), int.Parse(str.Split(':')[2].ToString()), int.Parse(str.Split(':')[3].ToString()));
+                image.Save(Application.StartupPath + "/3.jpg");
+                image.Dispose();
+            }
+            catch { }
+        }
+
 
         /// <summary>
         /// 鼠标左键弹起事件

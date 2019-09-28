@@ -17,13 +17,17 @@ namespace DXApplication2
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("zh-CN");
-            BonusSkins.Register();
-            SkinManager.EnableFormSkins();
-            UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
-            Application.Run(new Login());
+            try
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                BonusSkins.Register();
+                SkinManager.EnableFormSkins();
+                UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
+                System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("zh-CN");
+                Application.Run(new 登录());
+            }
+            catch { }
         }
     }
 }

@@ -77,13 +77,15 @@ namespace CustomPrint
             this.drawHeight = drawHeight;
         }
 
-        public PrintRow(int index, Image context, Font penFont, Brush drawBrush, int drawHeight)
+        public PrintRow(int index, Image context1, Font penFont, Brush drawBrush, int drawHeight)
         {
             this.printIndex = index;
-            this.Context1 = context;
+            this.Context1 = context1;
             this.drawFont = penFont;
             this.drawBrush = drawBrush;
             this.drawHeight = drawHeight;
         }
+
+
     }
 }

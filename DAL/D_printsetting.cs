@@ -15,7 +15,6 @@ namespace DXApplication2.DAL
         printsetting printsetting = new printsetting();
         public printsetting SelectSetting(string UserId)
         {
-            Console.WriteLine("SELECT PrintSwitch,CompatibilityMode,DetailSwitch,PrintingDelay,PrintingNumber,PrintingDrive FROM printsetting Where UserId='" + UserId + "';");
             dt= my_sql.listTable("SELECT PrintSwitch,CompatibilityMode,DetailSwitch,PrintingDelay,PrintingNumber,PrintingDrive FROM printsetting Where UserId='"+UserId+"';");
             printsetting.PrintSwitch= int.Parse(dt.Rows[0][0].ToString());
             printsetting.CompatibilityMode = int.Parse(dt.Rows[0][1].ToString());

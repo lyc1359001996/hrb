@@ -41,7 +41,6 @@ namespace Hook
                     mouse = MouseButtons.None;
                     break;
             }
-            Console.WriteLine("[鼠标Hook] 按下的键:{0}", mouse);
             if (mouse.Equals(MouseButtons.Right))
             {
                 //吃掉消息

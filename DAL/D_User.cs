@@ -12,9 +12,10 @@ namespace DXApplication2.DAL
 {
     class D_User
     {
+        EncryptionSHA1 e = new EncryptionSHA1();
         public int Upd_Pwd(string Old, string New, string UserId)
         {
-            return my_sql.updateSql("UPDATE `user` SET `PassWord`='" + New + "' WHERE (`UserId`='" + UserId + "' and PassWord='" + Old + "');");
+            return my_sql.updateSql("UPDATE `user` SET `PassWord`='" + e.MD5E(New) + "' WHERE (`UserId`='" + UserId + "' and PassWord='" + e.MD5E(Old) + "');");
         }
         public int Upd_NameStore(int NameStore, string UserId)
         {
@@ -24,14 +25,11 @@ namespace DXApplication2.DAL
         {
             if (PassWord.Length!=32)
             {
-                Console.WriteLine("SELECT COUNT(1) FROM `user` WHERE `UserID`='" + UserId + "' AND `PassWord`='" + PassWord + "';");
-                return int.Parse(my_sql.listTable("SELECT COUNT(1) FROM `user` WHERE `UserID`='" + UserId + "' AND `PassWord`='" + PassWord + "';").Rows[0][0].ToString());
+                return int.Parse(my_sql.listTable("SELECT COUNT(1) FROM `user` WHERE BINARY `UserID`='" + UserId + "' AND `PassWord`='" +e.MD5E( PassWord )+ "';").Rows[0][0].ToString());
             }else
             {
-                Console.WriteLine("SELECT COUNT(1) FROM `user` WHERE `UserID`='" + UserId + "' AND `PassWord`='" + EncryptionMD5.EncryptString(PassWord) + "';");
-                return int.Parse(my_sql.listTable("SELECT COUNT(1) FROM `user` WHERE `UserID`='" + UserId + "' AND `PassWord`='" + EncryptionMD5.EncryptString(PassWord) + "';").Rows[0][0].ToString());
+                return int.Parse(my_sql.listTable("SELECT COUNT(1) FROM `user` WHERE BINARY `UserID`='" + UserId + "' AND `PassWord`='" +e.MD5E(PassWord) + "';").Rows[0][0].ToString());
             }
-            
         }
 
         public DataTable Select(string name)

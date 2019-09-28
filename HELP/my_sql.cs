@@ -14,12 +14,7 @@ namespace thsoft_core
         public static String getconstr()
         {
             String constr = "";
-            string cfgINI = @"config\set.ini";
-            if (File.Exists(cfgINI))
-            {
-                IniFile ini = new IniFile(cfgINI);
-                constr = "SERVER=" + ini.IniReadValue("mySqlCon1", "ip") + ";DATABASE=" + ini.IniReadValue("mySqlCon1", "dbname") + ";PWD=" + jiami.Decrypt(ini.IniReadValue("mySqlCon1", "pwd")) + ";UID=" + ini.IniReadValue("mySqlCon1", "username") + ";Charset=utf8";
-            }
+           constr = "SERVER=192.168.0.119;DATABASE=hrb;PWD=abcd-1234;UID=root;Charset=utf8";
             return constr;
         }
         public static String getconstr2()

@@ -1,4 +1,5 @@
-﻿using DXApplication2.DAL;
+﻿using DevExpress.XtraEditors;
+using DXApplication2.DAL;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,14 +13,20 @@ namespace DXApplication2.BLL
     class B_Order
     {
         D_Order Order = new D_Order();
-        public int InsertOrder(decimal AmountMoney,decimal PreferentialAmount, int PaymentMethod,int State,DateTime PaymentTime,int NameStore,int Cashier,int PaymentTerminal,string OrderRemarks)
+        public int InsertOrder(string OrderBH,decimal AmountMoney,decimal PreferentialAmount, int PaymentMethod,int State,DateTime PaymentTime,int NameStore,int Cashier,int PaymentTerminal,string OrderRemarks)
         {
-            return Order.InsertOrder(GetTimeStamp(DateTime.Now.Date)+NameStore.ToString(),AmountMoney,PreferentialAmount,AmountMoney,PaymentMethod,State,PaymentTime.ToString(),NameStore,Cashier,PaymentTerminal, OrderRemarks);
+            return Order.InsertOrder(OrderBH,AmountMoney,PreferentialAmount,AmountMoney,PaymentMethod,State,PaymentTime.ToString(),NameStore,Cashier,PaymentTerminal, OrderRemarks);
         }
         public DataTable SelectOrder()
         {
             return Order.SelectOrder(DateTime.Now.Date.ToString(), DateTime.Now.ToLocalTime().ToString());
         }
+
+        public DataTable SelectOrder(DateEdit dateedit1,DateEdit dateedit2)
+        {
+            return Order.SelectOrder(dateedit1.Text, dateedit2.Text);
+        }
+
         public DataTable SelectOrder(string EndTime)
         {
             return Order.SelectOrder(EndTime);
@@ -35,9 +42,9 @@ namespace DXApplication2.BLL
             return Order.SelectOrder4(PaymentMethod);
         }
 
-        public DataTable SelectOrder4(string Cashier)
+        public DataTable SelectOrder4(string StateTime, string EndTime,string Cashier)
         {
-            return Order.SelectOrder5(Cashier);
+            return Order.SelectOrder5(StateTime, EndTime,Cashier);
         }
 
         public DataTable SelectOrder5(string StartTime)
@@ -50,6 +57,31 @@ namespace DXApplication2.BLL
             return Order.SelectOrder(StateTime,EndTime);
         }
 
+        public DataTable SelectOrder15(string StateTime, string EndTime)
+        {
+            return Order.SelectOrder15(StateTime, EndTime);
+        }
+
+        public DataTable SelectOrder(string StateTime, string EndTime,string OrderBH)
+        {
+            return Order.SelectOrder(StateTime, EndTime,OrderBH);
+        }
+
+        public DataTable P_SelectOrder(string StateTime, string EndTime,int pageSize,int curPage)
+        {
+            return Order.P_SelectOrder(StateTime, EndTime ,pageSize,curPage);
+        }
+
+        public DataTable P_SelectOrder(string StateTime, string EndTime, string OrderBH, int pageSize, int curPage)
+        {
+            return Order.P_SelectOrder(StateTime, EndTime, OrderBH, pageSize, curPage);
+        }
+
+        public DataTable SelectOrder7()
+        {
+            return Order.SelectOrder(DateTime.Now.Date.ToString(), DateTime.Now.ToLocalTime().ToString());
+        }
+
         public DataTable SelectOrder6(string StateTime)
         {
             return Order.SelectOrder1(StateTime);
@@ -60,9 +92,9 @@ namespace DXApplication2.BLL
             return Order.SelectOrder6(StateTime);
         }
 
-        public DataTable SelectOrder8(string StateTime)
+        public DataTable SelectOrder8()
         {
-            return Order.SelectOrder7(StateTime);
+            return Order.SelectOrder7();
         }
 
         public DataTable SelectOrder9(string StateTime)
@@ -75,9 +107,9 @@ namespace DXApplication2.BLL
             return Order.SelectOrder9(StateTime);
         }
 
-        public DataTable SelectOrder11(string StateTime)
+        public DataTable SelectOrder11()
         {
-            return Order.SelectOrder10(StateTime);
+            return Order.SelectOrder10();
         }
 
         public DataTable SelectOrder12(string StateTime)
@@ -90,9 +122,9 @@ namespace DXApplication2.BLL
             return Order.SelectOrder12(StateTime);
         }
 
-        public DataTable SelectOrder14(string StateTime)
+        public DataTable SelectOrder14()
         {
-            return Order.SelectOrder13(StateTime);
+            return Order.SelectOrder13();
         }
 
         /// <summary>

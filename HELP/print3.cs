@@ -1,15 +1,14 @@
-﻿using CustomPrint;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace DXApplication2.HELP
+
+namespace CustomPrint
 {
-    class PrintOrder
+    public static class PrintOrder
     {
         private static PrintDocument printDocument;
 
@@ -21,22 +20,22 @@ namespace DXApplication2.HELP
         /// <summary>
         /// 设置打印纸高 
         /// </summary>
-        public static int pageHeight = 800;
+        public static int pageHeight = 350;
 
 
         /// <summary>
         /// 设置打印纸宽
         /// </summary>
-        public static int pageWidth = 300;
+        public static int pageWidth = 320;
 
 
         public static StringFormat sf;
 
+
         static PrintOrder()
         {
             sf = new StringFormat();
-            sf.Alignment = StringAlignment.Near;
-            sf.FormatFlags= StringFormatFlags.LineLimit;
+            sf.Alignment = StringAlignment.Center;
             lockObj = new object();
             printDocument = new System.Drawing.Printing.PrintDocument();
             printDocument.BeginPrint += PrintDocument_BeginPrint;
@@ -44,15 +43,12 @@ namespace DXApplication2.HELP
             printDocument.PrintPage += PrintDocument_PrintPage;
         }
 
+
         private static void PrintDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             try
             {
                 Draw(e.Graphics, printOrder);
-                e.Graphics.PageUnit = GraphicsUnit.Millimeter;
-                Image image = Image.FromFile("E:/hrb/1.jpg");
-                e.Graphics.DrawImage(image, new Rectangle(7,70, 30, 30));
-                image.Dispose();
             }
             catch (Exception ex)
             {
@@ -76,12 +72,14 @@ namespace DXApplication2.HELP
         }
 
 
-        /// <summary>
-                /// 绘制打印的过程
-                /// </summary>
-                /// <param name="g">打印机g</param>
-                /// <param name="order">订单</param>
-        private static void Draw(Graphics g, Order order)
+
+
+        /// <summary>
+        /// 绘制打印的过程
+        /// </summary>
+        /// <param name="g">打印机g</param>
+        /// <param name="order">订单</param>
+        private static void Draw(Graphics g, Order order)
         {
             List<PrintRow> tempList = order.PrintRows.OrderBy(p => p.PrintIndex).ToList();
             for (int i = 0; i < tempList.Count; i++)
@@ -90,6 +88,7 @@ namespace DXApplication2.HELP
                 g.DrawString(tempList[i].Context, tempList[i].DrawFont, tempList[i].DrawBrush, drawRect, sf);
             }
         }
+
 
         public static Bitmap GetBmp(Order order)
         {
@@ -105,11 +104,51 @@ namespace DXApplication2.HELP
         {
             lock (lockObj)
             {
+                try
+                {
                     printOrder = order;
                     printDocument.DefaultPageSettings.PaperSize = new PaperSize("Custom", pageWidth, pageHeight);
                     printDocument.PrinterSettings.PrinterName = printName;
                     printDocument.Print();
+                }
+                catch (Exception ex)
+                {
+
+
+                }
             }
+        }
+
+
+
+
+        public static void Print(Order order)
+        {
+            lock (lockObj)
+            {
+                try
+                {
+                    printOrder = order;
+                    //printDocument.DocumentName = order.HeardInfo.OrderNum;
+                    printDocument.DefaultPageSettings.PaperSize = new PaperSize("Custom", pageWidth, pageHeight);
+                    printDocument.Print();
+                }
+                catch (Exception ex)
+                {
+                    //MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// 将CM转换成打印像素
+        /// </summary>
+        /// <param name="cmValue"></param>
+        /// <returns></returns>
+        public static int ConvertCmToPrintPixel(float cmValue)
+        {
+            return PrinterUnitConvert.Convert((int)(cmValue * 100), PrinterUnit.TenthsOfAMillimeter, PrinterUnit.Display);
         }
     }
 }

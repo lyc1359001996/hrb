@@ -29,16 +29,15 @@ namespace Common.Utility
                 //设置编码测量度
                 qrCodeEncoder.QRCodeScale = size;
                 //设置编码版本
-                qrCodeEncoder.QRCodeVersion = 8;
+                qrCodeEncoder.QRCodeVersion = 0;
                 //设置编码错误纠正
                 qrCodeEncoder.QRCodeErrorCorrect = QRCodeEncoder.ERROR_CORRECTION.M;
                 System.Drawing.Image image = qrCodeEncoder.Encode(str);
-                Console.WriteLine(qrCodeEncoder.Encode(str).Size);
-                string filename = path  + "1.jpg";
+                //Console.WriteLine(path + Guid.NewGuid() + ".jpg");
+                string filename = path + @"\11111111.jpg";
                 image.Save(filename);
-                image.Dispose();
-                return filename.Replace("~", "");
 
+                return "11";
         }
 
         /// <summary>    
