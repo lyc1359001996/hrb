@@ -59,7 +59,7 @@ namespace DXApplication2.HELP
                     }
                     if (!order1.Split(',')[3].Split(':')[1].Replace("}", "").Equals("null"))
                     {
-                     dr["realPayAmount"] = dr["realPayAmount"] = order1.Split(',')[3].Split(':')[1];
+                     dr["realPayAmount"] =order1.Split(',')[3].Split(':')[1];
                     }else
                     {
                      dr["realPayAmount"] = 0.0m;
@@ -123,7 +123,7 @@ namespace DXApplication2.HELP
                     dr["orderNumber"] = order1.Split(',')[1].Split(':')[1];
                     if (!order1.Split(',')[2].Split(':')[1].Replace("}", "").Equals("null"))
                     {
-                        dr["orderAmount"] = dr["orderAmount"] = order1.Split(',')[2].Split(':')[1];
+                        dr["orderAmount"] = order1.Split(',')[2].Split(':')[1];
                     }
                     else
                     {

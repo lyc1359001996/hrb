@@ -22,7 +22,7 @@ namespace CustomPrint
             set { context = value; }
         }
 
-        public Image Context1 { get; set; }
+
 
 
         private Font drawFont;
@@ -76,16 +76,5 @@ namespace CustomPrint
             this.drawBrush = drawBrush;
             this.drawHeight = drawHeight;
         }
-
-        public PrintRow(int index, Image context1, Font penFont, Brush drawBrush, int drawHeight)
-        {
-            this.printIndex = index;
-            this.Context1 = context1;
-            this.drawFont = penFont;
-            this.drawBrush = drawBrush;
-            this.drawHeight = drawHeight;
-        }
-
-
     }
 }

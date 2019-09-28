@@ -13,7 +13,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Printing;
-using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -305,27 +304,32 @@ namespace DXApplication2.HELP
             row13 = new PrintRow(150, "RMB:"+ realPayAmount, new Font("宋体", 20, FontStyle.Bold), Brushes.Black, 390);
             row14 = new PrintRow(150, "签    名：___________", new Font("宋体", 10), Brushes.Blue, 420);
             row15 = new PrintRow(150, "备    注：", new Font("宋体", 10), Brushes.Blue, 450);
-            row16 = new PrintRow(150, "*********退款码*********", new Font("宋体", 10), Brushes.Blue, 480);
-            row17 = new PrintRow(150, Image.FromFile(Application.StartupPath+"\\1.jpg"), new Font("宋体", 10), Brushes.Blue, 540);
-            Order tempOrder = new Order(new List<PrintRow>() { row0, row1, row2, row3, row4,row5,row6,row7,row8,row9,row10,row11,row12,row13,row14,row15, row16,row17});
+            //row16 = new PrintRow(150, "*********退款码*********", new Font("宋体", 10), Brushes.Blue, 480);
+            //row17 = new PrintRow(150, Image.FromFile(Application.StartupPath+"\\1.jpg"), new Font("宋体", 10), Brushes.Blue, 540);
+            Order tempOrder = new Order(new List<PrintRow>() { row0, row1, row2, row3, row4,row5,row6,row7,row8,row9,row10,row11,row12,row13,row14,row15});
             PrintOrder.Print(print, tempOrder);
         }
 
-        public void print5(string OrderBH, string print)
+        public void print5(string print, string storeName, string userName,string  terminal, string realPayAmount)
         {
             //string OrderBH = gridView2.GetFocusedRowCellValue("OrderBH").ToString();
             //string AmountMoney = gridView2.GetFocusedRowCellValue("AmountMoney").ToString();//PaymentMethod
             //string PaymentMethod = gridView2.GetFocusedRowCellValue("PaymentMethod").ToString();
             //string State = gridView2.GetFocusedRowCellValue("State").ToString();
             //string PaymentTime = gridView2.GetFocusedRowCellValue("PaymentTime").ToString();
-            DataTable dt = print4.fill("999999999999992342424323");
 
-            row0 = new PrintRow(150, Image.FromFile(Application.StartupPath + @"\Debug1.jpg"), new Font("宋体", 14, FontStyle.Bold), Brushes.Blue, 0);
-            
-            Order tempOrder = new Order(new List<PrintRow>() { row0 });
+            Console.WriteLine(storeName+","+userName+","+terminal+","+realPayAmount);
+            row0 = new PrintRow(150, "      " +storeName, new Font("宋体", 14, FontStyle.Bold), Brushes.Blue, 0);
+            row1 = new PrintRow(150, "********付款凭证********", new Font("宋体", 10), Brushes.Blue, 40);
+            row2 = new PrintRow(150, "门店名称：" +storeName, new Font("宋体", 10), Brushes.Black, 70);
+            row3 = new PrintRow(150, "收银员：" + userName, new Font("宋体", 10), Brushes.Black, 100);
+            row8 = new PrintRow(150, "支付终端：" + terminal, new Font("宋体", 10), Brushes.Black, 130);
+            row12 = new PrintRow(150, "顾客实付：", new Font("宋体", 10, FontStyle.Bold), Brushes.Black, 160);
+            row13 = new PrintRow(150, "RMB:" +realPayAmount, new Font("宋体", 20, FontStyle.Bold), Brushes.Black, 190);
+            row16 = new PrintRow(150, "*********付款码*********", new Font("宋体", 10), Brushes.Blue, 230);
+            Order tempOrder = new Order(new List<PrintRow>() { row0, row1, row2, row3, row8, row12, row13,row16 });
             PrintOrder.Print(print, tempOrder);
         }
-
 
         public void print6(string OrderBH, string print)
         {

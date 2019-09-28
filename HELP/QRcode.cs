@@ -34,7 +34,7 @@ namespace Common.Utility
                 qrCodeEncoder.QRCodeErrorCorrect = QRCodeEncoder.ERROR_CORRECTION.M;
                 System.Drawing.Image image = qrCodeEncoder.Encode(str);
                 //Console.WriteLine(path + Guid.NewGuid() + ".jpg");
-                string filename = path + @"\11111111.jpg";
+                string filename = path + @"\11111.jpg";
                 image.Save(filename);
 
                 return "11";

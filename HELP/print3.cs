@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
-
+using System.Windows.Forms;
 
 namespace CustomPrint
 {
@@ -20,13 +20,13 @@ namespace CustomPrint
         /// <summary>
         /// 设置打印纸高 
         /// </summary>
-        public static int pageHeight = 350;
+        public static int pageHeight = 450;
 
 
         /// <summary>
         /// 设置打印纸宽
         /// </summary>
-        public static int pageWidth = 320;
+        public static int pageWidth = 420;
 
 
         public static StringFormat sf;
@@ -35,7 +35,7 @@ namespace CustomPrint
         static PrintOrder()
         {
             sf = new StringFormat();
-            sf.Alignment = StringAlignment.Center;
+            sf.Alignment = StringAlignment.Near;
             lockObj = new object();
             printDocument = new System.Drawing.Printing.PrintDocument();
             printDocument.BeginPrint += PrintDocument_BeginPrint;
@@ -48,7 +48,14 @@ namespace CustomPrint
         {
             try
             {
-                Draw(e.Graphics, printOrder);
+                if (!System.IO.File.Exists(@"F:\桌面\hrb0917\hrb\bin\Debug\11111.jpg"))
+                {
+                    Draw1(e.Graphics, printOrder);
+                }
+                else
+                {
+                    Draw(e.Graphics, printOrder);
+                }
             }
             catch (Exception ex)
             {
@@ -72,7 +79,22 @@ namespace CustomPrint
         }
 
 
+        private static void Draw1(Graphics g, Order order)
+        {
+            List<PrintRow> tempList = order.PrintRows.OrderBy(p => p.PrintIndex).ToList();
+            for (int i = 0; i < tempList.Count; i++)
+            {
+                Console.WriteLine(tempList[i].DrawHeight+"");
 
+                //Rectangle drawRect = new Rectangle(0, tempList[i].DrawHeight, pageWidth, tempList[i].DrawFont.Height);
+                //g.DrawString(tempList[i].Context, tempList[i].DrawFont, tempList[i].DrawBrush, drawRect, sf);
+
+                Rectangle drawRect = new Rectangle(0, tempList[i].DrawHeight, pageWidth, pageHeight);
+                g.DrawString(tempList[i].Context, tempList[i].DrawFont, tempList[i].DrawBrush, drawRect, sf);
+                //Console.WriteLine("1111111111111111111"+Application.StartupPath + @"\1.jpg");
+                //g.DrawImage(Image.FromFile(Application.StartupPath + @"\11111.jpg"), 15, 260, 200, 200);
+            }
+        }
 
         /// <summary>
         /// 绘制打印的过程
@@ -84,21 +106,11 @@ namespace CustomPrint
             List<PrintRow> tempList = order.PrintRows.OrderBy(p => p.PrintIndex).ToList();
             for (int i = 0; i < tempList.Count; i++)
             {
-                Rectangle drawRect = new Rectangle(0, tempList[i].DrawHeight, pageWidth, tempList[i].DrawFont.Height);
+                Rectangle drawRect = new Rectangle(0, tempList[i].DrawHeight, 340, pageHeight);
                 g.DrawString(tempList[i].Context, tempList[i].DrawFont, tempList[i].DrawBrush, drawRect, sf);
+                g.DrawImage(Image.FromFile(Application.StartupPath + @"\11111.jpg"), 15, 260,170,170);
             }
         }
-
-
-        public static Bitmap GetBmp(Order order)
-        {
-            Bitmap bmp = new Bitmap(pageWidth, pageHeight);
-            Graphics g = Graphics.FromImage(bmp);
-            Draw(g, order);
-            g.DrawImage(bmp, 0, 0, bmp.Width, bmp.Height);
-            return bmp;
-        }
-
 
         public static void Print(string printName, Order order)
         {

@@ -25,6 +25,7 @@ namespace DXApplication2.UL
         string cfgINI = @"config\set.ini";
         B_User user = new B_User();
         IniFile ini = new IniFile(@"config\set.ini");
+        private bool isUserCancle = false;
         public 登录()
         {
             InitializeComponent();
@@ -34,7 +35,6 @@ namespace DXApplication2.UL
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
         }
 
-        private bool isUserCancle = false;
         private bool WaitFormService_Cancle()
         {
             return isUserCancle;
@@ -286,7 +286,6 @@ namespace DXApplication2.UL
         Thread th;
         private void labelControl6_Click(object sender, EventArgs e)
         {
-            
             login();
         }
 

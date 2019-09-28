@@ -439,21 +439,20 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
                 {
                     winFormPage1.RefreshData = bind;
                     bind();
+                    Console.WriteLine(1111);
                     if (textEdit21.Text.Length!=0)
                     {
+                        Console.WriteLine(11);
                         winFormPage1.RefreshData = bind;
                         bind();
                     }
                 }
-                
             }
             catch (Exception e1) { MessageBox.Show("当前网络状态不佳，请检查网络。"); Class11.captureWindowUsingPrintWindow(this).Save(Application.StartupPath+ @"\log\image\" + DateTime.Now.ToString()+".jpg");Log4NetHelper.WriteErrorLog(e1.Message); }
         }
 
         public void bind()
         {
-            try
-            {
                 if (textEdit21.Text.Length == 0)
                 {
                     var json = WebUtils.MakeRequest1(ini.IniReadValue("mySqlCon1", "Orderlist"), "{\"storeId\":" + ini.IniReadValue("mySqlCon3", "storeId") + ",\"startTime\":\"" + dateEdit1.Text + "\",\"endTime\":\"" + dateEdit2.Text + "\", \"pageNo\":" + winFormPage1.PageIndex + ",\"pageSize\":" + winFormPage1.PageSize + "}", "post", "http", ini.IniReadValue("mySqlCon2", "authorization") + ini.IniReadValue("mySqlCon2", "authorization1")).Replace("{\"success\":true,\"errorCode\":0,\"msg\":\"success\",\"data\":", "").Replace("}}", "").Replace("[", "").Replace("]", "").Replace("{", "").Replace("\"", "");
@@ -474,8 +473,6 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
                     if (winFormPage1.Count % winFormPage1.PageSize != 0)
                         winFormPage1.PageCount = winFormPage1.PageCount + 1;
                 }
-            }
-            catch (Exception ex){ Log4NetHelper.WriteErrorLog(ex.Message); }
         }
 
         public void bind1()
@@ -793,8 +790,6 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
 
         private void simpleButton19_Click(object sender, EventArgs e)
         {
-            try
-            {
                 if (textEdit3.Text.Length == 0)
                 {
                     MessageBox.Show("请输入金额");
@@ -829,17 +824,9 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
                                         }
                                         else
                                         {
-                                            MessageBox.Show("1111111111111");
-                                            //orderON = Date() + "010" + ((DateTime.Now.ToUniversalTime().Ticks - 621355968000000000) / 10000) + CreateCheckCode();
-                                            //Console.WriteLine(ini.IniReadValue("mySqlCon1", "barcode") + "?orderNumber=" + Date() + "010" + ((DateTime.Now.ToUniversalTime().Ticks - 621355968000000000) / 10000) + CreateCheckCode() + "&orderAmount:" + textEdit3.Text + "&storeId=" + ini.IniReadValue("mySqlCon3", "storeId") + "&storeUserId=" + ini.IniReadValue("mySqlCon3", "userId") + "&merchantId=" + ini.IniReadValue("mySqlCon3", "merchantId") + "&terminal=1");
-                                            //json = WebUtils.HttpGet(ini.IniReadValue("mySqlCon1", "barcode")+"?orderNumber=\"" + Date() + "010" + ((DateTime.Now.ToUniversalTime().Ticks - 621355968000000000) / 10000) + CreateCheckCode() + "\"&orderAmount:" + textEdit3.Text+ "&storeId=\""+ini.IniReadValue("mySqlCon3", "storeId") + "\"&storeUserId=\""+ini.IniReadValue("mySqlCon3", "userId") + "\"&merchantId=\""+ini.IniReadValue("mySqlCon3", "merchantId") + "\"&terminal=1");
-                                            //Console.WriteLine(QRcode.Create(ini.IniReadValue("mySqlCon1", "barcode") + "?orderNumber=" + Date() + "010" + ((DateTime.Now.ToUniversalTime().Ticks - 621355968000000000) / 10000) + CreateCheckCode() + "&orderAmount:" + textEdit3.Text + "&storeId=" + ini.IniReadValue("mySqlCon3", "storeId") + "&storeUserId=" + ini.IniReadValue("mySqlCon3", "userId") + "&merchantId=" + ini.IniReadValue("mySqlCon3", "merchantId") + "&terminal=1",4, @"F:\桌面\hrb0917\hrb\bin\Debug\"));
-
                                             QRcode qrCode = new QRcode();
-                                            //Console.WriteLine(qrCode.Create(ini.IniReadValue("mySqlCon1", "barcode") + "?orderNumber=" + Date() + "010" + ((DateTime.Now.ToUniversalTime().Ticks - 621355968000000000) / 10000) + CreateCheckCode() + "&orderAmount=" + textEdit3.Text + "&storeId=" + ini.IniReadValue("mySqlCon3", "storeId") + "&storeUserId=" + ini.IniReadValue("mySqlCon3", "userId") + "&merchantId=" + ini.IniReadValue("mySqlCon3", "merchantId") + "&terminal=1", 4, Application.StartupPath));
-                                            Control.print5(ini.IniReadValue("mySqlCon3", "storeName"), comboBoxEdit23.Text);
-                                            
-                                            //Console.WriteLine(@"F:\桌面\hrb0917\hrb\bin\Debug\11111111.jpg");
+                                            qrCode.Create(ini.IniReadValue("mySqlCon1", "barcode") + "?orderNumber=" + Date() + "010" + ((DateTime.Now.ToUniversalTime().Ticks - 621355968000000000) / 10000) + CreateCheckCode() + "&orderAmount=" + textEdit3.Text + "&storeId=" + ini.IniReadValue("mySqlCon3", "storeId") + "&storeUserId=" + ini.IniReadValue("mySqlCon3", "userId") + "&merchantId=" + ini.IniReadValue("mySqlCon3", "merchantId") + "&terminal=1", 4, Application.StartupPath + @"\");
+                                            Control.print5(comboBoxEdit23.Text,ini.IniReadValue("mySqlCon3", "storeName"), ini.IniReadValue("mySqlCon3", "username"), "PC",textEdit3.Text);
                                             th = new System.Threading.Thread(new ThreadStart(ExecWaitForm));
                                             th.IsBackground = true;
                                             th.Name = "ThreadExecWaitForm";
@@ -865,8 +852,6 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
                         }
                     }
                 }
-            }
-            catch (Exception e1) { MessageBox.Show("当前网络状态不佳，请检查网络。");  Log4NetHelper.WriteErrorLog(e1.Message); }
         }
 
         private void simpleButton18_Click(object sender, EventArgs e)
@@ -1605,7 +1590,7 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
 
         private void 刷新ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            gridControl1.DataSource = Order.SelectOrder7();
+            bind1();
         }
 
         private void 刷新ToolStripMenuItem_Click_2(object sender, EventArgs e)
@@ -1823,8 +1808,16 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
                 dateEdit1.Properties.MaxValue = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd") + " 23:59:59");
                 dateEdit2.Properties.MaxValue = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd") + " 23:59:59");
                 Console.WriteLine(DateTime.Now.ToLocalTime().ToString());
-                var json=WebUtils.MakeRequest2("http://192.168.0.138:8838/api/order/getOrderCountInfo", "storeId="+ini.IniReadValue("mySqlCon3", "storeId"),"post","http", ini.IniReadValue("mySqlCon2", "authorization") + ini.IniReadValue("mySqlCon2", "authorization1"));
-                Console.WriteLine(json);
+                var json=WebUtils.MakeRequest2("http://192.168.0.138:8838/api/order/getOrderCountInfo", "storeId="+ini.IniReadValue("mySqlCon3", "storeId"),"post","http", ini.IniReadValue("mySqlCon2", "authorization") + ini.IniReadValue("mySqlCon2", "authorization1")).Replace("\"","").Replace("\"", "").Replace("{success:true,errorCode:0,msg:success,data:", "").Replace("}","").Replace("{","");
+                labelControl12.Text=json.Split(',')[0].Split(':')[1];
+                labelControl13.Text = "周:"+json.Split(',')[1].Split(':')[1]+"笔";
+                labelControl14.Text = "月:" + json.Split(',')[2].Split(':')[1] + "笔";
+                labelControl17.Text = json.Split(',')[3].Split(':')[1].ToString();
+                labelControl16.Text = "周:" + json.Split(',')[4].Split(':')[1].ToString() + "元";
+                labelControl15.Text = "月:" + json.Split(',')[5].Split(':')[1].ToString() + "元";
+                labelControl24.Text = json.Split(',')[6].Split(':')[1].ToString();
+                labelControl23.Text = "周:" + json.Split(',')[7].Split(':')[1].ToString() + "元";
+                labelControl22.Text = "月:" + json.Split(',')[8].Split(':')[1].ToString() + "元";
                 Control.ButtonStyle(simpleButton3);
                 simpleButton3.Image = Resources._2dingdanA;
                 simpleButton1.Image = Resources._2shoukuan1;
@@ -1833,7 +1826,7 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
                 simpleButton5.Image = Resources._2shehzi;
                 Control.ButtonStyle1(simpleButton4, simpleButton2, simpleButton1, simpleButton5);
                 xtraTabControl1.SelectedTabPageIndex = 2;
-                Control.OrderSetting(dateEdit1, labelControl16, labelControl15, labelControl17, labelControl13, labelControl14, labelControl12, labelControl11, labelControl23, labelControl22, labelControl24);
+                //Control.OrderSetting(dateEdit1, labelControl16, labelControl15, labelControl17, labelControl13, labelControl14, labelControl12, labelControl11, labelControl23, labelControl22, labelControl24);
             }
             catch (Exception e1) { MessageBox.Show("当前网络状态不佳，请检查网络。"); Class11.captureWindowUsingPrintWindow(this).Save(Application.StartupPath+ @"\log\image\" + DateTime.Now.ToString()+".jpg");Log4NetHelper.WriteErrorLog(e1.Message); }
         }
@@ -2046,7 +2039,12 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
 
         private void repositoryItemButtonEdit6_Click(object sender, EventArgs e)
         {
+            var json=WebUtils.MakeRequest1(ini.IniReadValue("mySqlCon1", "refundInfo"), "{\"storeId\":"+ini.IniReadValue("mySqlCon3", "storeId")+ ",\"storeUserId\":\""+ini.IniReadValue("mySqlCon3", "userId") + "\",\"orderNumber\":\""+ gridView2.GetFocusedRowCellValue("orderNumber").ToString()+ "\",\"retreatAmount\":\""+ gridView2.GetFocusedRowCellValue("realPayAmount").ToString() + "\"}","post","http", ini.IniReadValue("mySqlCon2", "authorization") + ini.IniReadValue("mySqlCon2", "authorization1")).Replace("\"","").Replace("{","").Replace("}","");
+            if (json.Split(',')[1].Split(':')[1].Equals("0"))
+            {
 
+            }
+            Console.WriteLine(json);
         }
 
         private void simpleButton18_Click_1(object sender, EventArgs e)
@@ -2054,6 +2052,11 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
             Control.Updquicksetting(toggleSwitch5, comboBoxEdit14, textEdit12, comboBoxEdit15, textEdit13, comboBoxEdit17, textEdit15, comboBoxEdit16, textEdit14, comboBoxEdit19, textEdit17, comboBoxEdit18, textEdit16, comboBoxEdit21, textEdit19, comboBoxEdit20, textEdit18, comboBoxEdit22, textEdit20, this.name);
             MessageBox.Show("保存成功！", "确定", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             Control.quicksetting(toggleSwitch5, comboBoxEdit14, textEdit12, comboBoxEdit15, textEdit13, comboBoxEdit17, textEdit15, comboBoxEdit16, textEdit14, comboBoxEdit19, textEdit17, comboBoxEdit18, textEdit16, comboBoxEdit21, textEdit19, comboBoxEdit20, textEdit18, comboBoxEdit22, textEdit20, this.name);
+        }
+
+        private void contextMenuStrip3_Opening(object sender, CancelEventArgs e)
+        {
+
         }
     }
 }
