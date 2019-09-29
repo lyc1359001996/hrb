@@ -98,6 +98,7 @@
             // 
             // simpleButton1
             // 
+            this.simpleButton1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.simpleButton1.Location = new System.Drawing.Point(63, 144);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(75, 23);
@@ -118,7 +119,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.simpleButton1;
             this.ClientSize = new System.Drawing.Size(632, 225);
+            this.ControlBox = false;
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.textEdit2);
@@ -129,6 +132,8 @@
             this.Controls.Add(this.labelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "代理";
             this.ShowInTaskbar = false;
             this.Text = "设置代理服务器";

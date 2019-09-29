@@ -135,7 +135,8 @@ namespace DXApplication2
             this.name = ini.IniReadValue("mySqlCon2", "username");
             ini.IniWriteValue("mySqlCon2", "pwd", "");
             this.StartPosition = FormStartPosition.CenterScreen;
-        }
+            
+    }
 
         private bool isUserCancle = false;
         private bool WaitFormService_Cancle()
@@ -143,6 +144,9 @@ namespace DXApplication2
             return isUserCancle;
         }
 
+        public string getcode() {
+            return Date() + "010" + ((DateTime.Now.ToUniversalTime().Ticks - 621355968000000000) / 10000) + CreateCheckCode();
+        }
 
         private void BarCode_KeyDownEvent(object sender, System.Windows.Forms.KeyEventArgs e)
         {
@@ -178,7 +182,7 @@ namespace DXApplication2
                         }
                         else
                         {
-                            if (tempContent.Length == 16)
+                            if (tempContent.Length == 18)
                             {
                                 textEdit2.Text = tempContent;
                             }
@@ -329,8 +333,8 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
                                             string json = "";
                                             if (ini.IniReadValue("mySqlCon2", "jubing").Length != 0)
                                             {
-
-                                                json = WebUtils.MakeRequest1("http://192.168.0.138:8838/api/order/genOrder", "{\"orderNumber\":\"" + Date() + "010" + ((DateTime.Now.ToUniversalTime().Ticks - 621355968000000000) / 10000) + CreateCheckCode() + "\",\"storeId\":\"" + ini.IniReadValue("mySqlCon3", "storeId") + "\",\"storeUserId\":\"" + ini.IniReadValue("mySqlCon3", "userId") + "\",\"merchantId\":\"" + ini.IniReadValue("mySqlCon3", "merchantId") + "\",\"orderAmount\":" + ini.IniReadValue("mySqlCon2", "jubing").Replace("￥", "") + ",\"terminal\":" + 1 + ",\"qrCode\":\"" + textEdit2.Text + "\"}", "post", "http", ini.IniReadValue("mySqlCon2", "authorization") + ini.IniReadValue("mySqlCon2", "authorization1"));
+                                                ini.IniWriteValue("mySqlCon4", "lins", getcode());
+                                                json = WebUtils.MakeRequest1(ini.IniReadValue("mySqlCon1", "genOrder"), "{\"orderNumber\":\"" + ini.IniReadValue("mySqlCon4", "lins") + "\",\"storeId\":\"" + ini.IniReadValue("mySqlCon3", "storeId") + "\",\"storeUserId\":\"" + ini.IniReadValue("mySqlCon3", "userId") + "\",\"merchantId\":\"" + ini.IniReadValue("mySqlCon3", "merchantId") + "\",\"orderAmount\":" + ini.IniReadValue("mySqlCon2", "jubing").Replace("￥", "") + ",\"terminal\":" + 1 + ",\"qrCode\":\"" + textEdit2.Text + "\"}", "post", "http", ini.IniReadValue("mySqlCon2", "authorization") + ini.IniReadValue("mySqlCon2", "authorization1"));
                                                 th = new System.Threading.Thread(new ThreadStart(ExecWaitForm));
                                                 th.IsBackground = true;
                                                 th.Name = "ThreadExecWaitForm";
@@ -347,10 +351,8 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
                                                 {
                                                     ini.IniWriteValue("mySqlCon4", "mathod", "1");
                                                 }
-                                                orderON = Date() + "010" + ((DateTime.Now.ToUniversalTime().Ticks - 621355968000000000) / 10000) + CreateCheckCode();
-                                                Console.WriteLine("11111111111111111    " + orderON);
-                                                Console.WriteLine("{\"orderNumber\":\"" + orderON + "\",\"storeId\":\"" + ini.IniReadValue("mySqlCon3", "storeId") + "\",\"storeUserId\":\"" + ini.IniReadValue("mySqlCon2", "username") + "\",\"merchantId\":\"" + ini.IniReadValue("mySqlCon3", "merchantId") + "\",\"orderAmount\":" + textEdit3.Text + ",\"terminal\":" + 1 + ",\"qrCode\":\"" + textEdit2.Text + "\"}");
-                                                json = WebUtils.MakeRequest1("http://192.168.0.138:8838/api/order/genOrder", "{\"orderNumber\":\"" + Date() + "010" + ((DateTime.Now.ToUniversalTime().Ticks - 621355968000000000) / 10000) + CreateCheckCode() + "\",\"storeId\":\"" + ini.IniReadValue("mySqlCon3", "storeId") + "\",\"storeUserId\":\"" + ini.IniReadValue("mySqlCon3", "userId") + "\",\"merchantId\":\"" + ini.IniReadValue("mySqlCon3", "merchantId") + "\",\"orderAmount\":" + textEdit3.Text + ",\"terminal\":" + 1 + ",\"qrCode\":\"" + textEdit2.Text + "\"}", "post", "http", ini.IniReadValue("mySqlCon2", "authorization") + ini.IniReadValue("mySqlCon2", "authorization1"));
+                                                ini.IniWriteValue("mySqlCon4", "lins",getcode());
+                                                json = WebUtils.MakeRequest1(ini.IniReadValue("mySqlCon1", "genOrder"), "{\"orderNumber\":\"" +ini.IniReadValue("mySqlCon4", "lins") + "\",\"storeId\":\"" + ini.IniReadValue("mySqlCon3", "storeId") + "\",\"storeUserId\":\"" + ini.IniReadValue("mySqlCon3", "userId") + "\",\"merchantId\":\"" + ini.IniReadValue("mySqlCon3", "merchantId") + "\",\"orderAmount\":" + textEdit3.Text + ",\"terminal\":" + 1 + ",\"qrCode\":\"" + textEdit2.Text + "\"}", "post", "http", ini.IniReadValue("mySqlCon2", "authorization") + ini.IniReadValue("mySqlCon2", "authorization1"));
                                                 textEdit2.Text = "";
                                                 textEdit3.Text = "";
                                                 if (this.IsHandleCreated)
@@ -439,10 +441,8 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
                 {
                     winFormPage1.RefreshData = bind;
                     bind();
-                    Console.WriteLine(1111);
                     if (textEdit21.Text.Length!=0)
                     {
-                        Console.WriteLine(11);
                         winFormPage1.RefreshData = bind;
                         bind();
                     }
@@ -453,6 +453,8 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
 
         public void bind()
         {
+            try
+            {
                 if (textEdit21.Text.Length == 0)
                 {
                     var json = WebUtils.MakeRequest1(ini.IniReadValue("mySqlCon1", "Orderlist"), "{\"storeId\":" + ini.IniReadValue("mySqlCon3", "storeId") + ",\"startTime\":\"" + dateEdit1.Text + "\",\"endTime\":\"" + dateEdit2.Text + "\", \"pageNo\":" + winFormPage1.PageIndex + ",\"pageSize\":" + winFormPage1.PageSize + "}", "post", "http", ini.IniReadValue("mySqlCon2", "authorization") + ini.IniReadValue("mySqlCon2", "authorization1")).Replace("{\"success\":true,\"errorCode\":0,\"msg\":\"success\",\"data\":", "").Replace("}}", "").Replace("[", "").Replace("]", "").Replace("{", "").Replace("\"", "");
@@ -473,6 +475,8 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
                     if (winFormPage1.Count % winFormPage1.PageSize != 0)
                         winFormPage1.PageCount = winFormPage1.PageCount + 1;
                 }
+            }
+            catch { }
         }
 
         public void bind1()
@@ -818,14 +822,16 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
                                         string json = "";
                                         if (ini.IniReadValue("mySqlCon2", "jubing").Length != 0)
                                         {
-                                            json = WebUtils.MakeRequest1(ini.IniReadValue("mySqlCon1", "genOrder"), "{\"orderNumber\":\"" + Date() + "010" + ((DateTime.Now.ToUniversalTime().Ticks - 621355968000000000) / 10000) + CreateCheckCode() + "\",\"storeId\":\"" + ini.IniReadValue("mySqlCon3", "storeId") + "\",\"storeUserId\":\"" + ini.IniReadValue("mySqlCon3", "userId") + "\",\"merchantId\":\"" + ini.IniReadValue("mySqlCon3", "merchantId") + "\",\"orderAmount\":" + ini.IniReadValue("mySqlCon2", "jubing").Replace("￥", "") + ",\"terminal\":" + 1 + ",\"qrCode\":\"" + textEdit2.Text + "\"}", "post", "http", ini.IniReadValue("mySqlCon2", "authorization") + ini.IniReadValue("mySqlCon2", "authorization1"));
+                                            ini.IniWriteValue("mySqlCon4", "lins", getcode());
+                                            json = WebUtils.MakeRequest1(ini.IniReadValue("mySqlCon1", "genOrder"), "{\"orderNumber\":\"" +ini.IniReadValue("mySqlCon4", "lins") + "\",\"storeId\":\"" + ini.IniReadValue("mySqlCon3", "storeId") + "\",\"storeUserId\":\"" + ini.IniReadValue("mySqlCon3", "userId") + "\",\"merchantId\":\"" + ini.IniReadValue("mySqlCon3", "merchantId") + "\",\"orderAmount\":" + ini.IniReadValue("mySqlCon2", "jubing").Replace("￥", "") + ",\"terminal\":" + 1 + ",\"qrCode\":\"" + textEdit2.Text + "\"}", "post", "http", ini.IniReadValue("mySqlCon2", "authorization") + ini.IniReadValue("mySqlCon2", "authorization1"));
                                             System.Threading.Thread.Sleep(2000);
                                             timer3.Start();
                                         }
                                         else
                                         {
+                                            ini.IniWriteValue("mySqlCon4", "lins", getcode());
                                             QRcode qrCode = new QRcode();
-                                            qrCode.Create(ini.IniReadValue("mySqlCon1", "barcode") + "?orderNumber=" + Date() + "010" + ((DateTime.Now.ToUniversalTime().Ticks - 621355968000000000) / 10000) + CreateCheckCode() + "&orderAmount=" + textEdit3.Text + "&storeId=" + ini.IniReadValue("mySqlCon3", "storeId") + "&storeUserId=" + ini.IniReadValue("mySqlCon3", "userId") + "&merchantId=" + ini.IniReadValue("mySqlCon3", "merchantId") + "&terminal=1", 4, Application.StartupPath + @"\");
+                                            qrCode.Create(ini.IniReadValue("mySqlCon1", "barcode") + "?orderNumber=" + ini.IniReadValue("mySqlCon4", "lins") + "&orderAmount=" + textEdit3.Text + "&storeId=" + ini.IniReadValue("mySqlCon3", "storeId") + "&storeUserId=" + ini.IniReadValue("mySqlCon3", "userId") + "&merchantId=" + ini.IniReadValue("mySqlCon3", "merchantId") + "&terminal=1", 4, Application.StartupPath + @"\");
                                             Control.print5(comboBoxEdit23.Text,ini.IniReadValue("mySqlCon3", "storeName"), ini.IniReadValue("mySqlCon3", "username"), "PC",textEdit3.Text);
                                             th = new System.Threading.Thread(new ThreadStart(ExecWaitForm));
                                             th.IsBackground = true;
@@ -853,7 +859,7 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
                     }
                 }
         }
-
+        /*
         private void simpleButton18_Click(object sender, EventArgs e)
         {
             try
@@ -938,6 +944,7 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
             }
             catch (Exception e1) { MessageBox.Show("当前网络状态不佳，请检查网络。"); Class11.captureWindowUsingPrintWindow(this).Save(Application.StartupPath + @"\log\image\" + DateTime.Now.ToString() + ".jpg"); Log4NetHelper.WriteErrorLog(e1.Message); }
         }
+        */
         private void xtraTabControl1_Click(object sender, EventArgs e)
         {
             
@@ -1355,7 +1362,8 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
                                         string json = "";
                                         if (ini.IniReadValue("mySqlCon2", "jubing").Length!=0)
                                         {
-                                            json = WebUtils.MakeRequest1(ini.IniReadValue("mySqlCon1", "genOrder"), "{\"orderNumber\":\"" + Date() + "010" + ((DateTime.Now.ToUniversalTime().Ticks - 621355968000000000) / 10000) + CreateCheckCode() + "\",\"storeId\":\"" + ini.IniReadValue("mySqlCon3", "storeId") + "\",\"storeUserId\":\"" + ini.IniReadValue("mySqlCon3", "userId") + "\",\"merchantId\":\"" + ini.IniReadValue("mySqlCon3", "merchantId") + "\",\"orderAmount\":" + ini.IniReadValue("mySqlCon2", "jubing").Replace("￥", "") + ",\"terminal\":" + 1 + ",\"qrCode\":\"" + textEdit2.Text + "\"}", "post", "http", ini.IniReadValue("mySqlCon2", "authorization") + ini.IniReadValue("mySqlCon2", "authorization1"));
+                                            ini.IniWriteValue("mySqlCon4", "lins", getcode());
+                                            json = WebUtils.MakeRequest1(ini.IniReadValue("mySqlCon1", "genOrder"), "{\"orderNumber\":\"" +ini.IniReadValue("mySqlCon4", "lins") + "\",\"storeId\":\"" + ini.IniReadValue("mySqlCon3", "storeId") + "\",\"storeUserId\":\"" + ini.IniReadValue("mySqlCon3", "userId") + "\",\"merchantId\":\"" + ini.IniReadValue("mySqlCon3", "merchantId") + "\",\"orderAmount\":" + ini.IniReadValue("mySqlCon2", "jubing").Replace("￥", "") + ",\"terminal\":" + 1 + ",\"qrCode\":\"" + textEdit2.Text + "\"}", "post", "http", ini.IniReadValue("mySqlCon2", "authorization") + ini.IniReadValue("mySqlCon2", "authorization1"));
                                             System.Threading.Thread.Sleep(2000);
                                             timer3.Start();
                                         }
@@ -1368,8 +1376,8 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
                                             {
                                                 ini.IniWriteValue("mySqlCon4", "mathod", "1");
                                             }
-                                            orderON = Date() + "010" + ((DateTime.Now.ToUniversalTime().Ticks - 621355968000000000) / 10000) + CreateCheckCode();
-                                            json = WebUtils.MakeRequest1(ini.IniReadValue("mySqlCon1", "genOrder"), "{\"orderNumber\":\"" + Date() + "010" + ((DateTime.Now.ToUniversalTime().Ticks - 621355968000000000) / 10000) + CreateCheckCode() + "\",\"storeId\":\"" + ini.IniReadValue("mySqlCon3", "storeId") + "\",\"storeUserId\":\"" +ini.IniReadValue("mySqlCon3", "userId") + "\",\"merchantId\":\"" + ini.IniReadValue("mySqlCon3", "merchantId") + "\",\"orderAmount\":"+textEdit3.Text+ ",\"terminal\":"+1+ ",\"qrCode\":\""+textEdit2.Text+"\"}", "post", "http", ini.IniReadValue("mySqlCon2", "authorization") + ini.IniReadValue("mySqlCon2", "authorization1"));
+                                            ini.IniWriteValue("mySqlCon4", "lins", getcode());
+                                            json = WebUtils.MakeRequest1(ini.IniReadValue("mySqlCon1", "genOrder"), "{\"orderNumber\":\"" + ini.IniReadValue("mySqlCon4", "lins") + "\",\"storeId\":\"" + ini.IniReadValue("mySqlCon3", "storeId") + "\",\"storeUserId\":\"" +ini.IniReadValue("mySqlCon3", "userId") + "\",\"merchantId\":\"" + ini.IniReadValue("mySqlCon3", "merchantId") + "\",\"orderAmount\":"+textEdit3.Text+ ",\"terminal\":"+1+ ",\"qrCode\":\""+textEdit2.Text+"\"}", "post", "http", ini.IniReadValue("mySqlCon2", "authorization") + ini.IniReadValue("mySqlCon2", "authorization1"));
                                             th = new System.Threading.Thread(new ThreadStart(ExecWaitForm));
                                             th.IsBackground = true;
                                             th.Name = "ThreadExecWaitForm";
@@ -1377,7 +1385,6 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
                                             textEdit2.Text = "";
                                             textEdit3.Text = "";
                                             System.Threading.Thread.Sleep(2000);
-                                            
                                             timer3.Start();
                                         }
                                     }
@@ -1808,7 +1815,7 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
                 dateEdit1.Properties.MaxValue = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd") + " 23:59:59");
                 dateEdit2.Properties.MaxValue = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd") + " 23:59:59");
                 Console.WriteLine(DateTime.Now.ToLocalTime().ToString());
-                var json=WebUtils.MakeRequest2("http://192.168.0.138:8838/api/order/getOrderCountInfo", "storeId="+ini.IniReadValue("mySqlCon3", "storeId"),"post","http", ini.IniReadValue("mySqlCon2", "authorization") + ini.IniReadValue("mySqlCon2", "authorization1")).Replace("\"","").Replace("\"", "").Replace("{success:true,errorCode:0,msg:success,data:", "").Replace("}","").Replace("{","");
+                var json=WebUtils.MakeRequest2(ini.IniReadValue("mySqlCon1","getOrderCountInfo"), "storeId="+ini.IniReadValue("mySqlCon3", "storeId"),"post","http", ini.IniReadValue("mySqlCon2", "authorization") + ini.IniReadValue("mySqlCon2", "authorization1")).Replace("\"","").Replace("\"", "").Replace("{success:true,errorCode:0,msg:success,data:", "").Replace("}","").Replace("{","");
                 labelControl12.Text=json.Split(',')[0].Split(':')[1];
                 labelControl13.Text = "周:"+json.Split(',')[1].Split(':')[1]+"笔";
                 labelControl14.Text = "月:" + json.Split(',')[2].Split(':')[1] + "笔";
@@ -1984,35 +1991,76 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
         {
             try
             {
-                var json = WebUtils.MakeRequest1("http://192.168.0.138:8838/api/order/getOrderInfo", "{\"storeUserId\":" + ini.IniReadValue("mySqlCon3", "userId") + ",\"storeId\":" + ini.IniReadValue("mySqlCon3", "storeId") + ",\"orderNumber\":\"" + orderON + "\"}", "post", "http", ini.IniReadValue("mySqlCon2", "authorization") + ini.IniReadValue("mySqlCon2", "authorization1"));
-                Console.WriteLine(json.Replace("\"", "").Replace("{", "").Replace("}", "").Split(',')[1]);
-                if (int.Parse(json.Replace("\"", "").Replace("{", "").Replace("}", "").Split(',')[1].Replace("errorCode:", "")) == 0)
-                {
-                    var json1 = json.Replace("{\"success\":true,\"errorCode\":0,\"msg\":\"success\",\"data\":", "").Replace("{", "").Replace("}", "").Split(',');
-                    ini.IniWriteValue("mySqlCon4", "orderAmount",json1[0].Replace("\"orderAmount\":", "").Replace("\"",""));
-                    ini.IniWriteValue("mySqlCon4", "discountAmount", json1[1].Replace("\"discountAmount\":", "").Replace("\"", ""));
-                    ini.IniWriteValue("mySqlCon4", "realPayAmount", json1[2].Replace("\"realPayAmount\":", "").Replace("\"", ""));
-                    ini.IniWriteValue("mySqlCon4", "status", json1[3].Replace("\"status\":", "").Replace("\"", ""));
-                    ini.IniWriteValue("mySqlCon4", "orderOn", json1[6].Replace("\"orderOn\":", "").Replace("\"", ""));
-                    ini.IniWriteValue("mySqlCon4", "terminal", json1[8].Replace("\"terminal\":", "").Replace("\"",""));
-                    ini.IniWriteValue("mySqlCon4", "payTime", json1[10].Replace("\"payTime\":", "").Replace("\"", ""));
-                    ini.IniWriteValue("mySqlCon4", "createTime", json1[11].Replace("\"createTime\":", "").Replace("\"", ""));
-                    timer3.Stop();
-                    textEdit2.Text = "";
-                    try
+                    var json = WebUtils.MakeRequest1(ini.IniReadValue("mySqlCon1", "getOrderInfo"), "{\"storeUserId\":" + ini.IniReadValue("mySqlCon3", "userId") + ",\"storeId\":" + ini.IniReadValue("mySqlCon3", "storeId") + ",\"orderNumber\":\"" + ini.IniReadValue("mySqlCon4", "lins") + "\"}", "post", "http", ini.IniReadValue("mySqlCon2", "authorization") + ini.IniReadValue("mySqlCon2", "authorization1")).Replace("\"", "").Replace("{", "").Replace("}", "");
+                    Console.WriteLine(json);
+                    if (int.Parse(json.Split(',')[7].Split(':')[1]) == 1)
                     {
-                        isUserCancle = true;
-                        th.Abort();
-                        WaitFormService.Close();
-                        isUserCancle = false;
+                        ini.IniWriteValue("mySqlCon4", "orderAmount", json.Split(',')[3].Split(':')[2]);
+                        ini.IniWriteValue("mySqlCon4", "discountAmount", json.Split(',')[4].Split(':')[1]);
+                        ini.IniWriteValue("mySqlCon4", "realPayAmount", json.Split(',')[5].Split(':')[1]);
+                        ini.IniWriteValue("mySqlCon4", "status", json.Split(',')[6].Split(':')[1]);
+                        ini.IniWriteValue("mySqlCon4", "orderOn", json.Split(',')[10].Split(':')[1]);
+                        if (json.Split(',')[12].Split(':')[1].Equals("1")) { ini.IniWriteValue("mySqlCon4", "terminal", "PC"); } else if (json.Split(',')[12].Split(':')[1].Equals("2")) { ini.IniWriteValue("mySqlCon4", "terminal", "安卓"); } else if (json.Split(',')[12].Split(':')[1].Equals("2")) { ini.IniWriteValue("mySqlCon4", "terminal", "安卓"); } else if (json.Split(',')[12].Split(':')[1].Equals("3")) { ini.IniWriteValue("mySqlCon4", "terminal", "IOS"); } else if (json.Split(',')[12].Split(':')[1].Equals("4")) { ini.IniWriteValue("mySqlCon4", "terminal", "收银API"); } else if (json.Split(',')[12].Split(':')[1].Equals("5")) { ini.IniWriteValue("mySqlCon4", "terminal", "二维码"); }
+                        ini.IniWriteValue("mySqlCon4", "terminal", json.Split(',')[12].Split(':')[1]);
+                        ini.IniWriteValue("mySqlCon4", "payTime", json.Split(',')[14].Split(':')[1] + ":" + json.Split(',')[14].Split(':')[2] + ":" + json.Split(',')[14].Split(':')[3]);
+                        ini.IniWriteValue("mySqlCon4", "createTime", json.Split(',')[15].Split(':')[1] + ":" + json.Split(',')[15].Split(':')[2] + ":" + json.Split(',')[15].Split(':')[3]);
+                        timer3.Stop();
+                        textEdit2.Text = "";
+                        try
+                        {
+                            isUserCancle = true;
+                            th.Abort();
+                            WaitFormService.Close();
+                            isUserCancle = false;
+                        }
+                        catch { }
+                        支付详情 支付详情 = new 支付详情();
+                        支付详情.Show();
                     }
-                    catch
+                    else
                     {
-
+                        if (int.Parse(json.Split(',')[7].Split(':')[1]) == 2)
+                        {
+                            MessageBox.Show("订单待支付");
+                            timer3.Stop();
+                        }
+                        else if (int.Parse(json.Split(',')[7].Split(':')[1]) == 3)
+                        {
+                            MessageBox.Show("已退款");
+                            timer3.Stop();
+                        }
+                        else if (int.Parse(json.Split(',')[7].Split(':')[1]) == 4)
+                        {
+                            MessageBox.Show("支付失败");
+                            timer3.Stop();
+                        }
+                        else if (int.Parse(json.Split(',')[7].Split(':')[1]) == 5)
+                        {
+                            MessageBox.Show("部分退款");
+                            timer3.Stop();
+                        }
+                        else if (int.Parse(json.Split(',')[7].Split(':')[1]) == 6)
+                        {
+                            MessageBox.Show("已关闭");
+                            timer3.Stop();
+                        }
+                        else if (int.Parse(json.Split(',')[7].Split(':')[1]) == 7)
+                        {
+                            MessageBox.Show("未支付");
+                            timer3.Stop();
+                        Console.WriteLine(timer3.Enabled);
+                        }
+                        else if (int.Parse(json.Split(',')[7].Split(':')[1]) == 8)
+                        {
+                            MessageBox.Show("退款失败");
+                            timer3.Stop();
+                        }
+                        else if (int.Parse(json.Split(',')[7].Split(':')[1]) == 9)
+                        {
+                            MessageBox.Show("订单取消");
+                            timer3.Stop();
+                        }
                     }
-                    支付详情 支付详情 = new 支付详情();
-                    支付详情.Show();
-    }
             }
             catch { }
         }
@@ -2039,12 +2087,10 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
 
         private void repositoryItemButtonEdit6_Click(object sender, EventArgs e)
         {
-            var json=WebUtils.MakeRequest1(ini.IniReadValue("mySqlCon1", "refundInfo"), "{\"storeId\":"+ini.IniReadValue("mySqlCon3", "storeId")+ ",\"storeUserId\":\""+ini.IniReadValue("mySqlCon3", "userId") + "\",\"orderNumber\":\""+ gridView2.GetFocusedRowCellValue("orderNumber").ToString()+ "\",\"retreatAmount\":\""+ gridView2.GetFocusedRowCellValue("realPayAmount").ToString() + "\"}","post","http", ini.IniReadValue("mySqlCon2", "authorization") + ini.IniReadValue("mySqlCon2", "authorization1")).Replace("\"","").Replace("{","").Replace("}","");
-            if (json.Split(',')[1].Split(':')[1].Equals("0"))
-            {
-
-            }
-            Console.WriteLine(json);
+            ini.IniWriteValue("mySqlCon5", "orderon", gridView2.GetFocusedRowCellValue("orderNumber").ToString());
+            ini.IniWriteValue("mySqlCon5", "realPayAmount", gridView2.GetFocusedRowCellValue("realPayAmount").ToString());
+            退款 退款 = new 退款();
+            退款.Show();
         }
 
         private void simpleButton18_Click_1(object sender, EventArgs e)

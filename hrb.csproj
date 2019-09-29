@@ -264,6 +264,12 @@
     <Compile Include="UL\退出.Designer.cs">
       <DependentUpon>退出.cs</DependentUpon>
     </Compile>
+    <Compile Include="UL\退款.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UL\退款.Designer.cs">
+      <DependentUpon>退款.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="UL\WaitForm.resx">
       <DependentUpon>WaitForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -296,6 +302,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UL\退出.resx">
       <DependentUpon>退出.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UL\退款.resx">
+      <DependentUpon>退款.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config">
       <SubType>Designer</SubType>

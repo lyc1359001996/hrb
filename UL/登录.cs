@@ -22,7 +22,6 @@ namespace DXApplication2.UL
     public partial class 登录 : Form
     {
         代理 daili = new 代理();
-        string cfgINI = @"config\set.ini";
         B_User user = new B_User();
         IniFile ini = new IniFile(@"config\set.ini");
         private bool isUserCancle = false;
@@ -44,7 +43,7 @@ namespace DXApplication2.UL
         {
             daili.Show();
         }
-
+        /*
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             if (ini.IniReadValue("mySqlCon2", "authorization").Equals("") && ini.IniReadValue("mySqlCon2", "authorization1").Equals(""))
@@ -87,6 +86,7 @@ namespace DXApplication2.UL
                     main.Show();
                 }
             }
+            */
             /*
             Console.WriteLine(Date() + "010" + ((DateTime.Now.ToUniversalTime().Ticks - 621355968000000000) / 10000) + CreateCheckCode());
 
@@ -131,9 +131,9 @@ namespace DXApplication2.UL
                 }
             }
             catch (Exception e1) { { MessageBox.Show("当前网络状态不佳，请检查网络。"); Log4NetHelper.WriteErrorLog(e1.Message); } }
-            */
+            
         }
-
+        */
         public bool IsNumberic(string message)
         {
             bool flag = false;
@@ -216,7 +216,6 @@ namespace DXApplication2.UL
 
         private void Login_Load(object sender, EventArgs e)
         {
-            IniFile ini = new IniFile(cfgINI);
             textEdit2.Text = ini.IniReadValue("mySqlCon2", "username");
             textEdit1.Text = ini.IniReadValue("mySqlCon2", "pwd");
         }

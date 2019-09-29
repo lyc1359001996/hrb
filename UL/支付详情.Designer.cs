@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(支付详情));
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -44,23 +44,15 @@
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl1.Location = new System.Drawing.Point(11, 108);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(52, 14);
-            this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "支付状态";
             // 
             // labelControl2
             // 
@@ -203,17 +195,9 @@
             this.labelControl9.TabIndex = 7;
             this.labelControl9.Text = "支付终端";
             // 
-            // labelControl10
-            // 
-            this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl10.Location = new System.Drawing.Point(116, 108);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(52, 14);
-            this.labelControl10.TabIndex = 6;
-            this.labelControl10.Text = "支付状态";
-            // 
             // simpleButton1
             // 
+            this.simpleButton1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.simpleButton1.Location = new System.Drawing.Point(132, 431);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(75, 23);
@@ -241,10 +225,29 @@
             this.panelControl2.Size = new System.Drawing.Size(200, 57);
             this.panelControl2.TabIndex = 13;
             // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl1.Location = new System.Drawing.Point(11, 108);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(52, 14);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "支付状态";
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl10.Location = new System.Drawing.Point(116, 108);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(52, 14);
+            this.labelControl10.TabIndex = 6;
+            this.labelControl10.Text = "支付状态";
+            // 
             // 支付详情
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.simpleButton1;
             this.ClientSize = new System.Drawing.Size(352, 466);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.labelControl17);
@@ -260,6 +263,9 @@
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "支付详情";
             this.ShowInTaskbar = false;
             this.Text = "支付详情";
@@ -275,8 +281,6 @@
         }
 
         #endregion
-
-        private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl4;
@@ -292,9 +296,10 @@
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LabelControl labelControl9;
-        private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.LabelControl labelControl17;
         private DevExpress.XtraEditors.PanelControl panelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl10;
     }
 }

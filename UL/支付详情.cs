@@ -37,6 +37,7 @@ namespace DXApplication2.UL
             labelControl12.Text = orderAmount;
             labelControl11.Text = discountAmount;
             labelControl16.Text = realPayAmount+"元";
+            labelControl10.Text = status;
             if (mathod.Equals("1")) { panelControl2.ContentImage = Resources.zhifubao_3x; }else { panelControl2.ContentImage = Resources.weixin_3x; }
         }
 
