@@ -15,7 +15,9 @@ namespace DXApplication2.UL
         public 代理()
         {
             InitializeComponent();
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "McSkin";
             this.ControlBox = false;
+            this.StartPosition = FormStartPosition.CenterScreen;
             simpleButton2.Enabled = false;
         }
 

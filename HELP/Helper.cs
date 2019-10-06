@@ -35,7 +35,7 @@ namespace USBControlUtility
             //按照指定编码将字节数组变为字符串
             return encode.GetString(b);
         }
-
+        
         private string sp_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             StringBuilder builder = new StringBuilder();

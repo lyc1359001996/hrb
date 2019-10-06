@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            this.components = new System.ComponentModel.Container();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.repositoryItemButtonEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.repositoryItemButtonEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -70,7 +71,7 @@
             this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.contextMenuStrip3 = new System.Windows.Forms.ContextMenuStrip();
+            this.contextMenuStrip3 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.刷新ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.orderNumber = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -101,7 +102,7 @@
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.导出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.刷新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -302,16 +303,15 @@
             this.labelControl103 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.serialPort1 = new System.IO.Ports.SerialPort();
-            this.timer1 = new System.Windows.Forms.Timer();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon();
-            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip();
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.隐藏ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.显示ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolTipController1 = new DevExpress.Utils.ToolTipController();
-            this.timer2 = new System.Windows.Forms.Timer();
-            this.dxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.dxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
             this.labelControl30 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -324,8 +324,8 @@
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.bar1 = new DevExpress.XtraBars.Bar();
-            this.timer3 = new System.Windows.Forms.Timer();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).BeginInit();
@@ -474,7 +474,7 @@
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "刷新", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", "刷新", null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "刷新", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, "", "刷新", null, true)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             this.repositoryItemButtonEdit1.ReadOnly = true;
             this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
@@ -483,7 +483,7 @@
             // 
             this.repositoryItemButtonEdit2.AutoHeight = false;
             this.repositoryItemButtonEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "打印", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", "打印", null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "打印", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject14, "", "打印", null, true)});
             this.repositoryItemButtonEdit2.Name = "repositoryItemButtonEdit2";
             this.repositoryItemButtonEdit2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -491,7 +491,7 @@
             // 
             this.repositoryItemButtonEdit3.AutoHeight = false;
             this.repositoryItemButtonEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "退款", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", "退款", null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "退款", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject15, "", "退款", null, true)});
             this.repositoryItemButtonEdit3.Name = "repositoryItemButtonEdit3";
             this.repositoryItemButtonEdit3.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -583,6 +583,8 @@
             this.simpleButton32.TabIndex = 23;
             this.simpleButton32.Text = "=";
             this.simpleButton32.Click += new System.EventHandler(this.simpleButton32_Click);
+            this.simpleButton32.MouseLeave += new System.EventHandler(this.simpleButton32_MouseLeave);
+            this.simpleButton32.MouseMove += new System.Windows.Forms.MouseEventHandler(this.simpleButton32_MouseMove);
             // 
             // simpleButton31
             // 
@@ -601,6 +603,8 @@
             this.simpleButton31.TabIndex = 22;
             this.simpleButton31.Text = "-";
             this.simpleButton31.Click += new System.EventHandler(this.simpleButton31_Click);
+            this.simpleButton31.MouseLeave += new System.EventHandler(this.simpleButton31_MouseLeave);
+            this.simpleButton31.MouseMove += new System.Windows.Forms.MouseEventHandler(this.simpleButton31_MouseMove);
             // 
             // simpleButton21
             // 
@@ -611,6 +615,8 @@
             this.simpleButton21.Size = new System.Drawing.Size(94, 159);
             this.simpleButton21.TabIndex = 17;
             this.simpleButton21.Click += new System.EventHandler(this.simpleButton21_Click);
+            this.simpleButton21.MouseLeave += new System.EventHandler(this.simpleButton21_MouseLeave);
+            this.simpleButton21.MouseMove += new System.Windows.Forms.MouseEventHandler(this.simpleButton21_MouseMove);
             // 
             // simpleButton22
             // 
@@ -627,6 +633,8 @@
             this.simpleButton22.TabIndex = 16;
             this.simpleButton22.Text = "C";
             this.simpleButton22.Click += new System.EventHandler(this.simpleButton22_Click);
+            this.simpleButton22.MouseLeave += new System.EventHandler(this.simpleButton22_MouseLeave);
+            this.simpleButton22.MouseMove += new System.Windows.Forms.MouseEventHandler(this.simpleButton22_MouseMove);
             // 
             // simpleButton19
             // 
@@ -641,7 +649,7 @@
             this.simpleButton19.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.simpleButton19.Location = new System.Drawing.Point(319, 360);
             this.simpleButton19.Name = "simpleButton19";
-            this.simpleButton19.Size = new System.Drawing.Size(165, 39);
+            this.simpleButton19.Size = new System.Drawing.Size(150, 39);
             this.simpleButton19.TabIndex = 13;
             this.simpleButton19.Click += new System.EventHandler(this.simpleButton19_Click);
             // 
@@ -656,9 +664,9 @@
             this.simpleButton20.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.simpleButton20.Image = global::DXApplication2.Properties.Resources.bt1;
             this.simpleButton20.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton20.Location = new System.Drawing.Point(20, 360);
+            this.simpleButton20.Location = new System.Drawing.Point(35, 360);
             this.simpleButton20.Name = "simpleButton20";
-            this.simpleButton20.Size = new System.Drawing.Size(165, 39);
+            this.simpleButton20.Size = new System.Drawing.Size(150, 39);
             this.simpleButton20.TabIndex = 12;
             this.simpleButton20.Click += new System.EventHandler(this.simpleButton20_Click);
             // 
@@ -679,6 +687,8 @@
             this.simpleButton15.TabIndex = 11;
             this.simpleButton15.Text = ".";
             this.simpleButton15.Click += new System.EventHandler(this.simpleButton15_Click);
+            this.simpleButton15.MouseLeave += new System.EventHandler(this.simpleButton15_MouseLeave);
+            this.simpleButton15.MouseMove += new System.Windows.Forms.MouseEventHandler(this.simpleButton15_MouseMove);
             // 
             // simpleButton16
             // 
@@ -697,6 +707,8 @@
             this.simpleButton16.TabIndex = 10;
             this.simpleButton16.Text = "+";
             this.simpleButton16.Click += new System.EventHandler(this.simpleButton16_Click);
+            this.simpleButton16.MouseLeave += new System.EventHandler(this.simpleButton16_MouseLeave);
+            this.simpleButton16.MouseMove += new System.Windows.Forms.MouseEventHandler(this.simpleButton16_MouseMove);
             // 
             // simpleButton17
             // 
@@ -715,6 +727,8 @@
             this.simpleButton17.TabIndex = 9;
             this.simpleButton17.Text = "0";
             this.simpleButton17.Click += new System.EventHandler(this.simpleButton17_Click);
+            this.simpleButton17.MouseLeave += new System.EventHandler(this.simpleButton17_MouseLeave);
+            this.simpleButton17.MouseMove += new System.Windows.Forms.MouseEventHandler(this.simpleButton17_MouseMove);
             // 
             // simpleButton12
             // 
@@ -733,6 +747,8 @@
             this.simpleButton12.TabIndex = 8;
             this.simpleButton12.Text = "3";
             this.simpleButton12.Click += new System.EventHandler(this.simpleButton12_Click);
+            this.simpleButton12.MouseLeave += new System.EventHandler(this.simpleButton12_MouseLeave);
+            this.simpleButton12.MouseMove += new System.Windows.Forms.MouseEventHandler(this.simpleButton12_MouseMove);
             // 
             // simpleButton13
             // 
@@ -751,6 +767,8 @@
             this.simpleButton13.TabIndex = 7;
             this.simpleButton13.Text = "2";
             this.simpleButton13.Click += new System.EventHandler(this.simpleButton13_Click);
+            this.simpleButton13.MouseLeave += new System.EventHandler(this.simpleButton13_MouseLeave);
+            this.simpleButton13.MouseMove += new System.Windows.Forms.MouseEventHandler(this.simpleButton13_MouseMove);
             // 
             // simpleButton14
             // 
@@ -769,6 +787,8 @@
             this.simpleButton14.TabIndex = 6;
             this.simpleButton14.Text = "1";
             this.simpleButton14.Click += new System.EventHandler(this.simpleButton14_Click);
+            this.simpleButton14.MouseLeave += new System.EventHandler(this.simpleButton14_MouseLeave);
+            this.simpleButton14.MouseMove += new System.Windows.Forms.MouseEventHandler(this.simpleButton14_MouseMove);
             // 
             // simpleButton9
             // 
@@ -787,6 +807,8 @@
             this.simpleButton9.TabIndex = 5;
             this.simpleButton9.Text = "6";
             this.simpleButton9.Click += new System.EventHandler(this.simpleButton9_Click);
+            this.simpleButton9.MouseLeave += new System.EventHandler(this.simpleButton9_MouseLeave);
+            this.simpleButton9.MouseMove += new System.Windows.Forms.MouseEventHandler(this.simpleButton9_MouseMove);
             // 
             // simpleButton10
             // 
@@ -805,6 +827,8 @@
             this.simpleButton10.TabIndex = 4;
             this.simpleButton10.Text = "5";
             this.simpleButton10.Click += new System.EventHandler(this.simpleButton10_Click);
+            this.simpleButton10.MouseLeave += new System.EventHandler(this.simpleButton10_MouseLeave);
+            this.simpleButton10.MouseMove += new System.Windows.Forms.MouseEventHandler(this.simpleButton10_MouseMove);
             // 
             // simpleButton11
             // 
@@ -823,6 +847,8 @@
             this.simpleButton11.TabIndex = 3;
             this.simpleButton11.Text = "4";
             this.simpleButton11.Click += new System.EventHandler(this.simpleButton11_Click);
+            this.simpleButton11.MouseLeave += new System.EventHandler(this.simpleButton11_MouseLeave);
+            this.simpleButton11.MouseMove += new System.Windows.Forms.MouseEventHandler(this.simpleButton11_MouseMove);
             // 
             // simpleButton8
             // 
@@ -841,6 +867,8 @@
             this.simpleButton8.TabIndex = 2;
             this.simpleButton8.Text = "9";
             this.simpleButton8.Click += new System.EventHandler(this.simpleButton8_Click);
+            this.simpleButton8.MouseLeave += new System.EventHandler(this.simpleButton8_MouseLeave);
+            this.simpleButton8.MouseMove += new System.Windows.Forms.MouseEventHandler(this.simpleButton8_MouseMove);
             // 
             // simpleButton7
             // 
@@ -859,11 +887,13 @@
             this.simpleButton7.TabIndex = 1;
             this.simpleButton7.Text = "8";
             this.simpleButton7.Click += new System.EventHandler(this.simpleButton7_Click);
+            this.simpleButton7.MouseLeave += new System.EventHandler(this.simpleButton7_MouseLeave);
+            this.simpleButton7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.simpleButton7_MouseMove);
             // 
             // simpleButton6
             // 
-            this.simpleButton6.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.simpleButton6.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.simpleButton6.Appearance.BackColor = System.Drawing.Color.White;
+            this.simpleButton6.Appearance.BackColor2 = System.Drawing.Color.White;
             this.simpleButton6.Appearance.BorderColor = System.Drawing.Color.White;
             this.simpleButton6.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.simpleButton6.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -877,6 +907,8 @@
             this.simpleButton6.TabIndex = 0;
             this.simpleButton6.Text = "7";
             this.simpleButton6.Click += new System.EventHandler(this.simpleButton6_Click);
+            this.simpleButton6.MouseLeave += new System.EventHandler(this.simpleButton6_MouseLeave);
+            this.simpleButton6.MouseMove += new System.Windows.Forms.MouseEventHandler(this.simpleButton6_MouseMove);
             // 
             // panelControl4
             // 
@@ -1051,6 +1083,7 @@
             this.createTime});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.ReadOnly = true;
             this.gridView1.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -1546,7 +1579,7 @@
             // 
             this.repositoryItemButtonEdit4.AutoHeight = false;
             this.repositoryItemButtonEdit4.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "刷新", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject4, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "刷新", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject16, "", null, null, true)});
             this.repositoryItemButtonEdit4.Name = "repositoryItemButtonEdit4";
             this.repositoryItemButtonEdit4.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEdit4.Click += new System.EventHandler(this.repositoryItemButtonEdit4_Click);
@@ -1565,7 +1598,7 @@
             // 
             this.repositoryItemButtonEdit5.AutoHeight = false;
             this.repositoryItemButtonEdit5.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "打印", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "打印", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, "", null, null, true)});
             this.repositoryItemButtonEdit5.Name = "repositoryItemButtonEdit5";
             this.repositoryItemButtonEdit5.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEdit5.Click += new System.EventHandler(this.repositoryItemButtonEdit5_Click);
@@ -1584,7 +1617,7 @@
             // 
             this.repositoryItemButtonEdit6.AutoHeight = false;
             this.repositoryItemButtonEdit6.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "退款", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject6, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "退款", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject18, "", null, null, true)});
             this.repositoryItemButtonEdit6.Name = "repositoryItemButtonEdit6";
             this.repositoryItemButtonEdit6.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEdit6.Click += new System.EventHandler(this.repositoryItemButtonEdit6_Click);
@@ -1634,15 +1667,16 @@
             this.dateEdit2.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit2.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Vista;
-            this.dateEdit2.Properties.DisplayFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
+            this.dateEdit2.Properties.DisplayFormat.FormatString = "yyyy-MM-dd";
             this.dateEdit2.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.dateEdit2.Properties.EditFormat.FormatString = "yyyy-MM-dd HH:mm";
+            this.dateEdit2.Properties.EditFormat.FormatString = "yyyy-MM-dd";
             this.dateEdit2.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.dateEdit2.Properties.Mask.EditMask = "yyyy-MM-dd HH:mm:ss";
+            this.dateEdit2.Properties.Mask.EditMask = "yyyy-MM-dd";
             this.dateEdit2.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.dateEdit2.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.True;
             this.dateEdit2.Size = new System.Drawing.Size(211, 20);
             this.dateEdit2.TabIndex = 1;
+            this.dateEdit2.TextChanged += new System.EventHandler(this.dateEdit2_TextChanged);
             // 
             // dateEdit1
             // 
@@ -1653,16 +1687,15 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Vista;
-            this.dateEdit1.Properties.DisplayFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
+            this.dateEdit1.Properties.DisplayFormat.FormatString = "yyyy-MM-dd";
             this.dateEdit1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.dateEdit1.Properties.EditFormat.FormatString = "yyyy-MM-dd HH:mm";
+            this.dateEdit1.Properties.EditFormat.FormatString = "yyyy-MM-dd";
             this.dateEdit1.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.dateEdit1.Properties.Mask.EditMask = "yyyy-MM-dd HH:mm:ss";
+            this.dateEdit1.Properties.Mask.EditMask = "yyyy-MM-dd";
             this.dateEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.dateEdit1.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.True;
             this.dateEdit1.Size = new System.Drawing.Size(211, 20);
             this.dateEdit1.TabIndex = 0;
+            this.dateEdit1.TextChanged += new System.EventHandler(this.dateEdit1_TextChanged);
             // 
             // xtraTabPage4
             // 
@@ -3848,9 +3881,9 @@
             this.labelControl5.LineLocation = DevExpress.XtraEditors.LineLocation.Right;
             this.labelControl5.LineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
             this.labelControl5.LineVisible = true;
-            this.labelControl5.Location = new System.Drawing.Point(-1, 0);
+            this.labelControl5.Location = new System.Drawing.Point(-1, -1);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(187, 51);
+            this.labelControl5.Size = new System.Drawing.Size(189, 51);
             this.labelControl5.TabIndex = 2;
             // 
             // serialPort1
@@ -3911,14 +3944,14 @@
             // 
             this.labelControl30.Appearance.Image = global::DXApplication2.Properties.Resources.TOUXIANG;
             this.labelControl30.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl30.Location = new System.Drawing.Point(1, 52);
+            this.labelControl30.Location = new System.Drawing.Point(0, 48);
             this.labelControl30.Name = "labelControl30";
             this.labelControl30.Size = new System.Drawing.Size(187, 95);
             this.labelControl30.TabIndex = 3;
             // 
             // labelControl2
             // 
-            this.labelControl2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(42)))), ((int)(((byte)(63)))));
+            this.labelControl2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(51)))), ((int)(((byte)(62)))));
             this.labelControl2.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl2.Location = new System.Drawing.Point(58, 84);
@@ -3929,7 +3962,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(40)))), ((int)(((byte)(63)))));
+            this.labelControl1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(51)))), ((int)(((byte)(62)))));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -3946,14 +3979,14 @@
             this.labelControl111.LineLocation = DevExpress.XtraEditors.LineLocation.Right;
             this.labelControl111.LineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
             this.labelControl111.LineVisible = true;
-            this.labelControl111.Location = new System.Drawing.Point(1, 147);
+            this.labelControl111.Location = new System.Drawing.Point(0, 143);
             this.labelControl111.Name = "labelControl111";
             this.labelControl111.Size = new System.Drawing.Size(187, 29);
             this.labelControl111.TabIndex = 10;
             // 
             // panelControl1
             // 
-            this.panelControl1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(31)))), ((int)(((byte)(37)))));
+            this.panelControl1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(51)))), ((int)(((byte)(62)))));
             this.panelControl1.Appearance.Options.UseBackColor = true;
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl1.Controls.Add(this.simpleButton5);
@@ -4026,8 +4059,13 @@
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.simpleButton1.Appearance.BackColor2 = System.Drawing.Color.Transparent;
+            this.simpleButton1.Appearance.BorderColor = System.Drawing.Color.White;
+            this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.Yellow;
             this.simpleButton1.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Appearance.Image")));
+            this.simpleButton1.Appearance.Options.UseBackColor = true;
+            this.simpleButton1.Appearance.Options.UseBorderColor = true;
             this.simpleButton1.Appearance.Options.UseForeColor = true;
             this.simpleButton1.Appearance.Options.UseImage = true;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -4067,10 +4105,15 @@
             // Main
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
+            this.Appearance.BackColor2 = System.Drawing.Color.White;
+            this.Appearance.BorderColor = System.Drawing.Color.White;
+            this.Appearance.ForeColor = System.Drawing.Color.White;
             this.Appearance.Options.UseBackColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1040, 697);
+            this.Appearance.Options.UseBorderColor = true;
+            this.Appearance.Options.UseForeColor = true;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(1036, 692);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.labelControl111);
             this.Controls.Add(this.labelControl2);
@@ -4078,7 +4121,7 @@
             this.Controls.Add(this.labelControl30);
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.xtraTabControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MaximizeBox = false;
@@ -4484,7 +4527,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn terminal2;
         private DevExpress.XtraGrid.Columns.GridColumn userName2;
         private DevExpress.XtraGrid.Columns.GridColumn storeName2;
-        private DevExpress.Utils.ToolTipController toolTipController1;
         private System.Windows.Forms.ToolStripMenuItem 刷新ToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip3;
         private System.Windows.Forms.ToolStripMenuItem 刷新ToolStripMenuItem1;

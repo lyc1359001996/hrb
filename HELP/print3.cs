@@ -59,8 +59,7 @@ namespace CustomPrint
             }
             catch (Exception ex)
             {
-
-
+                MessageBox.Show("当前网络状态不佳，请检查网络。"); Log4NetHelper.WriteErrorLog(ex.Message);
             }
         }
 
@@ -84,14 +83,10 @@ namespace CustomPrint
             List<PrintRow> tempList = order.PrintRows.OrderBy(p => p.PrintIndex).ToList();
             for (int i = 0; i < tempList.Count; i++)
             {
-                Console.WriteLine(tempList[i].DrawHeight+"");
-
                 //Rectangle drawRect = new Rectangle(0, tempList[i].DrawHeight, pageWidth, tempList[i].DrawFont.Height);
                 //g.DrawString(tempList[i].Context, tempList[i].DrawFont, tempList[i].DrawBrush, drawRect, sf);
-
                 Rectangle drawRect = new Rectangle(0, tempList[i].DrawHeight, pageWidth, pageHeight);
                 g.DrawString(tempList[i].Context, tempList[i].DrawFont, tempList[i].DrawBrush, drawRect, sf);
-                //Console.WriteLine("1111111111111111111"+Application.StartupPath + @"\1.jpg");
                 //g.DrawImage(Image.FromFile(Application.StartupPath + @"\11111.jpg"), 15, 260, 200, 200);
             }
         }
@@ -109,6 +104,7 @@ namespace CustomPrint
                 Rectangle drawRect = new Rectangle(0, tempList[i].DrawHeight, 340, pageHeight);
                 g.DrawString(tempList[i].Context, tempList[i].DrawFont, tempList[i].DrawBrush, drawRect, sf);
                 g.DrawImage(Image.FromFile(Application.StartupPath + @"\11111.jpg"), 15, 260,170,170);
+                System.IO.File.Delete(Application.StartupPath + @"\11111.jpg");
             }
         }
 
@@ -125,8 +121,7 @@ namespace CustomPrint
                 }
                 catch (Exception ex)
                 {
-
-
+                    MessageBox.Show("当前网络状态不佳，请检查网络。"); Log4NetHelper.WriteErrorLog(ex.Message);
                 }
             }
         }
@@ -147,8 +142,8 @@ namespace CustomPrint
                 }
                 catch (Exception ex)
                 {
-                    //MessageBox.Show(ex.Message);
-                }
+                    MessageBox.Show("当前网络状态不佳，请检查网络。"); Log4NetHelper.WriteErrorLog(ex.Message);
+                }
             }
         }
 

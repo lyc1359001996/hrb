@@ -14,6 +14,7 @@ namespace DXApplication2.UL
         public 退出()
         {
             InitializeComponent();
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "McSkin";
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)

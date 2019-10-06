@@ -38,25 +38,22 @@ namespace WindowsFormsApplication16
         /// </summary>    
         private WaitFormService()
         {
+
         }
-
-
         private static WaitFormService _instance;
         private static readonly Object syncLock = new Object();
         //private static Thread waitThread;
         private static WaitForm waitForm;
-
         public delegate void ShowWaitFormEventHandler();
-        public  delegate bool CancleEventHandler();
+        public delegate bool CancleEventHandler();
         public static event CancleEventHandler Cancle;
         /// <summary>    
         /// 显示等待窗体    
         /// </summary>    
         public static void Show()
         {
-
             ShowWaitFormEventHandler showWaitFormEventHandler = new ShowWaitFormEventHandler(CreateForm);
-           IAsyncResult result= showWaitFormEventHandler.BeginInvoke(new  AsyncCallback(Completed),null);
+            IAsyncResult result = showWaitFormEventHandler.BeginInvoke(new AsyncCallback(Completed), null);
         }
         private static void Completed(IAsyncResult result)
         {
@@ -72,11 +69,8 @@ namespace WindowsFormsApplication16
         {
             try
             {
-
-                Console.WriteLine(Thread.CurrentThread.ManagedThreadId + "---" + Thread.CurrentThread.Name);
                 if (waitForm.InvokeRequired)
                 {
-                    Console.WriteLine(Thread.CurrentThread.ManagedThreadId);
                     //子线程将调用方法 Marshal成消息，调用Win 32 API的RegisterWindowsMessage()向UI窗体发送消息。
                     //UI线程需要处理完正在做的事，做完之后再去执行Invoke封送过来的消息。Control.Invoke和BeginInvoke,这两个方法所执行的
                     //委托是在UI线程中执行的
@@ -84,7 +78,6 @@ namespace WindowsFormsApplication16
                     {
                         waitForm.Close();
                         waitForm.Dispose();
-
                     }));
                 }
                 else
@@ -92,7 +85,7 @@ namespace WindowsFormsApplication16
                     waitForm.Close();
                 }
             }
-            catch 
+            catch
             {
 
             }
@@ -106,7 +99,7 @@ namespace WindowsFormsApplication16
         {
             try
             {
-               WaitFormService.Instance.SetWaiteText(text);
+                WaitFormService.Instance.SetWaiteText(text);
             }
             catch (Exception ex)
             {
@@ -122,7 +115,6 @@ namespace WindowsFormsApplication16
         {
             waitForm = new WaitForm();
             waitForm.Show();
-
             for (int i = 0; i < 10000; i++)
             {
                 //waitForm.IsHandleCreated
@@ -140,15 +132,11 @@ namespace WindowsFormsApplication16
                 {
                     break;
                 }
-                  
-             //   }
-
             }
-
         }
         private static void Create()
         {
-            
+
         }
 
         /// <summary>    
@@ -159,6 +147,5 @@ namespace WindowsFormsApplication16
         {
 
         }
-
     }
-}  
+}

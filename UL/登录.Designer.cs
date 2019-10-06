@@ -42,6 +42,7 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -165,6 +166,9 @@
             // 
             // labelControl6
             // 
+            this.labelControl6.Appearance.BackColor = System.Drawing.Color.White;
+            this.labelControl6.Appearance.BackColor2 = System.Drawing.Color.White;
+            this.labelControl6.Appearance.BorderColor = System.Drawing.Color.White;
             this.labelControl6.Appearance.Image = global::DXApplication2.Properties.Resources.lg;
             this.labelControl6.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl6.ContextMenuStrip = this.contextMenuStrip1;
@@ -173,6 +177,8 @@
             this.labelControl6.Size = new System.Drawing.Size(244, 60);
             this.labelControl6.TabIndex = 27;
             this.labelControl6.Click += new System.EventHandler(this.labelControl6_Click);
+            this.labelControl6.MouseLeave += new System.EventHandler(this.labelControl6_MouseLeave);
+            this.labelControl6.MouseMove += new System.Windows.Forms.MouseEventHandler(this.labelControl6_MouseMove);
             // 
             // labelControl5
             // 
@@ -187,7 +193,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::DXApplication2.Properties.Resources.bg;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::DXApplication2.Properties.Resources.LBG2;
             this.ClientSize = new System.Drawing.Size(1008, 729);
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.panelControl1);
@@ -198,6 +205,7 @@
             this.ShowInTaskbar = false;
             this.Text = "登录";
             this.TopMost = true;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.登录_FormClosing);
             this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
@@ -222,5 +230,6 @@
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
     }
 }

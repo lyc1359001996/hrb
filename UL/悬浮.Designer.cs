@@ -41,7 +41,7 @@
             this.labelControl1.Appearance.BackColor2 = System.Drawing.Color.Transparent;
             this.labelControl1.Appearance.BorderColor = System.Drawing.Color.Transparent;
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 30F);
-            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.DodgerBlue;
             this.labelControl1.Appearance.Image = global::DXApplication2.Properties.Resources.icon_drag_money_pop;
             this.labelControl1.Appearance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
@@ -62,10 +62,10 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.labelControl2.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.labelControl2.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.labelControl2.Appearance.Image = global::DXApplication2.Properties.Resources.icon_drag_money_pop;
+            this.labelControl2.Appearance.BackColor = System.Drawing.Color.White;
+            this.labelControl2.Appearance.BackColor2 = System.Drawing.Color.White;
+            this.labelControl2.Appearance.BorderColor = System.Drawing.Color.White;
+            this.labelControl2.Appearance.Image = global::DXApplication2.Properties.Resources.zbg2;
             this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
             this.labelControl2.LineLocation = DevExpress.XtraEditors.LineLocation.Right;

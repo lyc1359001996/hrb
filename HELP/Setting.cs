@@ -1,6 +1,4 @@
 ﻿using DevExpress.XtraEditors;
-using DXApplication2.BLL;
-using DXApplication2.MODEL;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,9 +10,6 @@ namespace DXApplication2.HELP
 {
     class Setting
     {
-        B_currencysetting currencysetting = new B_currencysetting();
-        B_graspsettingClass graspsetting = new B_graspsettingClass();
-        graspsetting grasp = new graspsetting();
         IniFile ini = new IniFile(@"config\set.ini");
 
         public void Fillgraspsetting(ToggleSwitch toggleSwitch1, RadioGroup RadioGroup, ComboBoxEdit comboBoxEdit3,

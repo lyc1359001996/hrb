@@ -30,7 +30,7 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -111,6 +111,22 @@
       <HintPath>packages\Newtonsoft.Json.10.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="ServiceStack.Common, Version=4.0.62.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\ServiceStack.Common.4.0.62\lib\net40\ServiceStack.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces, Version=4.0.0.0, Culture=neutral, PublicKeyToken=e06fbc6124f57c43, processorArchitecture=MSIL">
+      <HintPath>packages\ServiceStack.Interfaces.4.0.62\lib\portable-wp80+sl5+net40+win8+wpa81+monotouch+monoandroid+xamarin.ios10\ServiceStack.Interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.Redis, Version=4.0.62.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\ServiceStack.Redis.4.0.62\lib\net40\ServiceStack.Redis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.Text, Version=4.0.62.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\ServiceStack.Text.4.0.62\lib\net40\ServiceStack.Text.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System.Core" />
@@ -129,25 +145,14 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="tesseract, Version=0.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\tesseract.dll</HintPath>
+    </Reference>
     <Reference Include="ThoughtWorks.QRCode, Version=1.0.2774.19990, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="WinFormPage, Version=1.0.7205.25890, Culture=neutral, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\B_currencysetting.cs" />
-    <Compile Include="BLL\B_graspsetting.cs" />
-    <Compile Include="BLL\B_Order.cs" />
-    <Compile Include="BLL\B_quicksetting.cs" />
-    <Compile Include="BLL\B_User.cs" />
-    <Compile Include="BLL\B_PrintSetting.cs" />
-    <Compile Include="BLL\B_paymentmethod.cs" />
-    <Compile Include="DAL\D_currencysetting.cs" />
-    <Compile Include="DAL\D_graspsetting.cs" />
-    <Compile Include="DAL\D_Order.cs" />
-    <Compile Include="DAL\D_paymentmethod.cs" />
-    <Compile Include="DAL\D_print.cs" />
-    <Compile Include="DAL\D_printsetting.cs" />
-    <Compile Include="DAL\D_User.cs" />
-    <Compile Include="DAL\D_quicksetting.cs" />
     <Compile Include="HELP\3des.cs" />
     <Compile Include="HELP\AspriseOCR.cs" />
     <Compile Include="HELP\Calculator.cs" />
@@ -172,6 +177,7 @@
     <Compile Include="HELP\KeyboardHook.cs" />
     <Compile Include="HELP\KeyboardHook1.cs" />
     <Compile Include="HELP\Log.cs" />
+    <Compile Include="HELP\MessageBoxHelper.cs" />
     <Compile Include="HELP\MouseHook.cs" />
     <Compile Include="HELP\my_sql.cs" />
     <Compile Include="HELP\orderlist.cs" />
@@ -181,12 +187,10 @@
     <Compile Include="HELP\QRcode.cs" />
     <Compile Include="HELP\WaitFormService.cs" />
     <Compile Include="HELP\截图帮助类.cs" />
-    <Compile Include="MODEL\OrderEvery.cs" />
-    <Compile Include="MODEL\orderinfo.cs" />
-    <Compile Include="MODEL\orderLIst.cs" />
-    <Compile Include="MODEL\PrintRow.cs" />
     <Compile Include="HELP\Setting.cs" />
     <Compile Include="HELP\TimeHelper.cs" />
+    <Compile Include="MODEL\order.cs" />
+    <Compile Include="MODEL\PrintRow.cs" />
     <Compile Include="MODEL\StoreName.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -212,20 +216,6 @@
     <Compile Include="UL\登录.Designer.cs">
       <DependentUpon>登录.cs</DependentUpon>
     </Compile>
-    <Compile Include="MODEL\baudrate.cs" />
-    <Compile Include="MODEL\cashier.cs" />
-    <Compile Include="MODEL\currencysetting.cs" />
-    <Compile Include="MODEL\grabmobe.cs" />
-    <Compile Include="MODEL\graspsetting.cs" />
-    <Compile Include="MODEL\Namestore.cs" />
-    <Compile Include="MODEL\order.cs" />
-    <Compile Include="MODEL\PaymentMethod.cs" />
-    <Compile Include="MODEL\PaymentTerminal.cs" />
-    <Compile Include="MODEL\printsetting.cs" />
-    <Compile Include="MODEL\quicksetting.cs" />
-    <Compile Include="MODEL\ShortcutKeys.cs" />
-    <Compile Include="MODEL\Store.cs" />
-    <Compile Include="MODEL\User.cs" />
     <Compile Include="UL\代理.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -290,6 +280,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UL\主页.resx">
       <DependentUpon>主页.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -863,6 +854,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\images\weixin%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BLL\" />
+    <Folder Include="DAL\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\LBG2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

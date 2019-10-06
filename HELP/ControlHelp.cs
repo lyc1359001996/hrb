@@ -1,12 +1,10 @@
 ﻿using Common.Utilities;
 using CustomPrint;
 using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraTab;
-using DXApplication2.BLL;
-using DXApplication2.DAL;
-using DXApplication2.MODEL;
 using DXApplication2.Properties;
 using System;
 using System.Collections.Generic;
@@ -24,15 +22,6 @@ namespace DXApplication2.HELP
     class ControlHelp
     {
         DataTable dt = new DataTable();
-        B_Order Order = new B_Order();
-        quicksetting q = new MODEL.quicksetting();
-        B_quicksetting quick = new B_quicksetting();
-        B_PrintSetting print = new B_PrintSetting();
-        B_currencysetting currency = new B_currencysetting();
-        currencysetting curr = new MODEL.currencysetting();
-        printsetting printsetting = new printsetting();
-        B_User user = new B_User();
-        D_print print4 = new D_print();
         IniFile ini = new IniFile(@"config\set.ini");
         PrintRow row0;
         PrintRow row1;
@@ -51,37 +40,28 @@ namespace DXApplication2.HELP
         PrintRow row14;
         PrintRow row15;
         PrintRow row16;
-        PrintRow row17;
+        //PrintRow row17;
         public void ButtonStyle(DevExpress.XtraEditors.SimpleButton simpleButton)
         {
-            /*
-            simpleButton.Appearance.BackColor = Color.FromArgb(224, 224, 224);
-            simpleButton.Appearance.BackColor2 = Color.FromArgb(224, 224, 224);
-            simpleButton.Appearance.BorderColor = Color.FromArgb(224, 224, 224);
-            simpleButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
-            */
+            simpleButton.ButtonStyle = BorderStyles.Default;
         }
         
-        public void ButtonStyle1(SimpleButton simpleButton1, SimpleButton simpleButton2, SimpleButton simpleButton3,SimpleButton simpleButton4)
+        public void ButtonStyle1(SimpleButton simpleButton)
         {
-            /*
-            simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
-            simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
-            simpleButton3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
-            simpleButton4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
-            */
-
+            simpleButton.Appearance.BackColor = Color.OrangeRed;
+            simpleButton.Appearance.BackColor = Color.Orange;
+            simpleButton.ButtonStyle = BorderStyles.Simple;
         }
 
         public void TimeEdit(DateEdit dateEdit)
         {
-            dateEdit.Properties.DisplayFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
-            dateEdit.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            dateEdit.Properties.EditFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
-            dateEdit.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            dateEdit.Properties.Mask.EditMask = "yyyy-MM-dd HH:mm:ss";
-            dateEdit.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.True;
-            dateEdit.Properties.VistaEditTime = DevExpress.Utils.DefaultBoolean.True;
+            dateEdit.Properties.DisplayFormat.FormatString = "d";
+            dateEdit.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.None;
+            dateEdit.Properties.EditFormat.FormatString = "d";
+            dateEdit.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.None;
+            dateEdit.Properties.Mask.EditMask = "d";
+            dateEdit.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            dateEdit.Properties.VistaEditTime = DevExpress.Utils.DefaultBoolean.False;
         }
 
         public void ComboBoxEdit(ComboBoxEdit ComboBoxEdit)
@@ -151,66 +131,7 @@ namespace DXApplication2.HELP
             xtraTabControl.TabPages.Add(XtraTabPag3);
             xtraTabControl.TabPages.Add(XtraTabPage4);
         }
-
-        public void OrderSetting(DateEdit dateEdit1,LabelControl labelControl16, LabelControl labelControl15, LabelControl labelControl17, LabelControl labelControl13, LabelControl labelControl14, LabelControl labelControl12, LabelControl labelControl11, LabelControl labelControl23, LabelControl labelControl22, LabelControl labelControl24)
-        {
-            if (dateEdit1.ToString().Equals("DevExpress.XtraEditors.DateEdit"))
-            {
-                labelControl16.Text = "周:" + Order.SelectOrder6(DateTime.Now.Date.ToString()).Rows[0][0].ToString() + "元";
-                labelControl15.Text = "月:" + Order.SelectOrder7(DateTime.Now.Date.ToString()).Rows[0][0].ToString() + "元";
-                labelControl17.Text = Order.SelectOrder8().Rows[0][0].ToString();// 
-                labelControl13.Text = "周:" + Order.SelectOrder9(DateTime.Now.Date.ToString()).Rows[0][0].ToString() + "笔";
-                labelControl14.Text = "月:" + Order.SelectOrder10(DateTime.Now.Date.ToString()).Rows[0][0].ToString() + "笔";
-                labelControl12.Text = Order.SelectOrder11().Rows[0][0].ToString();
-                labelControl23.Text = "周:" + Order.SelectOrder12(DateTime.Now.Date.ToString()).Rows[0][0].ToString() + "元";
-                labelControl22.Text = "月:" + Order.SelectOrder13(DateTime.Now.Date.ToString()).Rows[0][0].ToString() + "元";
-                labelControl24.Text = Order.SelectOrder14().Rows[0][0].ToString();
-
-            }
-            else
-            {
-                labelControl16.Text = "周:" + Order.SelectOrder6(dateEdit1.ToString()).Rows[0][0].ToString() + "元";
-                labelControl15.Text = "月:" + Order.SelectOrder7(dateEdit1.ToString()).Rows[0][0].ToString() + "元";
-                labelControl17.Text = Order.SelectOrder8().Rows[0][0].ToString();
-                labelControl13.Text = "周:" + Order.SelectOrder9(dateEdit1.ToString()).Rows[0][0].ToString() + "元";
-                labelControl14.Text = "月:" + Order.SelectOrder10(dateEdit1.ToString()).Rows[0][0].ToString() + "元";
-                labelControl12.Text = Order.SelectOrder11().Rows[0][0].ToString();
-                labelControl23.Text = "周:" + Order.SelectOrder12(dateEdit1.ToString()).Rows[0][0].ToString() + "元";
-                labelControl22.Text = "月:" + Order.SelectOrder13(dateEdit1.ToString()).Rows[0][0].ToString() + "元";
-                labelControl24.Text = Order.SelectOrder14().Rows[0][0].ToString();
-            }
-        }
-
-        public void OrderSetting2(DateEdit dateEdit2,DateEdit dateEdit1,TextEdit textEdit, GridControl gridControl2,WinFormPage.WinFormPage winFormPage1)
-        {
-            if (!dateEdit2.Text.Equals(""))
-            {
-                if (!dateEdit1.Text.Equals(""))
-                {
-                    gridControl2.DataSource = Order.SelectOrder(dateEdit1.Text, dateEdit2.Text);
-                    if (!textEdit.Text.Equals(""))
-                    {
-                        gridControl2.DataSource = Order.SelectOrder(dateEdit1.Text, dateEdit2.Text,textEdit.Text);
-                    }
-                }
-                else
-                {
-                    gridControl2.DataSource = Order.SelectOrder(dateEdit2.Text);
-                }
-            }
-            else
-            {
-                if (!dateEdit1.Text.Equals(""))
-                {
-                    gridControl2.DataSource = Order.SelectOrder5(dateEdit1.Text);
-                }
-                else
-                {
-                   
-                }
-            }
-        }
-
+        
         public void quicksetting(ToggleSwitch toggleSwitch5, ComboBoxEdit comboBoxEdit14, TextEdit textEdit12, ComboBoxEdit comBoxEdit15,TextEdit textEdit13, ComboBoxEdit comboBoxEdit17, TextEdit textEdit15, ComboBoxEdit comboBoxEdit16, TextEdit textEdit14, ComboBoxEdit comboBoxEdit19, TextEdit textEdit17, ComboBoxEdit comboBoxEdit18, TextEdit textEdit16, ComboBoxEdit comboBoxEdit21, TextEdit textEdit19, ComboBoxEdit comboBoxEdit20, TextEdit textEdit18, ComboBoxEdit comboBoxEdit22, TextEdit textEdit20, string UserId)
         {
             toggleSwitch5.IsOn = bool.Parse(ini.IniReadValue("quicksetting", "FastSwitchState"));
@@ -318,7 +239,6 @@ namespace DXApplication2.HELP
             //string State = gridView2.GetFocusedRowCellValue("State").ToString();
             //string PaymentTime = gridView2.GetFocusedRowCellValue("PaymentTime").ToString();
 
-            Console.WriteLine(storeName+","+userName+","+terminal+","+realPayAmount);
             row0 = new PrintRow(150, "      " +storeName, new Font("宋体", 14, FontStyle.Bold), Brushes.Blue, 0);
             row1 = new PrintRow(150, "********付款凭证********", new Font("宋体", 10), Brushes.Blue, 40);
             row2 = new PrintRow(150, "门店名称：" +storeName, new Font("宋体", 10), Brushes.Black, 70);
@@ -338,7 +258,6 @@ namespace DXApplication2.HELP
             //string PaymentMethod = gridView2.GetFocusedRowCellValue("PaymentMethod").ToString();
             //string State = gridView2.GetFocusedRowCellValue("State").ToString();
             //string PaymentTime = gridView2.GetFocusedRowCellValue("PaymentTime").ToString();
-            DataTable dt = print4.fill(OrderBH);
 
             row0 = new PrintRow(150, "      " + dt.Rows[0][0].ToString(), new Font("宋体", 14, FontStyle.Bold), Brushes.Blue, 0);
             row1 = new PrintRow(150, "********付款凭证********", new Font("宋体", 10), Brushes.Blue, 40);
@@ -351,10 +270,9 @@ namespace DXApplication2.HELP
             PrintOrder.Print(print, tempOrder);
         }
 
-        public void print7(DateEdit dateEdit1,DateEdit dateEdit2,string UserId,string NameStore,string print)
+        public void print7(DateEdit dateEdit1,DateEdit dateEdit2,string UserId,string refundWxNum,string refundWxAmount,string NameStore,string totalPaidInOrder,string refundAliAmount,string refundAliNum,string wxTotalOrder,string refundTotalOrder,string refundTotalAmount,string wxTotalAmount,string aliTotalOrder,string aliTotalAmount,string totalOrder,string totalAmount,string totalPaidInAmount, string print)
         {
             
-            DataTable dt = Order.SelectOrder15(dateEdit1.Text, dateEdit2.Text);
             DataTable dt2 = my_sql.listTable("SELECT SUM(PaymentAmount),COUNT(PaymentAmount) FROM `order` o WHERE o.State=4 AND PaymentTime>='"+dateEdit1.Text+"' AND PaymentTime<='"+dateEdit2.Text+"';");
             DataTable d1 = my_sql.listTable("SELECT COUNT(PaymentAmount),SUM(PaymentAmount) FROM `order` o WHERE o.State=2 AND PaymentTime>='" + dateEdit1.Text+"' AND PaymentTime<='"+dateEdit2.Text+"';");
             
@@ -364,11 +282,16 @@ namespace DXApplication2.HELP
             row3 = new PrintRow(150, "起始时间：" + dateEdit1.Text, new Font("宋体", 10), Brushes.Black, 100);
             row4 = new PrintRow(150, "截止时间：" + dateEdit2.Text, new Font("宋体", 10), Brushes.Black, 130);
             row5 = new PrintRow(150, "-----------------------", new Font("宋体", 10, FontStyle.Bold), Brushes.Black, 160);
-            row6 = new PrintRow(150, "订单统计:" +(int.Parse(d1.Rows[0][0].ToString())+int.Parse(dt2.Rows[0][1].ToString()))+ "笔   " + (decimal.Parse(d1.Rows[0][1].ToString())-decimal.Parse(dt2.Rows[0][0].ToString())).ToString() +"元", new Font("宋体", 10), Brushes.Black, 190);
-            row7 = new PrintRow(150, "商户实收:"+ (int.Parse(d1.Rows[0][0].ToString())+int.Parse(dt2.Rows[0][1].ToString())) + "笔   "+ (decimal.Parse(d1.Rows[0][1].ToString()) - decimal.Parse(dt2.Rows[0][0].ToString())).ToString() + "元", new Font("宋体", 10), Brushes.Black, 220);
+            row6 = new PrintRow(150, "订单统计:" + totalOrder + "笔   " + totalAmount + "元", new Font("宋体", 10), Brushes.Black, 190);
+            row7 = new PrintRow(150, "商户实收:"+ totalPaidInOrder + "笔   "+ totalPaidInAmount + "元", new Font("宋体", 10), Brushes.Black, 220);
+            row8 = new PrintRow(150, "支 付 宝:" + aliTotalOrder + "笔   " + aliTotalAmount + "元", new Font("宋体", 10), Brushes.Black, 220);
+            row9 = new PrintRow(150, "微    信:" + wxTotalOrder + "笔   " + wxTotalAmount + "元", new Font("宋体", 10), Brushes.Black, 220);
+
             row10 = new PrintRow(150, "-----------------------", new Font("宋体", 10), Brushes.Black, 250);
-            row11 = new PrintRow(150, "退款统计"+ dt2.Rows[0][1].ToString() + "笔   " + dt2.Rows[0][0].ToString() + "元", new Font("宋体", 10), Brushes.Black, 280);
-            Order tempOrder = new Order(new List<PrintRow>() { row0, row1, row2, row3, row4, row5,row6,row7,row10,row11 });
+            row11 = new PrintRow(150, "退款统计"+ refundTotalOrder + "笔   " + refundTotalAmount + "元", new Font("宋体", 10), Brushes.Black, 280);
+            row12 = new PrintRow(150, "支 付 宝" + refundAliNum + "笔   " + refundAliAmount + "元", new Font("宋体", 10), Brushes.Black, 310);
+            row13 = new PrintRow(150, "微    信" + refundWxNum + "笔   " + refundWxAmount + "元", new Font("宋体", 10), Brushes.Black, 340);
+            Order tempOrder = new Order(new List<PrintRow>() { row0, row1, row2, row3, row4, row5,row6,row7,row10,row11, row12, row13 });
             PrintOrder.Print(print, tempOrder);
         }
 

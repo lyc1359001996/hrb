@@ -1,5 +1,4 @@
 ﻿using Common.Utilities;
-using DXApplication2.BLL;
 using DXApplication2.HELP;
 using System;
 using System.Collections.Generic;
@@ -17,13 +16,14 @@ namespace DXApplication2.UL
 {
     public partial class 修改密码 : Form
     {
-        B_User user = new B_User();
         ControlHelp control = new ControlHelp();
         IniFile ini = new IniFile(@"config\set.ini");
         public 修改密码()
         {
             InitializeComponent();
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "McSkin";
             this.ControlBox = false;
+            this.StartPosition = FormStartPosition.CenterScreen;
             textEdit1.Text = "";
             textEdit2.Text = "";
         }
@@ -38,7 +38,6 @@ namespace DXApplication2.UL
             if (IsDigitOrNumber(textEdit2.Text) == 1)
             {
                 var json=WebUtils.MakeRequest1(ini.IniReadValue("mySqlCon1", "updatePwd"), "{\"oldPassword\":\"" + textEdit1.Text+ "\",\"newPassword\":\"" + textEdit2.Text+"\"}","post","http", ini.IniReadValue("mySqlCon2", "authorization") + ini.IniReadValue("mySqlCon2", "authorization1")).Replace("{","").Replace("}","").Replace("\"","");
-                Console.WriteLine(int.Parse(json.Split(',')[1].Split(':')[1]));
                 if (int.Parse(json.Split(',')[1].Split(':')[1])==0)
                 {
                     MessageBox.Show("修改成功！");

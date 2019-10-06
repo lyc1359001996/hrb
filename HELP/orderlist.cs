@@ -1,5 +1,4 @@
 ﻿using Common.Utility;
-using DXApplication2.MODEL;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,7 +12,6 @@ namespace DXApplication2.HELP
     {
         public static DataTable toTatable(string json)
         {
-                orderLIst order = new orderLIst();
                 DataTable table = new DataTable();
                 DataColumn dc1 = new DataColumn("orderNumber", Type.GetType("System.String"));
                 DataColumn dc2 = new DataColumn("orderAmount", Type.GetType("System.Decimal"));
@@ -101,7 +99,6 @@ namespace DXApplication2.HELP
 
         public static DataTable toTatable1(string json)
         {
-            orderLIst order = new orderLIst();
             DataTable table = new DataTable();
             DataColumn dc1 = new DataColumn("orderNumber", Type.GetType("System.String"));//
             DataColumn dc4 = new DataColumn("orderAmount", Type.GetType("System.Decimal"));//

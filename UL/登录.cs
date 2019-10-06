@@ -1,6 +1,8 @@
 ﻿using Common.Utilities;
 using Common.Utility;
-using DXApplication2.BLL;
+using DemoMessageBox;
+using DevExpress.XtraEditors.Controls;
+using DXApplication2.HELP;
 using DXApplication2.MODEL;
 using GalaSoft.MvvmLight.Messaging;
 using SISS_thsoft;
@@ -9,6 +11,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -22,12 +25,18 @@ namespace DXApplication2.UL
     public partial class 登录 : Form
     {
         代理 daili = new 代理();
-        B_User user = new B_User();
+        [DllImport("user32.dll", EntryPoint = "FindWindow", CharSet = CharSet.Auto)]
+        private extern static IntPtr FindWindow(string lpClassName, string lpWindowName);
+        private ControlHelp Control = new ControlHelp();
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        public static extern int PostMessage(IntPtr hWnd, int msg, IntPtr wParam, IntPtr lParam);
+        public const int WM_CLOSE = 0x10;
         IniFile ini = new IniFile(@"config\set.ini");
         private bool isUserCancle = false;
         public 登录()
         {
             InitializeComponent();
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "McSkin";
             WaitFormService.Cancle += WaitFormService_Cancle;
             ini.IniWriteValue("mySqlCon2", "authorization", "");
             ini.IniWriteValue("mySqlCon2", "authorization1", "");
@@ -49,7 +58,6 @@ namespace DXApplication2.UL
             if (ini.IniReadValue("mySqlCon2", "authorization").Equals("") && ini.IniReadValue("mySqlCon2", "authorization1").Equals(""))
             {
                 string json = WebUtils.MakeRequest(ini.IniReadValue("mySqlCon1", "loginurl"), "{\"userAccount\":\"" + textEdit2.Text + "\",\"password\":\"" + textEdit1.Text + "\"}", "post", "http").Replace("\"", "").Replace("{", "").Replace("}", "");
-                Console.WriteLine(json);
                 if (json.Split(',')[1].Split(':')[1].Equals("8"))
                 {
                     MessageBox.Show("账号登录身份错误");
@@ -60,7 +68,6 @@ namespace DXApplication2.UL
                 }
                 else if (json.Split(',')[1].Split(':')[1].Equals("0"))
                 {
-                    Console.WriteLine(json.Split(',')[4]+","+ json.Split(',')[5]+","+ json.Split(',')[6]);
                     ini.IniWriteValue("mySqlCon3", "merchantId", json.Split(',')[4].Replace("merchantId:", ""));
                     ini.IniWriteValue("mySqlCon3", "storeId", json.Split(',')[5].Replace("storeId:", ""));
                     ini.IniWriteValue("mySqlCon3", "userId", json.Split(',')[6].Replace("userId:", ""));
@@ -70,7 +77,6 @@ namespace DXApplication2.UL
                     ini.IniWriteValue("mySqlCon2", "username", textEdit2.Text);
                     string[] condition = { "}," };
                     StoreName StoreName = ConvertJson.DeserializeJsonToObject<StoreName>(json1.Replace("{\"success\":true,\"errorCode\":0,\"msg\":\"success\",\"data\":[", "").Replace("]}", "").Split(condition, StringSplitOptions.RemoveEmptyEntries)[0]+"}");
-                    Console.WriteLine(json1.Replace("{\"success\":true,\"errorCode\":0,\"msg\":\"success\",\"data\":[", "").Replace("]}", "").Split(condition, StringSplitOptions.RemoveEmptyEntries)[0] + "}");
                     ini.IniWriteValue("mySqlCon3", "username", StoreName.userName);
                     ini.IniWriteValue("mySqlCon3", "roleId", StoreName.roleId.ToString());
                     ini.IniWriteValue("mySqlCon3", "storeName", StoreName.storeName);
@@ -88,8 +94,6 @@ namespace DXApplication2.UL
             }
             */
             /*
-            Console.WriteLine(Date() + "010" + ((DateTime.Now.ToUniversalTime().Ticks - 621355968000000000) / 10000) + CreateCheckCode());
-
             login(textEdit2.Text, textEdit1.Text);
             try
             {
@@ -218,6 +222,8 @@ namespace DXApplication2.UL
         {
             textEdit2.Text = ini.IniReadValue("mySqlCon2", "username");
             textEdit1.Text = ini.IniReadValue("mySqlCon2", "pwd");
+            MessageBoxHelper.IsWorking = true;
+            MessageBoxHelper.FindAndKillWindow();
         }
 
         private void textEdit1_EditValueChanged(object sender, EventArgs e)
@@ -282,7 +288,6 @@ namespace DXApplication2.UL
                 Log4NetHelper.WriteErrorLog(ex.Message);
             }
         }
-        Thread th;
         private void labelControl6_Click(object sender, EventArgs e)
         {
             login();
@@ -300,7 +305,7 @@ namespace DXApplication2.UL
         {
                 if (ini.IniReadValue("mySqlCon2", "authorization").Equals("") && ini.IniReadValue("mySqlCon2", "authorization1").Equals(""))
                 {
-                    string json = WebUtils.MakeRequest(ini.IniReadValue("mySqlCon1", "loginurl"), "{\"userAccount\":\"" + textEdit2.Text + "\",\"password\":\"" + textEdit1.Text + "\"}", "post", "http").Replace("\"", "").Replace("{", "").Replace("}", "");
+                    var json = WebUtils.MakeRequest(ini.IniReadValue("mySqlCon1", "loginurl"), "{\"userAccount\":\"" + textEdit2.Text + "\",\"password\":\"" + textEdit1.Text + "\"}", "post", "http").Replace("\"", "").Replace("{", "").Replace("}", "");
                     if (json.Split(',')[1].Split(':')[1].Equals("4"))
                     {
                         MessageBox.Show("帐户未激活");
@@ -316,21 +321,41 @@ namespace DXApplication2.UL
                         ini.IniWriteValue("mySqlCon3", "userId", json.Split(',')[6].Replace("userId:", ""));
                         ini.IniWriteValue("mySqlCon2", "authorization", json.Split(',')[3].Replace("data:authorization:", "").Substring(0, 66));
                         ini.IniWriteValue("mySqlCon2", "authorization1", json.Split(',')[3].Replace("data:authorization:", "").Substring(66));
+                        Console.WriteLine(json.Split(',')[3].Replace("data:authorization:", "").Substring(0, 66)+ json.Split(',')[3].Replace("data:authorization:", "").Substring(66));
+                        Console.WriteLine(json.Split(',')[3].Replace("data:authorization:", ""));
                         var json1 = WebUtils.MakeRequest1(ini.IniReadValue("mySqlCon1", "StoreInfo"), "{\"userId\":" + json.Split(',')[6].Replace("userId:", "") + ",\"storeId\":" + json.Split(',')[5].Replace("storeId:", "") + "}", "post", "http", ini.IniReadValue("mySqlCon2", "authorization") + ini.IniReadValue("mySqlCon2", "authorization1"));
                         ini.IniWriteValue("mySqlCon2", "username", textEdit2.Text);
                         string[] condition = { "}," };
                         StoreName StoreName = ConvertJson.DeserializeJsonToObject<StoreName>(json1.Replace("{\"success\":true,\"errorCode\":0,\"msg\":\"success\",\"data\":[", "").Replace("]}", "").Split(condition, StringSplitOptions.RemoveEmptyEntries)[0] + "}");
-                        Console.WriteLine(json1.Replace("{\"success\":true,\"errorCode\":0,\"msg\":\"success\",\"data\":[", "").Replace("]}", "").Split(condition, StringSplitOptions.RemoveEmptyEntries)[0] + "}");
                         ini.IniWriteValue("mySqlCon3", "username", StoreName.userName);
                         ini.IniWriteValue("mySqlCon3", "roleId", StoreName.roleId.ToString());
                         ini.IniWriteValue("mySqlCon3", "storeName", StoreName.storeName);
                         ini.IniWriteValue("mySqlCon3", "userAccount", StoreName.userAccount);
-                        MessageBox.Show("登录成功");
+                        MessageBox.Show(this,"登录成功","提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Main main = new Main();
                         this.Visible = false;
                         main.Show();
                     }
                 }
+        }
+
+        private void 登录_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            MessageBoxHelper.IsWorking = false;
+        }
+
+        private void labelControl6_MouseMove(object sender, MouseEventArgs e)
+        {
+            labelControl6.Appearance.BackColor = Color.OrangeRed;
+            labelControl6.Appearance.BackColor = Color.Orange;
+            //labelControl6.BorderStyle = BorderStyles.Simple;
+        }
+
+        private void labelControl6_MouseLeave(object sender, EventArgs e)
+        {
+            labelControl6.Appearance.BackColor = Color.White;
+            labelControl6.Appearance.BackColor = Color.White;
+            //labelControl6.BorderStyle = BorderStyles.Simple;
         }
     }
 }
