@@ -346,8 +346,9 @@ namespace DXApplication2.UL
 
         private void labelControl6_MouseMove(object sender, MouseEventArgs e)
         {
-            labelControl6.Appearance.BackColor = Color.OrangeRed;
-            labelControl6.Appearance.BackColor = Color.Orange;
+            labelControl6.Appearance.BackColor = Color.FromArgb(14, 144, 254);
+            labelControl6.Appearance.BackColor = Color.FromArgb(14, 144, 254);
+            labelControl6.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             //labelControl6.BorderStyle = BorderStyles.Simple;
         }
 

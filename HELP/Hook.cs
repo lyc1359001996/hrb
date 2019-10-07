@@ -440,7 +440,7 @@ namespace Hook
     public struct HookMsg
     {
         /// <summary>
-        /// //表示一个在1到254间的虚似键盘码
+        /// //表示一个在1到254间的虚拟键盘码
         /// </summary>
         public IntPtr message;
         /// <summary>

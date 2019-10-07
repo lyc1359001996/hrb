@@ -48,9 +48,10 @@ namespace DXApplication2.HELP
         
         public void ButtonStyle1(SimpleButton simpleButton)
         {
-            simpleButton.Appearance.BackColor = Color.OrangeRed;
-            simpleButton.Appearance.BackColor = Color.Orange;
+            simpleButton.Appearance.BackColor = Color.FromArgb(14, 144, 254);
+            simpleButton.Appearance.BackColor = Color.FromArgb(14, 144, 254);
             simpleButton.ButtonStyle = BorderStyles.Simple;
+            simpleButton.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
         }
 
         public void TimeEdit(DateEdit dateEdit)
