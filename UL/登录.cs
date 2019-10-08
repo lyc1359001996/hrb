@@ -4,7 +4,6 @@ using DevExpress.XtraEditors.Controls;
 using DXApplication2.HELP;
 using DXApplication2.MODEL;
 using GalaSoft.MvvmLight.Messaging;
-using SISS_thsoft;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -51,92 +50,6 @@ namespace DXApplication2.UL
         {
             daili.Show();
         }
-        /*
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            if (ini.IniReadValue("mySqlCon2", "authorization").Equals("") && ini.IniReadValue("mySqlCon2", "authorization1").Equals(""))
-            {
-                string json = WebUtils.MakeRequest(ini.IniReadValue("mySqlCon1", "loginurl"), "{\"userAccount\":\"" + textEdit2.Text + "\",\"password\":\"" + textEdit1.Text + "\"}", "post", "http").Replace("\"", "").Replace("{", "").Replace("}", "");
-                if (json.Split(',')[1].Split(':')[1].Equals("8"))
-                {
-                    MessageBox.Show("账号登录身份错误");
-                }
-                else if (json.Split(',')[1].Split(':')[1].Equals("9"))
-                {
-                    MessageBox.Show("账号或密码错误");
-                }
-                else if (json.Split(',')[1].Split(':')[1].Equals("0"))
-                {
-                    ini.IniWriteValue("mySqlCon3", "merchantId", json.Split(',')[4].Replace("merchantId:", ""));
-                    ini.IniWriteValue("mySqlCon3", "storeId", json.Split(',')[5].Replace("storeId:", ""));
-                    ini.IniWriteValue("mySqlCon3", "userId", json.Split(',')[6].Replace("userId:", ""));
-                    ini.IniWriteValue("mySqlCon2", "authorization", json.Split(',')[3].Replace("data:authorization:", "").Substring(0, 65));
-                    ini.IniWriteValue("mySqlCon2", "authorization1", json.Split(',')[3].Replace("data:authorization:", "").Substring(65));
-                    var json1= WebUtils.MakeRequest1(ini.IniReadValue("mySqlCon1", "StoreInfo"), "{\"userId\":" + json.Split(',')[6].Replace("userId:", "")+ ",\"storeId\":"+ json.Split(',')[5].Replace("storeId:", "")+"}", "post","http",ini.IniReadValue("mySqlCon2", "authorization")+ ini.IniReadValue("mySqlCon2", "authorization1"));
-                    ini.IniWriteValue("mySqlCon2", "username", textEdit2.Text);
-                    string[] condition = { "}," };
-                    StoreName StoreName = ConvertJson.DeserializeJsonToObject<StoreName>(json1.Replace("{\"success\":true,\"errorCode\":0,\"msg\":\"success\",\"data\":[", "").Replace("]}", "").Split(condition, StringSplitOptions.RemoveEmptyEntries)[0]+"}");
-                    ini.IniWriteValue("mySqlCon3", "username", StoreName.userName);
-                    ini.IniWriteValue("mySqlCon3", "roleId", StoreName.roleId.ToString());
-                    ini.IniWriteValue("mySqlCon3", "storeName", StoreName.storeName);
-                    ini.IniWriteValue("mySqlCon3", "userAccount", StoreName.userAccount);
-
-                    th = new Thread(new ThreadStart(ExecWaitForm));
-                    th.IsBackground = true;
-                    th.Name = "ThreadExecWaitForm";
-                    th.Start();
-
-                    Main main = new Main();
-                    this.Visible = false;
-                    main.Show();
-                }
-            }
-            */
-            /*
-            login(textEdit2.Text, textEdit1.Text);
-            try
-            {
-                if (textEdit2.Text.Length == 12)
-                {
-                    if (textEdit1.Text.Length <= 16 && textEdit1.Text.Length >= 6)
-                    {
-                        if (IsDigitOrNumber(textEdit1.Text) == 0)
-                        {
-                            if (user.login(textEdit2.Text, textEdit1.Text))
-                            {
-                                IniFile ini = new IniFile(@"config\set.ini");
-                                ini.IniWriteValue("mySqlCon2", "username", textEdit2.Text);
-
-                                Main main = new Main();
-                                //this.WindowState = FormWindowState.Minimized;
-                                //simpleButton1.Visible = false;
-                                this.Visible = false;
-                                main.Show();
-                            }
-                            else
-                            {
-                                MessageBox.Show("账号或密码错误", "提示", MessageBoxButtons.OK);
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("密码必须为大写字母数字混合", "提示", MessageBoxButtons.OK);
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("密码必须为6-16位", "提示", MessageBoxButtons.OK);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("账号不足12位", "提示", MessageBoxButtons.OK);
-                }
-            }
-            catch (Exception e1) { { MessageBox.Show("当前网络状态不佳，请检查网络。"); Log4NetHelper.WriteErrorLog(e1.Message); } }
-            
-        }
-        */
         public bool IsNumberic(string message)
         {
             bool flag = false;

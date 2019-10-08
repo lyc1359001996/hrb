@@ -1,11 +1,4 @@
-﻿///*************************************************************************/
-///*
-///* 文件名    ：IniFileMgr.cs                                     
-///* 程序说明  : 操作INI文件
-///* 原创作者  ：余建涛 
-///* 
-///* Copyright 2015-2015 卓软信息 www.zjgsoft.cn
-///**************************************************************************/
+﻿
 
 using System;
 using System.Collections.Generic;
@@ -17,12 +10,9 @@ using System.Runtime.InteropServices;
 
 namespace thsoft_core
 {
-    /// <summary>
-    /// 操作INI文件类 
-    /// </summary>
     public class IniFile
     {
-        private string _path; //INI档案名 
+        private string _path; 
         public string IniPath { get { return _path; } set { _path = value; } }
 
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
@@ -31,28 +21,23 @@ namespace thsoft_core
             [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 256)]
             public string szText;
         }
-
-        //读写INI文件的API函数 
         [DllImport("kernel32", CharSet = CharSet.Auto)]
         private static extern long WritePrivateProfileString(string section, string key, string val, string filePath);
 
         [DllImport("kernel32", CharSet = CharSet.Auto)]
         private static extern int GetPrivateProfileString(string section, string key, string def, out STRINGBUFFER retVal, int size, string filePath);
 
-        //类的构造函数，传递INI档案名 
         public IniFile(string INIPath)
         {
             _path = INIPath;
             if (!File.Exists(_path)) CreateIniFile();
         }
-
-        //写INI文件 
+        
         public void IniWriteValue(string Section, string Key, string Value)
         {
             WritePrivateProfileString(Section, Key, Value, this._path);
         }
 
-        //读取INI文件指定 
         public string IniReadValue(string Section, string Key)
         {
             int i;
@@ -62,9 +47,7 @@ namespace thsoft_core
             return temp.Trim();
         }
 
-        /// <summary>
-        /// 创建INI文件
-        /// </summary>
+        
         public void CreateIniFile()
         {
             StreamWriter w = File.CreateText(_path);

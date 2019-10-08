@@ -161,7 +161,6 @@
     <Compile Include="HELP\ComUtility.cs" />
     <Compile Include="HELP\ControlHelp.cs" />
     <Compile Include="HELP\ConvertJson.cs" />
-    <Compile Include="HELP\FileOperate.cs" />
     <Compile Include="HELP\Helper.cs" />
     <Compile Include="HELP\Hook.cs" />
     <Compile Include="HELP\http.cs" />
@@ -170,7 +169,6 @@
     <Compile Include="HELP\ImageRecognitionInterface.cs" />
     <Compile Include="HELP\inifile_mgr.cs" />
     <Compile Include="HELP\Internet.cs" />
-    <Compile Include="HELP\jiami.cs" />
     <Compile Include="HELP\jubing.cs" />
     <Compile Include="HELP\key.cs" />
     <Compile Include="HELP\KeyboardHook.cs" />
@@ -178,7 +176,6 @@
     <Compile Include="HELP\Log.cs" />
     <Compile Include="HELP\MessageBoxHelper.cs" />
     <Compile Include="HELP\MouseHook.cs" />
-    <Compile Include="HELP\my_sql.cs" />
     <Compile Include="HELP\orderlist.cs" />
     <Compile Include="HELP\PagerArgs.cs" />
     <Compile Include="HELP\print3.cs" />

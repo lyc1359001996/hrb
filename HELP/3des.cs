@@ -3,7 +3,6 @@ using System.IO;
 using System.Security.Cryptography;
 public class Des3
 {
-    #region CBC模式**
                                 public static byte[] Des3EncodeCBC(byte[] key, byte[] iv, byte[] data)
     {
                 try
@@ -47,8 +46,6 @@ public class Des3
             return null;
         }
     }
-    #endregion
-    #region ECB模式
                                 public static byte[] Des3EncodeECB(byte[] key, byte[] iv, byte[] data)
     {
         try
@@ -94,7 +91,6 @@ public class Des3
             return null;
         }
     }
-    #endregion
                 public static void Test()
     {
         System.Text.Encoding utf8 = System.Text.Encoding.UTF8;

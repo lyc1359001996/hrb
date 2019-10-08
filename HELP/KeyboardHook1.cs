@@ -21,8 +21,7 @@ namespace Hook
             Keys key = (Keys)hMsg.message.ToInt32();
             if (!key.Equals(Keys.Escape))
             {
-                //拦截某些键
-                nextHandle = new IntPtr(1); /*返回1，吃掉消息,否则返回CallNextHookEx*/
+                nextHandle = new IntPtr(1); 
             }
             return nextHandle;
         }

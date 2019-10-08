@@ -22,12 +22,6 @@ namespace DXApplication2.UL
         public bool blnMouseDown = false;
         public string jine;
         IniFile ini = new IniFile(@"config\set.ini");
-        /// <summary>
-        /// 获取窗体的句柄函数
-        /// </summary>
-        /// <param name="lpClassName">窗口类名</param>
-        /// <param name="lpWindowName">窗口标题名</param>
-        /// <returns>返回句柄</returns>
         [DllImport("user32.dll", EntryPoint = "FindWindow", SetLastError = true)]
         public static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
@@ -38,19 +32,11 @@ namespace DXApplication2.UL
         public static extern bool SendMessage(IntPtr hwnd, int wMsg, int wParam, int lParam);
         [DllImport("user32.dll")]
         public static extern bool IsIconic(IntPtr hWnd);
-
-        /// <summary>
-        /// 通过句柄，窗体显示函数
-        /// </summary>
-        /// <param name="hWnd">窗体句柄</param>
-        /// <param name="cmdShow">显示方式</param>
-        /// <returns>返工成功与否</returns>
         [DllImport("user32.dll", EntryPoint = "ShowWindowAsync", SetLastError = true)]
         public static extern bool ShowWindowAsync(IntPtr hWnd, int cmdShow);
 
         public const int WM_SYSCOMMAND = 0x0112;
         public const int SC_MOVE = 0xF010;
-        //public const int HTCAPTION = 0x0002;
 
         const int WM_NCLBUTTONDBLCLK = 0xA3;
         public const int WM_RBUTTONDOWN = 0x0204;
@@ -58,7 +44,6 @@ namespace DXApplication2.UL
         private void labelControl1_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
-                //Return back signal
                 blnMouseDown = false;
         }
 
@@ -66,15 +51,11 @@ namespace DXApplication2.UL
         {
             if (blnMouseDown)
             {
-                //Get the current position of the mouse in the screen
                 ptMouseNewPos = Control.MousePosition;
-                //Set window position
                 ptFormNewPos.X = ptMouseNewPos.X - ptMouseCurrrnetPos.X + ptFormPos.X;
                 ptFormNewPos.Y = ptMouseNewPos.Y - ptMouseCurrrnetPos.Y + ptFormPos.Y;
-                //Save window position
                 Location = ptFormNewPos;
                 ptFormPos = ptFormNewPos;
-                //Save mouse position
                 ptMouseCurrrnetPos = ptMouseNewPos;
 
             }
@@ -85,7 +66,6 @@ namespace DXApplication2.UL
             if (e.Button == MouseButtons.Left)
             {
                 blnMouseDown = true;
-                // Save window position and mouse position
                 ptMouseCurrrnetPos = Control.MousePosition;
                 ptFormPos = Location;
             }
@@ -96,7 +76,6 @@ namespace DXApplication2.UL
         private void labelControl2_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
-                //Return back signal
                 blnMouseDown = false;
         }
 
@@ -104,15 +83,11 @@ namespace DXApplication2.UL
         {
             if (blnMouseDown)
             {
-                //Get the current position of the mouse in the screen
                 ptMouseNewPos = Control.MousePosition;
-                //Set window position
                 ptFormNewPos.X = ptMouseNewPos.X - ptMouseCurrrnetPos.X + ptFormPos.X;
                 ptFormNewPos.Y = ptMouseNewPos.Y - ptMouseCurrrnetPos.Y + ptFormPos.Y;
-                //Save window position
                 Location = ptFormNewPos;
                 ptFormPos = ptFormNewPos;
-                //Save mouse position
                 ptMouseCurrrnetPos = ptMouseNewPos;
 
             }
@@ -122,7 +97,6 @@ namespace DXApplication2.UL
             if (e.Button == MouseButtons.Left)
             {
                 blnMouseDown = true;
-                // Save window position and mouse position
                 ptMouseCurrrnetPos = Control.MousePosition;
                 ptFormPos = Location;
             }
@@ -221,7 +195,6 @@ namespace DXApplication2.UL
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            //SetWindowPos(this.Handle, -1, 0, 0, 0, 0, 1 | 2);
             if (ini.IniReadValue("mySqlCon2", "jubing").Length!=0)
                 {
                 labelControl1.Text = "      " + ini.IniReadValue("mySqlCon2", "jubing").Replace("￥", "").Replace(".0.0", ".0");

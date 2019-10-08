@@ -257,7 +257,6 @@ namespace tools
                 }
                 response = (HttpWebResponse)request.GetResponse();
                 reader = new StreamReader(response.GetResponseStream(), Encoding.UTF8);
-                //return
                 result = reader.ReadToEnd();
             }
             finally

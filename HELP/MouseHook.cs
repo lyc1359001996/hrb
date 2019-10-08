@@ -33,17 +33,12 @@ namespace Hook
                 case MouseMsg.WM_RBUTTONUP:
                     mouse=MouseButtons.Right;
                     break;
-                /*
-                case MouseMsg.WM_MOUSEWHEEL:
-                 * 鼠标滚轮消息
-                */
                 default:
                     mouse = MouseButtons.None;
                     break;
             }
             if (mouse.Equals(MouseButtons.Right))
             {
-                //吃掉消息
                 nextHandle=new IntPtr(1);
             }
             return nextHandle;

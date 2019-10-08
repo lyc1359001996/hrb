@@ -154,7 +154,6 @@ namespace Common.Utility
             }
             catch (WebException ex)
             {
-                //这里是在发生异常时返回的错误信息
                 result.Html = "String Error";
                 response = (HttpWebResponse)ex.Response;
             }
@@ -164,11 +163,7 @@ namespace Common.Utility
             }
             return result;
         }
-
-        /// <summary>
-        /// 4.0以下.net版本取数据使用
-        /// </summary>
-        /// <param name="streamResponse">流</param>
+        
         private static MemoryStream GetMemoryStream(Stream streamResponse)
         {
             MemoryStream _stream = new MemoryStream();
@@ -183,137 +178,91 @@ namespace Common.Utility
             }
             return _stream;
         }
-
-        /// <summary>
-        /// 为请求准备参数
-        /// </summary>
-        ///<param name="objhttpItem">参数列表</param>
-        /// <param name="_Encoding">读取数据时的编码方式</param>
         private void SetRequest(HttpItem objhttpItem)
         {
-            // 验证证书
             SetCer(objhttpItem);
-            // 设置代理
             SetProxy(objhttpItem);
-            //请求方式Get或者Post
             request.Method = objhttpItem.Method;
             request.Timeout = objhttpItem.Timeout;
             request.ReadWriteTimeout = objhttpItem.ReadWriteTimeout;
-            //Accept
             request.Accept = objhttpItem.Accept;
-            //ContentType返回类型
             request.ContentType = objhttpItem.ContentType;
-            //UserAgent客户端的访问类型，包括浏览器版本和操作系统信息
             request.UserAgent = objhttpItem.UserAgent;
-            // 编码
             SetEncoding(objhttpItem);
-            //设置Cookie
             SetCookie(objhttpItem);
-            //来源地址
             request.Referer = objhttpItem.Referer;
-            //是否执行跳转功能
             request.AllowAutoRedirect = objhttpItem.Allowautoredirect;
-            //设置Post数据
             SetPostData(objhttpItem);
-            //设置最大连接
             if (objhttpItem.Connectionlimit > 0)
             {
                 request.ServicePoint.ConnectionLimit = objhttpItem.Connectionlimit;
             }
         }
-        /// <summary>
-        /// 设置证书
-        /// </summary>
-        /// <param name="objhttpItem"></param>
         private void SetCer(HttpItem objhttpItem)
         {
             if (!string.IsNullOrEmpty(objhttpItem.CerPath))
             {
-                //这一句一定要写在创建连接的前面。使用回调的方法进行证书验证。
                 ServicePointManager.ServerCertificateValidationCallback = new System.Net.Security.RemoteCertificateValidationCallback(CheckValidationResult);
-                //初始化对像，并设置请求的URL地址
                 request = (HttpWebRequest)WebRequest.Create(GetUrl(objhttpItem.URL));
-                //创建证书文件
                 X509Certificate objx509 = new X509Certificate(objhttpItem.CerPath);
-                //添加到请求里
                 request.ClientCertificates.Add(objx509);
             }
             else
             {
-                //初始化对像，并设置请求的URL地址
                 request = (HttpWebRequest)WebRequest.Create(GetUrl(objhttpItem.URL));
             }
         }
-        /// <summary>
-        /// 设置编码
-        /// </summary>
-        /// <param name="objhttpItem">Http参数</param>
         private void SetEncoding(HttpItem objhttpItem)
         {
             if (string.IsNullOrEmpty(objhttpItem.Encoding) || objhttpItem.Encoding.ToLower().Trim() == "null")
             {
-                //读取数据时的编码方式
                 encoding = null;
             }
             else
             {
-                //读取数据时的编码方式
                 encoding = System.Text.Encoding.GetEncoding(objhttpItem.Encoding);
             }
         }
-        /// <summary>
-        /// 设置Cookie
-        /// </summary>
-        /// <param name="objhttpItem">Http参数</param>
         private void SetCookie(HttpItem objhttpItem)
         {
             if (!string.IsNullOrEmpty(objhttpItem.Cookie))
             {
-                //Cookie
                 request.Headers[HttpRequestHeader.Cookie] = objhttpItem.Cookie;
             }
-            //设置Cookie
             if (objhttpItem.CookieCollection != null)
             {
                 request.CookieContainer = new CookieContainer();
                 request.CookieContainer.Add(objhttpItem.CookieCollection);
             }
         }
-        /// <summary>
-        /// 设置Post数据
-        /// </summary>
-        /// <param name="objhttpItem">Http参数</param>
         private void SetPostData(HttpItem objhttpItem)
         {
-            //验证在得到结果时是否有传入数据
             if (request.Method.Trim().ToLower().Contains("post"))
             {
-                //写入Byte类型
                 if (objhttpItem.PostDataType == PostDataType.Byte)
                 {
-                    //验证在得到结果时是否有传入数据
                     if (objhttpItem.PostdataByte != null && objhttpItem.PostdataByte.Length > 0)
                     {
                         request.ContentLength = objhttpItem.PostdataByte.Length;
                         request.GetRequestStream().Write(objhttpItem.PostdataByte, 0, objhttpItem.PostdataByte.Length);
                     }
-                }//写入文件
-                else if (objhttpItem.PostDataType == PostDataType.FilePath)
-                {
-                    StreamReader r = new StreamReader(objhttpItem.Postdata, encoding);
-                    byte[] buffer = Encoding.Default.GetBytes(r.ReadToEnd());
-                    r.Close();
-                    request.ContentLength = buffer.Length;
-                    request.GetRequestStream().Write(buffer, 0, buffer.Length);
-                }
-                else
-                {
-                    //验证在得到结果时是否有传入数据
-                    if (!string.IsNullOrEmpty(objhttpItem.Postdata))
+                    else if (objhttpItem.PostDataType == PostDataType.FilePath)
                     {
-                        byte[] buffer = Encoding.Default.GetBytes(objhttpItem.Postdata);
+                        StreamReader r = new StreamReader(objhttpItem.Postdata, encoding);
+                        byte[] buffer = Encoding.Default.GetBytes(r.ReadToEnd());
+                        r.Close();
                         request.ContentLength = buffer.Length;
                         request.GetRequestStream().Write(buffer, 0, buffer.Length);
+                    }
+                    else
+                    {
+                        //验证在得到结果时是否有传入数据
+                        if (!string.IsNullOrEmpty(objhttpItem.Postdata))
+                        {
+                            byte[] buffer = Encoding.Default.GetBytes(objhttpItem.Postdata);
+                            request.ContentLength = buffer.Length;
+                            request.GetRequestStream().Write(buffer, 0, buffer.Length);
+                        }
                     }
                 }
             }

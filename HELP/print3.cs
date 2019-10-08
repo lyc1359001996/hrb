@@ -17,15 +17,7 @@ namespace CustomPrint
 
 
         private static object lockObj;
-        /// <summary>
-        /// 设置打印纸高 
-        /// </summary>
         public static int pageHeight = 450;
-
-
-        /// <summary>
-        /// 设置打印纸宽
-        /// </summary>
         public static int pageWidth = 420;
 
 

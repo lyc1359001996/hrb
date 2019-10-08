@@ -20,13 +20,7 @@ namespace DXApplication2.HELP
             }
             return "";
         }
-
-        /// <summary>
-        /// 获取正则表达式匹配结果集
-        /// </summary>
-        /// <param name="value">字符串</param>
-        /// <param name="regx">正则表达式</param>
-        /// <returns></returns>
+        
         public float[] GetPathPoint(string value, string regx)
         {
             if (string.IsNullOrWhiteSpace(value))

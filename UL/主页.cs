@@ -21,7 +21,6 @@ using OCR.ImageRecognition;
 using OCR.TesseractWrapper;
 using QQ截图工具;
 using ScanningAfter;
-using SISS_thsoft;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -83,10 +82,6 @@ namespace DXApplication2
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         private static extern int SetWindowPos(IntPtr hWnd, int hWndInsertAfter, int x, int y, int Width, int Height, int flags);
-        /// <summary>
-        /// 得到当前活动的窗口
-        /// </summary>
-        /// <returns></returns>
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         private static extern System.IntPtr GetForegroundWindow();
         [DllImport("user32.dll", EntryPoint = "FindWindow", SetLastError = true)]
@@ -99,13 +94,13 @@ namespace DXApplication2
         [DllImport("user32.dll")]
         public static extern bool IsIconic(IntPtr hWnd);
         [DllImport("user32.dll")]
-        public static extern int GetCursorPos(ref Point lpPoint);  //获取鼠标坐标，该坐标是光标所在的屏幕坐标位置
+        public static extern int GetCursorPos(ref Point lpPoint);
         [DllImport("user32.dll")]
-        public static extern int WindowFromPoint(int xPoint, int yPoint);  //指定坐标处窗体句柄
+        public static extern int WindowFromPoint(int xPoint, int yPoint);
         [DllImport("user32.dll")]
-        public static extern int GetWindowText(int hwnd, StringBuilder lpString, int nMaxCount);//获取窗体标题名称
+        public static extern int GetWindowText(int hwnd, StringBuilder lpString, int nMaxCount);
         [DllImport("user32.dll")]
-        public static extern int GetClassName(int hwnd, StringBuilder lpstring, int nMaxCount); //获取窗体类名称           
+        public static extern int GetClassName(int hwnd, StringBuilder lpstring, int nMaxCount);      
         [DllImport("user32.dll", EntryPoint = "SendMessageA")]
         public static extern int SendMessage(int hwnd, int wMsg, int wParam, string lParam);
         //bool isMouseUp = false;
@@ -190,7 +185,6 @@ namespace DXApplication2
                     }
                     else
                     {
-                        //Content.Text = "";
                     }
                 }
                 else
@@ -210,7 +204,6 @@ namespace DXApplication2
         private void Main_Load(object sender, EventArgs e)
         {
             this.TopMost = true;
-            //this.defaultLookAndFeel1.LookAndFeel.SkinName = "McSkin";
             xuanfu.Show();
             comboBoxEdit24.Enabled = false;
             Control.GridControl(gridView2);
@@ -221,9 +214,7 @@ namespace DXApplication2
             labelControl1.Text = ini.IniReadValue("mySqlCon3", "username");
             labelControl2.Text = ini.IniReadValue("mySqlCon3", "storeName");
             labelControl109.Text = ini.IniReadValue("mySqlCon3", "username");
-            //ini.IniWriteValue("mySqlCon3", "username", "");
             ini.IniWriteValue("mySqlCon3", "roleId", "");
-            //ini.IniWriteValue("mySqlCon3", "storeName", "");
             ini.IniWriteValue("mySqlCon3", "userAccount", "");
             Control.quicksetting(toggleSwitch5, comboBoxEdit14, textEdit12, comboBoxEdit15, textEdit13, comboBoxEdit17, textEdit15, comboBoxEdit16, textEdit14, comboBoxEdit19, textEdit17, comboBoxEdit18, textEdit16, comboBoxEdit21, textEdit19, comboBoxEdit20, textEdit18, comboBoxEdit22, textEdit20, this.name);
             setting.Fillgraspsetting(toggleSwitch1, radioGroup1, comboBoxEdit3,
@@ -854,89 +845,6 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
                 }
             }
         }
-        /*
-        private void simpleButton18_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (textEdit2.Text.Length == 0)
-                {
-                    MessageBox.Show("请输入付款码");
-                }
-                if (textEdit3.Text.Length == 0)
-                {
-                    MessageBox.Show("请输入金额");
-                }
-                else
-                {
-                    if (textEdit3.Text.Substring(0, 1).Equals(".") || decimal.Parse(textEdit3.Text) == 0)
-                    {
-                        MessageBox.Show("请输入合法金额格式");
-                    }
-                    else
-                    {
-                        if (textEdit3.Text.Contains("."))
-                        {
-                            if (Control.IsNumber(textEdit3.Text.Replace("￥", ""), textEdit3.Text.Replace("￥", "").Split('.')[0].Length + 1, textEdit3.Text.Replace("￥", "").Split('.')[1].Length + 1))
-                            {
-                                if (!textEdit3.Text.Equals(""))
-                                {
-                                    if ("" != textEdit3.Text.Trim())
-                                    {
-                                        double input = 0;
-                                        input = Convert.ToDouble(textEdit3.Text.Trim());
-                                        textEdit3.Text = input.ToString();
-
-                                        Maticsoft.Common.WebClient client = new WebClient();
-                                        string json = "";
-                                        if (ini.IniReadValue("mySqlCon2", "jubing").Length != 0)
-                                        {
-
-                                            json = WebUtils.MakeRequest1("http://192.168.0.138:8838/api/order/genOrder", "{\"orderNumber\":\"" + Date() + "010" + ((DateTime.Now.ToUniversalTime().Ticks - 621355968000000000) / 10000) + CreateCheckCode() + "\",\"storeId\":\"" + ini.IniReadValue("mySqlCon3", "storeId") + "\",\"storeUserId\":\"" + ini.IniReadValue("mySqlCon3", "userId") + "\",\"merchantId\":\"" + ini.IniReadValue("mySqlCon3", "merchantId") + "\",\"orderAmount\":" + ini.IniReadValue("mySqlCon2", "jubing").Replace("￥", "") + ",\"terminal\":" + 1 + ",\"qrCode\":\"" + textEdit2.Text + "\"}", "post", "http", ini.IniReadValue("mySqlCon2", "authorization") + ini.IniReadValue("mySqlCon2", "authorization1"));
-                                            System.Threading.Thread.Sleep(2000);
-                                            timer3.Start();
-                                        }
-                                        else
-                                        {
-                                            if (int.Parse(textEdit2.Text.Substring(0, 2)) < 15)
-                                            {
-                                                ini.IniWriteValue("mySqlCon4", "mathod", "2");
-                                            }
-                                            else
-                                            {
-                                                ini.IniWriteValue("mySqlCon4", "mathod", "1");
-                                            }
-                                            orderON = Date() + "010" + ((DateTime.Now.ToUniversalTime().Ticks - 621355968000000000) / 10000) + CreateCheckCode();
-                                            json = WebUtils.MakeRequest1("http://192.168.0.138:8838/api/order/genOrder", "{\"orderNumber\":\"" + Date() + "010" + ((DateTime.Now.ToUniversalTime().Ticks - 621355968000000000) / 10000) + CreateCheckCode() + "\",\"storeId\":\"" + ini.IniReadValue("mySqlCon3", "storeId") + "\",\"storeUserId\":\"" + ini.IniReadValue("mySqlCon3", "userId") + "\",\"merchantId\":\"" + ini.IniReadValue("mySqlCon3", "merchantId") + "\",\"orderAmount\":" + textEdit3.Text + ",\"terminal\":" + 1 + ",\"qrCode\":\"" + textEdit2.Text + "\"}", "post", "http", ini.IniReadValue("mySqlCon2", "authorization") + ini.IniReadValue("mySqlCon2", "authorization1"));
-                                            th = new System.Threading.Thread(new ThreadStart(ExecWaitForm));
-                                            th.IsBackground = true;
-                                            th.Name = "ThreadExecWaitForm";
-                                            th.Start();
-                                            System.Threading.Thread.Sleep(2000);
-                                            timer3.Start();
-                                        }
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("输入不能为空！", "系统提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                                    }
-                                }
-                                else
-                                {
-                                    MessageBox.Show("请输入金额");
-                                }
-                            }
-                            else
-                            {
-                                MessageBox.Show("请输入合法金额格式");
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception e1) { MessageBox.Show("当前网络状态不佳，请检查网络。"); Class11.captureWindowUsingPrintWindow(this).Save(Application.StartupPath + @"\log\image\" + DateTime.Now.ToString() + ".jpg"); Log4NetHelper.WriteErrorLog(e1.Message); }
-        }
-        */
         private void xtraTabControl1_Click(object sender, EventArgs e)
         {
 
@@ -1258,7 +1166,6 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
     comboBoxEdit4, comboBoxEdit6, comboBoxEdit5, spinEdit1, toggleSwitch2, textEdit4, textEdit5, toggleSwitch3, spinEdit2, textEdit6,
     comboBoxEdit7, textEdit7, comboBoxEdit8, textEdit8, comboBoxEdit9, textEdit9, comboBoxEdit10, textEdit10, comboBoxEdit11,
     textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
-                    //Control.baudrate(comboBoxEdit4);
                 }
             }
             catch (Exception e1) { MessageBox.Show("当前网络状态不佳，请检查网络。"); Class11.captureWindowUsingPrintWindow(this).Save(Application.StartupPath + @"\log\image\" + DateTime.Now.ToString() + ".jpg"); Log4NetHelper.WriteErrorLog(e1.Message); }
@@ -1503,25 +1410,6 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
 
         private void simpleButton30_Click(object sender, EventArgs e)
         {
-            /***
-            this.Size = new Size(0, 0);
-            if (radioGroup1.SelectedIndex == 2)
-            {
-                Bitmap CatchBmp = new Bitmap(Screen.AllScreens[0].Bounds.Width, Screen.AllScreens[0].Bounds.Height);
-                Graphics g = Graphics.FromImage(CatchBmp);
-                g.CopyFromScreen(new Point(0, 0), new Point(0, 0), new Size(Screen.AllScreens[0].Bounds.Width, Screen.AllScreens[0].Bounds.Height));
-                cutter = new Cutter();
-                cutter.BackgroundImage = CatchBmp;
-
-                if (cutter.ShowDialog() == DialogResult.OK)
-                {
-                    Image image = Clipboard.GetImage();
-                    image.Save(Application.StartupPath + "/3.jpg");
-                    image.Dispose();
-                    this.Size = new Size(1047, 670);
-                }
-            }
-            ***/
             this.WindowState=FormWindowState.Minimized;
             Thread.Sleep(200);
                 ProcessStartInfo info = new ProcessStartInfo();
@@ -1649,12 +1537,6 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
                 return flag;
             }
         }
-
-        /// <summary>
-        /// 判断字符串是否为全角字符
-        /// </summary>
-        /// <param name="strSDC"></param>
-        /// <returns></returns>
         public static bool IsSDC(string strSDC)
         {
             bool flag = false;
@@ -1668,14 +1550,7 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
                 return flag;
             }
         }
-
-        /// <summary>
-        /// 将全角转换为半角；replace SBC case to DBC case
-        /// 全角空格为12288，半角空格为32；
-        /// 其他字符半角（33-126）与全角（65281-65374）的对应关系是：均相差65248；
-        /// </summary>
-        /// <param name="strSBC"></param>
-        /// <returns></returns>
+        
         public static string ToDBC(string strSBC)
         {
             char[] ch = strSBC.ToCharArray();
@@ -1707,10 +1582,8 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
 
         private void jisuan()
         {
-            //获取运算的第一个数字(前一个数字);将字符串类型转换为int类型(int.parse())
-            // num1 = Convert.ToInt32(textBox1.Text);第二种转换方式convert
             num1 = decimal.Parse(textEdit3.Text);
-            textEdit3.Text = "";//清除屏幕
+            textEdit3.Text = "";
         }
 
         private void simpleButton32_Click(object sender, EventArgs e)
@@ -1725,11 +1598,11 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
                 {
                     MessageBox.Show("请数据金额");
                 }
-                num2 = decimal.Parse(textEdit3.Text);//记录第二个数字
+                num2 = decimal.Parse(textEdit3.Text);
                 textEdit3.Text = "";
-                if (FUN == "jia")//判断计算类型
+                if (FUN == "jia")
                 {
-                    textEdit3.Text = (num1 + num2).ToString();//括号里进行计算,计算的结果转化为string类型,并显示在屏幕(textEdit1)里;
+                    textEdit3.Text = (num1 + num2).ToString();
                 }
                 if (FUN == "jian")
                 {
@@ -1779,11 +1652,7 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
             }
             catch (Exception e1) { MessageBox.Show("当前网络状态不佳，请检查网络。"); Class11.captureWindowUsingPrintWindow(this).Save(Application.StartupPath + @"\log\image\" + DateTime.Now.ToString() + ".jpg"); Log4NetHelper.WriteErrorLog(e1.Message); }
         }
-
-        /// <summary>
-        /// 获取网络日期时间
-        /// </summary>
-        /// <returns></returns>
+        
         public static string GetNetDateTime()
         {
             WebRequest request = null;

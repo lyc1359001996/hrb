@@ -43,17 +43,11 @@ namespace DXApplication2.HELP
             Marshal.StructureToPtr(struct_IPI, intptrStruct, true);
             bool iReturn = InternetSetOption(IntPtr.Zero, INTERNET_OPTION_PROXY, intptrStruct, Marshal.SizeOf(struct_IPI));
         }
-
-        /// <summary>
-        /// 验证IP地址
-        /// </summary>
-        /// <param name="str">Ip地址</param>
-        /// <param name="port">端口号</param>
         public static bool yanzhen(string str, int port)
         {
             WebProxy proxyObject = new WebProxy(str, port);//str为IP地址 port为端口号
             HttpWebRequest Req = (HttpWebRequest)WebRequest.Create("http://www.ip138.com/");
-            Req.Proxy = proxyObject; //设置代理
+            Req.Proxy = proxyObject;
             Req.Timeout = 30000;
             HttpWebResponse Resp = (HttpWebResponse)Req.GetResponse();
             Encoding code = Encoding.GetEncoding("UTF-8");
@@ -61,7 +55,6 @@ namespace DXApplication2.HELP
             {
                 if (sr != null)
                 {
-                    //string.Format("验证成功：IP：{0}\t端口：{1}", str, port);
                     return true;
                 }
                 else

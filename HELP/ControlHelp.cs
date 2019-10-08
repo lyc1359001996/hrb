@@ -75,38 +75,11 @@ namespace DXApplication2.HELP
 
                                                         }
 
-        public void comboBoxEdit1(ComboBoxEdit comboBoxEdit)
-        {
-            dt = my_sql.listTable("SELECT Cashier FROM `cashier`;");
-            comboBoxEdit.Properties.Items.Add("店员");
-            comboBoxEdit.SelectedIndex = 0;
-            for (int i=0;i< dt.Rows.Count;i++)
-            {
-               comboBoxEdit.Properties.Items.Add(dt.Rows[i][0].ToString());
-            }
-        }
-
-        public void comboBoxEdit2(ComboBoxEdit comboBoxEdit)
-        {
-            dt = my_sql.listTable("SELECT PaymentMethod FROM `paymentmethod`");
-            comboBoxEdit.Properties.Items.Add("支付方式");
-            comboBoxEdit.SelectedIndex = 0;
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                comboBoxEdit.Properties.Items.Add(dt.Rows[i][0].ToString());
-            }
-        }
+       
         
         public void radioGroup(RadioGroup radioGroup)
         {
-            if (radioGroup.Properties.Items.Count<1)
-            {
-                dt = my_sql.listTable("SELECT GrabMode FROM `grabmode`;");
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    radioGroup.Properties.Items.Add(new DevExpress.XtraEditors.Controls.RadioGroupItem("串口模式", dt.Rows[i][0].ToString()));
-                }
-            }
+            
         }
 
         public void xtraTabControl(XtraTabControl xtraTabControl, XtraTabPage XtraTabPage1, XtraTabPage XtraTabPag2, XtraTabPage XtraTabPag3, XtraTabPage XtraTabPage4)
@@ -115,14 +88,6 @@ namespace DXApplication2.HELP
             xtraTabControl.TabPages.Remove(XtraTabPag2);
             xtraTabControl.TabPages.Remove(XtraTabPag3);
             xtraTabControl.TabPages.Remove(XtraTabPage4);
-        }
-
-        public void xtraTabControl1(XtraTabControl xtraTabControl, XtraTabPage XtraTabPage1, XtraTabPage XtraTabPag2, XtraTabPage XtraTabPag3, XtraTabPage XtraTabPage4)
-        {
-            xtraTabControl.TabPages.Add(XtraTabPage1);
-            xtraTabControl.TabPages.Add(XtraTabPag2);
-            xtraTabControl.TabPages.Add(XtraTabPag3);
-            xtraTabControl.TabPages.Add(XtraTabPage4);
         }
         
         public void quicksetting(ToggleSwitch toggleSwitch5, ComboBoxEdit comboBoxEdit14, TextEdit textEdit12, ComboBoxEdit comBoxEdit15,TextEdit textEdit13, ComboBoxEdit comboBoxEdit17, TextEdit textEdit15, ComboBoxEdit comboBoxEdit16, TextEdit textEdit14, ComboBoxEdit comboBoxEdit19, TextEdit textEdit17, ComboBoxEdit comboBoxEdit18, TextEdit textEdit16, ComboBoxEdit comboBoxEdit21, TextEdit textEdit19, ComboBoxEdit comboBoxEdit20, TextEdit textEdit18, ComboBoxEdit comboBoxEdit22, TextEdit textEdit20, string UserId)
@@ -170,15 +135,7 @@ namespace DXApplication2.HELP
             ini.IniWriteValue("quicksetting", "ViewShortcuts1", comboBoxEdit22.SelectedIndex.ToString());
             ini.IniWriteValue("quicksetting", "ViewShortcuts2", textEdit20.Text);
         }
-
-        public void baudrate(ComboBoxEdit comboBoxEdit4)
-        {
-            dt= my_sql.listTable("SELECT BaudRate FROM baudrate;");
-            for (int i=0;i<dt.Rows.Count;i++)
-            {
-                comboBoxEdit4.Properties.Items.Add(dt.Rows[i][0]);
-            }
-        }
+        
 
         public void fillprint(ToggleSwitch toggleSwitch6, ToggleSwitch toggleSwitch7, ToggleSwitch toggleSwitch8, SpinEdit spinEdit3, SpinEdit spinEdit4, ComboBoxEdit comboBoxEdit23,string UserId)
         {
@@ -253,10 +210,6 @@ namespace DXApplication2.HELP
 
         public void print7(DateEdit dateEdit1,DateEdit dateEdit2,string UserId,string refundWxNum,string refundWxAmount,string NameStore,string totalPaidInOrder,string refundAliAmount,string refundAliNum,string wxTotalOrder,string refundTotalOrder,string refundTotalAmount,string wxTotalAmount,string aliTotalOrder,string aliTotalAmount,string totalOrder,string totalAmount,string totalPaidInAmount, string print)
         {
-            
-            DataTable dt2 = my_sql.listTable("SELECT SUM(PaymentAmount),COUNT(PaymentAmount) FROM `order` o WHERE o.State=4 AND PaymentTime>='"+dateEdit1.Text+"' AND PaymentTime<='"+dateEdit2.Text+"';");
-            DataTable d1 = my_sql.listTable("SELECT COUNT(PaymentAmount),SUM(PaymentAmount) FROM `order` o WHERE o.State=2 AND PaymentTime>='" + dateEdit1.Text+"' AND PaymentTime<='"+dateEdit2.Text+"';");
-            
             row0 = new PrintRow(150, "        "+NameStore+ "        ", new Font("宋体", 10, FontStyle.Bold), Brushes.Blue, 0);
             row1 = new PrintRow(150, "********流水凭证********", new Font("宋体", 10), Brushes.Blue, 40);
             row2 = new PrintRow(150, "打印人：" + UserId, new Font("宋体", 10), Brushes.Black, 70);
@@ -312,14 +265,12 @@ namespace DXApplication2.HELP
 
         public void AccountInformation (ComboBoxEdit comboBoxEdit24, string UserId, LabelControl labelControl109)
         {
-            dt= my_sql.listTable("SELECT NameStore FROM namestore;");
+            
             for (int i=0;i<dt.Rows.Count;i++)
             {
                 comboBoxEdit24.Properties.Items.Add(dt.Rows[i][0].ToString());
             }
-            DataTable dt1 = my_sql.listTable("SELECT UserName FROM `user` WHERE UserID='"+UserId+"';");
             labelControl109.Text = ini.IniReadValue("mySqlCon3", "username");
-            DataTable dt2 = my_sql.listTable("SELECT NameStore FROM namestore WHERE Id=(SELECT NameStore FROM `user` WHERE UserID='"+UserId+"');");
             comboBoxEdit24.Text = ini.IniReadValue("mySqlCon3", "storeName");
         }
 

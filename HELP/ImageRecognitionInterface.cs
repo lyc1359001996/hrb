@@ -8,12 +8,7 @@ namespace OCR
 {
     interface ImageRecognitionInterface
     {
-
-        /// <summary>
-        /// 识别图像
-        /// </summary>
-        /// <param name="imgPath"></param>
-        /// <returns></returns>
+        
         string Recognize(string imgPath);
     }
 }
