@@ -70,7 +70,7 @@ namespace DXApplication2
         public bool ishoudo = false;
         private string strPath = System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase;
         AspriseOCR ocr = new AspriseOCR();
-        Cutter cutter = null;
+        //Cutter cutter = null;
         public int curPage = 1;
         public int pageSize = 100;
         Cutter cutter1 = new Cutter();
@@ -2189,7 +2189,7 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
         private void simpleButton14_MouseLeave(object sender, EventArgs e)
         {
             Control.ButtonStyle(simpleButton14);
-        }
+        } 
 
         private void simpleButton13_MouseMove(object sender, MouseEventArgs e)
         {

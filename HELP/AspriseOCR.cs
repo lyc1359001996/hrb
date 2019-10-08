@@ -8,11 +8,7 @@ using System.Threading.Tasks;
 
 namespace OCR.ImageRecognition
 {
-    /// <summary>
-    /// AspriseOCR
-    /// </summary>
-    /// DLL包引用：AspriseOCR.dll、DevIL.dll、ILU.dll
-    public class AspriseOCR:ImageRecognitionInterface
+        public class AspriseOCR:ImageRecognitionInterface
     {
         [DllImport("AspriseOCR.dll", EntryPoint = "OCR", CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr OCR(string file, int type);
@@ -26,12 +22,7 @@ namespace OCR.ImageRecognition
         [DllImport("AspriseOCR.dll", EntryPoint = "OCRpartBarCodes", CallingConvention = CallingConvention.Cdecl)]
         static extern IntPtr OCRpartBarCodes(string file, int type, int startX, int startY, int width, int height);
 
-
-        /// <summary>
-        /// 识别图像
-        /// </summary>
-        /// <param name="imgPath"></param>
-        /// <returns></returns>
+        
         public string Recognize(string imgPath)
         {
             try

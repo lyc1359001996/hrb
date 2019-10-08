@@ -12,13 +12,8 @@ using System.Web.Script.Serialization;
 
 namespace Common.Utility
 {
-    //JSON转换类
     public class ConvertJson
     {
-        #region 私有方法
-        /// <summary>
-        /// 过滤特殊字符
-        /// </summary>
         private static string String2Json(String s)
         {
             StringBuilder sb = new StringBuilder();
@@ -49,10 +44,7 @@ namespace Common.Utility
             }
             return sb.ToString();
         }
-
-        /// <summary>
-        /// 格式化字符型、日期型、布尔型
-        /// </summary>
+        
         private static string StringFormat(string str, Type type)
         {
             if (type == typeof(string))
@@ -74,21 +66,13 @@ namespace Common.Utility
             }
             return str;
         }
-        #endregion
-
-        #region List转换成Json
-        /// <summary>
-        /// List转换成Json
-        /// </summary>
+        
         public static string ListToJson<T>(IList<T> list)
         {
             object obj = list[0];
             return ListToJson<T>(list, obj.GetType().Name);
         }
-
-        /// <summary>
-        /// List转换成Json 
-        /// </summary>
+        
         public static string ListToJson<T>(IList<T> list, string jsonName)
         {
             StringBuilder Json = new StringBuilder();
@@ -121,14 +105,7 @@ namespace Common.Utility
             Json.Append("]}");
             return Json.ToString();
         }
-        #endregion
-
-        #region 对象转换为Json
-        /// <summary> 
-        /// 对象转换为Json 
-        /// </summary> 
-        /// <param name="jsonObject">对象</param> 
-        /// <returns>Json字符串</returns> 
+        
         public static string ToJson(object jsonObject)
         {
             string jsonString = "{";
@@ -158,14 +135,6 @@ namespace Common.Utility
             jsonString.Remove(jsonString.Length - 1, jsonString.Length);
             return jsonString + "}";
         }
-        #endregion
-
-        #region 对象集合转换Json
-        /// <summary> 
-        /// 对象集合转换Json 
-        /// </summary> 
-        /// <param name="array">集合对象</param> 
-        /// <returns>Json字符串</returns> 
         public static string ToJson(IEnumerable array)
         {
             string jsonString = "[";
@@ -176,14 +145,7 @@ namespace Common.Utility
             jsonString.Remove(jsonString.Length - 1, jsonString.Length);
             return jsonString + "]";
         }
-        #endregion
-
-        #region 普通集合转换Json
-        /// <summary> 
-        /// 普通集合转换Json 
-        /// </summary> 
-        /// <param name="array">集合对象</param> 
-        /// <returns>Json字符串</returns> 
+        
         public static string ToArrayString(IEnumerable array)
         {
             string jsonString = "[";
@@ -194,14 +156,6 @@ namespace Common.Utility
             jsonString.Remove(jsonString.Length - 1, jsonString.Length);
             return jsonString + "]";
         }
-        #endregion
-
-        #region  DataSet转换为Json
-        /// <summary> 
-        /// DataSet转换为Json 
-        /// </summary> 
-        /// <param name="dataSet">DataSet对象</param> 
-        /// <returns>Json字符串</returns> 
         public static string ToJson(DataSet dataSet)
         {
             string jsonString = "{";
@@ -212,14 +166,6 @@ namespace Common.Utility
             jsonString = jsonString.TrimEnd(',');
             return jsonString + "}";
         }
-        #endregion
-
-        #region Datatable转换为Json
-        /// <summary> 
-        /// Datatable转换为Json 
-        /// </summary> 
-        /// <param name="table">Datatable对象</param> 
-        /// <returns>Json字符串</returns> 
         public static string ToJson(DataTable dt)
         {
             StringBuilder jsonString = new StringBuilder();
@@ -250,10 +196,7 @@ namespace Common.Utility
             jsonString.Append("]");
             return jsonString.ToString();
         }
-
-        /// <summary>
-        /// DataTable转换为Json 
-        /// </summary>
+        
         public static string ToJson(DataTable dt, string jsonName)
         {
             StringBuilder Json = new StringBuilder();
@@ -283,14 +226,7 @@ namespace Common.Utility
             Json.Append("]}");
             return Json.ToString();
         }
-        #endregion
-
-        #region DataReader转换为Json
-        /// <summary> 
-        /// DataReader转换为Json 
-        /// </summary> 
-        /// <param name="dataReader">DataReader对象</param> 
-        /// <returns>Json字符串</returns> 
+        
         public static string ToJson(DbDataReader dataReader)
         {
             StringBuilder jsonString = new StringBuilder();
@@ -321,16 +257,7 @@ namespace Common.Utility
             jsonString.Append("]");
             return jsonString.ToString();
         }
-        #endregion
-
-
-        #region Datatable转换为Json 2
-
-        /// <summary>
-        /// Datatable转换为Json 2
-        /// </summary>
-        /// <param name="dt"></param>
-        /// <returns></returns>
+        
         public static List<Dictionary<string, object>> DataTableToDictionary(DataTable dt)
         {
             List<Dictionary<string, object>> list = new List<Dictionary<string, object>>();
@@ -345,32 +272,13 @@ namespace Common.Utility
             }
             return list;
         }
-        #endregion
 
-
-        #region SerializeObject
-
-        /// <summary>
-        /// SerializeObject
-        /// </summary>
-        /// <param name="o"></param>
-        /// <returns></returns>
+        
         public static string SerializeObject(object o)
         {
             string json = JsonConvert.SerializeObject(o);
             return json;
         }
-        #endregion
-
-
-        #region 解析JSON字符串生成对象实体
-
-        /// <summary>
-        /// 解析JSON字符串生成对象实体
-        /// </summary>
-        /// <typeparam name="T">对象类型</typeparam>
-        /// <param name="json">json字符串(eg.{"ID":"112","Name":"石子儿"})</param>
-        /// <returns>对象实体</returns>
         public static T DeserializeJsonToObject<T>(string json) where T : class
         {
             JsonSerializer serializer = new JsonSerializer();
@@ -379,52 +287,13 @@ namespace Common.Utility
             T t = o as T;
             return t;
         }
-
-        #endregion
-
-        #region 解析JSON数组生成对象实体集合
-
-        /// <summary>
-        /// 解析JSON数组生成对象实体集合
-        /// </summary>
-        /// <typeparam name="T">对象类型</typeparam>
-        /// <param name="json">json数组字符串(eg.[{"ID":"112","Name":"石子儿"}])</param>
-        /// <returns>对象实体集合</returns>
-        public static List<T> DeserializeJsonToList<T>(string json) where T : class
-        {
-            JsonSerializer serializer = new JsonSerializer();
-            StringReader sr = new StringReader(json);
-            object o = serializer.Deserialize(new JsonTextReader(sr), typeof(List<T>));
-            List<T> list = o as List<T>;
-            return list;
-        }
-
-        #endregion
-
-        #region 反序列化JSON到给定的匿名对象
-
-        /// <summary>
-        /// 反序列化JSON到给定的匿名对象.
-        /// </summary>
-        /// <typeparam name="T">匿名对象类型</typeparam>
-        /// <param name="json">json字符串</param>
-        /// <param name="anonymousTypeObject">匿名对象</param>
-        /// <returns>匿名对象</returns>
+        
         public static T DeserializeAnonymousType<T>(string json, T anonymousTypeObject)
         {
             T t = JsonConvert.DeserializeAnonymousType(json, anonymousTypeObject);
             return t;
         }
-
-        #endregion
-
-        /// <summary>
-        /// 将JSON解析成DataSet只限标准的JSON数据
-        /// 例如：Json＝{t1:[{name:'数据name',type:'数据type'}]} 
-        /// 或 Json＝{t1:[{name:'数据name',type:'数据type'}],t2:[{id:'数据id',gx:'数据gx',val:'数据val'}]}
-        /// </summary>
-        /// <param name="Json">Json字符串</param>
-        /// <returns>DataSet</returns>
+        
         public static DataSet JsonToDataSet(string Json)
         {
             try

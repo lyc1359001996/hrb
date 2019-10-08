@@ -1,5 +1,4 @@
-﻿using Common.Utilities;
-using Common.Utility;
+﻿using Common.Utility;
 using DemoMessageBox;
 using DevExpress.XtraEditors.Controls;
 using DXApplication2.HELP;

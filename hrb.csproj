@@ -161,7 +161,6 @@
     <Compile Include="HELP\ComUtility.cs" />
     <Compile Include="HELP\ControlHelp.cs" />
     <Compile Include="HELP\ConvertJson.cs" />
-    <Compile Include="HELP\EncryptionMD5.cs" />
     <Compile Include="HELP\FileOperate.cs" />
     <Compile Include="HELP\Helper.cs" />
     <Compile Include="HELP\Hook.cs" />

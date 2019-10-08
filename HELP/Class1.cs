@@ -1,18 +1,9 @@
 ﻿using System.Drawing;
 using System.Web.UI;
 using System.Windows.Forms;
-/// <summary>
-/// 在一个控件上绘制虚线矩形 并返回矩形区域
-/// zgke@sina.com.
-/// qq:116149
-/// </summary>
 public class SetControlRectangle
 {
-    /// <summary>
-    /// 需要绘制的图形
-    /// </summary>
-    /// <param name="p_Control">控件</param>
-    public SetControlRectangle(System.Windows.Forms.Control p_Control)
+                public SetControlRectangle(System.Windows.Forms.Control p_Control)
     {
         m_Control = p_Control;
         m_Control.MouseUp += new MouseEventHandler(MyControl_MouseUp);
@@ -20,18 +11,8 @@ public class SetControlRectangle
         m_Control.MouseDown += new MouseEventHandler(MyControl_MouseDown);
     }
     private System.Windows.Forms.Control m_Control;
-    /// <summary>
-    /// 鼠标状态
-    /// </summary>
     private bool m_MouseIsDown = false;
-    /// <summary>
-    /// 绘制区域
-    /// </summary>
     private Rectangle m_MouseRect = Rectangle.Empty;
-    /// <summary>
-    /// 刷新绘制
-    /// </summary>
-    /// <param name="p"></param>
     private void ResizeToRectangle(Point p_Point)
     {
         DrawRectangle();
@@ -39,18 +20,11 @@ public class SetControlRectangle
         m_MouseRect.Height = p_Point.Y - m_MouseRect.Top;
         DrawRectangle();
     }
-    /// <summary>
-    /// 绘制区域
-    /// </summary>
     private void DrawRectangle()
     {
         Rectangle _Rect = m_Control.RectangleToScreen(m_MouseRect);
         ControlPaint.DrawReversibleFrame(_Rect, Color.White, FrameStyle.Dashed);
     }
-    /// <summary>
-    /// 开始绘制 并且设置鼠标区域
-    /// </summary>
-    /// <param name="StartPoint">开始位置</param>
     private void DrawStart(Point p_Point)
     {
         m_Control.Capture = true;
@@ -74,7 +48,6 @@ public class SetControlRectangle
         DrawRectangle();
         if (m_MouseRect.X == 0 || m_MouseRect.Y == 0 || m_MouseRect.Width == 0 || m_MouseRect.Height == 0)
         {
-            //如果区域没0 就不执行委托
         }
         else
         {

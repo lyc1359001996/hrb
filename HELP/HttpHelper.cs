@@ -11,18 +11,8 @@ using System.Net.Security;
 
 namespace Common.Utility
 {
-    /// <summary>
-    /// Http连接操作帮助类 
-    /// </summary>
     public class HttpHelper
     {
-        #region 模拟GET
-        /// <summary>
-        /// GET请求
-        /// </summary>
-        /// <param name="Url">The URL.</param>
-        /// <param name="postDataStr">The post data string.</param>
-        /// <returns>System.String.</returns>
         public static string HttpGet(string Url, string postDataStr)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Url + (postDataStr == "" ? "" : "?") + postDataStr);
@@ -38,15 +28,7 @@ namespace Common.Utility
 
             return retString;
         }
-        #endregion
-
-        #region 模拟POST
-        /// <summary>
-        /// POST请求
-        /// </summary>
-        /// <param name="posturl">The posturl.</param>
-        /// <param name="postData">The post data.</param>
-        /// <returns>System.String.</returns>
+        
         public static string HttpPost(string posturl, string postData)
         {
             Stream outstream = null;
@@ -56,8 +38,6 @@ namespace Common.Utility
             HttpWebRequest request = null;
             Encoding encoding = System.Text.Encoding.GetEncoding("utf-8");
             byte[] data = encoding.GetBytes(postData);
-            // 准备请求...
-                // 设置参数
                 request = WebRequest.Create(posturl) as HttpWebRequest;
                 CookieContainer cookieContainer = new CookieContainer();
                 request.CookieContainer = cookieContainer;
@@ -68,24 +48,13 @@ namespace Common.Utility
                 outstream = request.GetRequestStream();
                 outstream.Write(data, 0, data.Length);
                 outstream.Close();
-                //发送请求并获取相应回应数据
                 response = request.GetResponse() as HttpWebResponse;
-                //直到request.GetResponse()程序才开始向目标网页发送Post请求
                 instream = response.GetResponseStream();
                 sr = new StreamReader(instream, encoding);
-                //返回结果网页（html）代码
                 string content = sr.ReadToEnd();
                 string err = string.Empty;
                 return content;
         }
-
-        /// <summary>
-        /// 模拟httpPost提交表单
-        /// </summary>
-        /// <param name="url">POS请求的网址</param>
-        /// <param name="data">表单里的参数和值</param>
-        /// <param name="encoder">页面编码</param>
-        /// <returns></returns>
         public static string CreateAutoSubmitForm(string url, Dictionary<string, string> data, Encoding encoder)
         {
             StringBuilder html = new StringBuilder();
@@ -112,28 +81,16 @@ namespace Common.Utility
             html.AppendLine("</html>");
             return html.ToString();
         }
-        #endregion
 
-
-        #region 预定义方法或者变更
-        //默认的编码
+        
         private Encoding encoding = Encoding.Default;
-        //HttpWebRequest对象用来发起请求
         private HttpWebRequest request = null;
-        //获取影响流的数据对象
         private HttpWebResponse response = null;
-        /// <summary>
-        /// 根据相传入的数据，得到相应页面数据
-        /// </summary>
-        /// <param name="strPostdata">传入的数据Post方式,get方式传NUll或者空字符串都可以</param>
-        /// <returns>string类型的响应数据</returns>
         private HttpResult GetHttpRequestData(HttpItem objhttpitem)
         {
-            //返回参数
             HttpResult result = new HttpResult();
             try
             {
-                #region 得到请求的response
                 using (response = (HttpWebResponse)request.GetResponse())
                 {
                     result.Header = response.Headers;
@@ -147,29 +104,19 @@ namespace Common.Utility
                     }
 
                     MemoryStream _stream = new MemoryStream();
-                    //GZIIP处理
                     if (response.ContentEncoding != null && response.ContentEncoding.Equals("gzip", StringComparison.InvariantCultureIgnoreCase))
                     {
-                        //开始读取流并设置编码方式
-                        //new GZipStream(response.GetResponseStream(), CompressionMode.Decompress).CopyTo(_stream, 10240);
-                        //.net4.0以下写法
                         _stream = GetMemoryStream(new GZipStream(response.GetResponseStream(), CompressionMode.Decompress));
                     }
                     else
                     {
-                        //开始读取流并设置编码方式
-                        //response.GetResponseStream().CopyTo(_stream, 10240);
-                        //.net4.0以下写法
                         _stream = GetMemoryStream(response.GetResponseStream());
                     }
-                    //获取Byte
                     byte[] RawResponse = _stream.ToArray();
-                    //是否返回Byte类型数据
                     if (objhttpitem.ResultType == ResultType.Byte)
                     {
                         result.ResultByte = RawResponse;
                     }
-                    //从这里开始我们要无视编码了
                     if (encoding == null)
                     {
                         string temp = Encoding.Default.GetString(RawResponse, 0, RawResponse.Length);
@@ -201,12 +148,9 @@ namespace Common.Utility
                             }
                         }
                     }
-                    //得到返回的HTML
                     result.Html = encoding.GetString(RawResponse);
-                    //最后释放流
                     _stream.Close();
                 }
-                #endregion
             }
             catch (WebException ex)
             {
@@ -396,27 +340,10 @@ namespace Common.Utility
                 request.Credentials = CredentialCache.DefaultNetworkCredentials;
             }
         }
-        /// <summary>
-        /// 回调验证证书问题
-        /// </summary>
-        /// <param name="sender">流对象</param>
-        /// <param name="certificate">证书</param>
-        /// <param name="chain">X509Chain</param>
-        /// <param name="errors">SslPolicyErrors</param>
-        /// <returns>bool</returns>
         public bool CheckValidationResult(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors errors)
-        {
-            // 总是接受    
+        {  
             return true;
         }
-        #endregion
-        #region 普通类型
-        /// <summary>    
-        /// 传入一个正确或不正确的URl，返回正确的URL
-        /// </summary>    
-        /// <param name="URL">url</param>   
-        /// <returns>
-        /// </returns>
         public static string GetUrl(string URL)
         {
             if (!(URL.Contains("http://") || URL.Contains("https://")))
@@ -425,19 +352,11 @@ namespace Common.Utility
             }
             return URL;
         }
-        ///<summary>
-        ///采用https协议访问网络,根据传入的URl地址，得到响应的数据字符串。
-        ///</summary>
-        ///<param name="objhttpItem">参数列表</param>
-        ///<returns>String类型的数据</returns>
         public HttpResult GetHtml(HttpItem objhttpItem)
         {
-            //准备参数
             SetRequest(objhttpItem);
-            //调用专门读取数据的类
             return GetHttpRequestData(objhttpItem);
         }
-        #endregion
     }
     /// <summary>
     /// Http请求参考类 

@@ -9,7 +9,6 @@ namespace USBControlUtility
 {
     class Helper
     {
-        //十六进制转二进制
         public string HexString2BinString(string hexString)
         {
             string result = string.Empty;
@@ -17,7 +16,6 @@ namespace USBControlUtility
             {
                 int v = Convert.ToInt32(c.ToString(), 16);
                 int v2 = int.Parse(Convert.ToString(v, 2));
-                // 去掉格式串中的空格，即可去掉每个4位二进制数之间的空格，
                 result += string.Format("{0:d4} ", v2);
             }
             return result;
@@ -32,7 +30,6 @@ namespace USBControlUtility
                 strTemp = hs.Substring(i * 2, 2);
                 b[i] = Convert.ToByte(strTemp, 16);
             }
-            //按照指定编码将字节数组变为字符串
             return encode.GetString(b);
         }
         

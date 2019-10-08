@@ -1,5 +1,4 @@
-﻿using Common.Utilities;
-using CustomPrint;
+﻿using CustomPrint;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraGrid;
@@ -40,8 +39,7 @@ namespace DXApplication2.HELP
         PrintRow row14;
         PrintRow row15;
         PrintRow row16;
-        //PrintRow row17;
-        public void ButtonStyle(DevExpress.XtraEditors.SimpleButton simpleButton)
+                public void ButtonStyle(DevExpress.XtraEditors.SimpleButton simpleButton)
         {
             simpleButton.ButtonStyle = BorderStyles.Default;
         }
@@ -67,9 +65,7 @@ namespace DXApplication2.HELP
 
         public void ComboBoxEdit(ComboBoxEdit ComboBoxEdit)
         {
-            //ComboBoxEdit.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            //ComboBoxEdit.Properties.ReadOnly = true;
-            ComboBoxEdit.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+                                    ComboBoxEdit.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
         }
 
         public void GridControl(GridView GridView)
@@ -77,11 +73,7 @@ namespace DXApplication2.HELP
             GridView.OptionsView.ShowGroupPanel = false;
             GridView.OptionsView.ShowFooter = true;
 
-            //GridView.Columns[1].SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
-            //GridView.Columns[1].SummaryItem.DisplayFormat = "{0:0.##}";
-            //GridView.Columns[1].SummaryItem.FieldName = "TotalMoney";
-            //gridView2.GetFocusedRowCellValue("OrderBH").ToString()
-        }
+                                                        }
 
         public void comboBoxEdit1(ComboBoxEdit comboBoxEdit)
         {
@@ -226,20 +218,13 @@ namespace DXApplication2.HELP
             row13 = new PrintRow(150, "RMB:"+ realPayAmount, new Font("宋体", 20, FontStyle.Bold), Brushes.Black, 390);
             row14 = new PrintRow(150, "签    名：___________", new Font("宋体", 10), Brushes.Blue, 420);
             row15 = new PrintRow(150, "备    注：", new Font("宋体", 10), Brushes.Blue, 450);
-            //row16 = new PrintRow(150, "*********退款码*********", new Font("宋体", 10), Brushes.Blue, 480);
-            //row17 = new PrintRow(150, Image.FromFile(Application.StartupPath+"\\1.jpg"), new Font("宋体", 10), Brushes.Blue, 540);
-            Order tempOrder = new Order(new List<PrintRow>() { row0, row1, row2, row3, row4,row5,row6,row7,row8,row9,row10,row11,row12,row13,row14,row15});
+                                    Order tempOrder = new Order(new List<PrintRow>() { row0, row1, row2, row3, row4,row5,row6,row7,row8,row9,row10,row11,row12,row13,row14,row15});
             PrintOrder.Print(print, tempOrder);
         }
 
         public void print5(string print, string storeName, string userName,string  terminal, string realPayAmount)
         {
-            //string OrderBH = gridView2.GetFocusedRowCellValue("OrderBH").ToString();
-            //string AmountMoney = gridView2.GetFocusedRowCellValue("AmountMoney").ToString();//PaymentMethod
-            //string PaymentMethod = gridView2.GetFocusedRowCellValue("PaymentMethod").ToString();
-            //string State = gridView2.GetFocusedRowCellValue("State").ToString();
-            //string PaymentTime = gridView2.GetFocusedRowCellValue("PaymentTime").ToString();
-
+                                                            
             row0 = new PrintRow(150, "      " +storeName, new Font("宋体", 14, FontStyle.Bold), Brushes.Blue, 0);
             row1 = new PrintRow(150, "********付款凭证********", new Font("宋体", 10), Brushes.Blue, 40);
             row2 = new PrintRow(150, "门店名称：" +storeName, new Font("宋体", 10), Brushes.Black, 70);
@@ -254,12 +239,7 @@ namespace DXApplication2.HELP
 
         public void print6(string OrderBH, string print)
         {
-            //string OrderBH = gridView2.GetFocusedRowCellValue("OrderBH").ToString();
-            //string AmountMoney = gridView2.GetFocusedRowCellValue("AmountMoney").ToString();//PaymentMethod
-            //string PaymentMethod = gridView2.GetFocusedRowCellValue("PaymentMethod").ToString();
-            //string State = gridView2.GetFocusedRowCellValue("State").ToString();
-            //string PaymentTime = gridView2.GetFocusedRowCellValue("PaymentTime").ToString();
-
+                                                            
             row0 = new PrintRow(150, "      " + dt.Rows[0][0].ToString(), new Font("宋体", 14, FontStyle.Bold), Brushes.Blue, 0);
             row1 = new PrintRow(150, "********付款凭证********", new Font("宋体", 10), Brushes.Blue, 40);
             row2 = new PrintRow(150, "门店名称：" + dt.Rows[0][0].ToString(), new Font("宋体", 10), Brushes.Black, 70);
@@ -343,14 +323,6 @@ namespace DXApplication2.HELP
             comboBoxEdit24.Text = ini.IniReadValue("mySqlCon3", "storeName");
         }
 
-        
-        /**//// <summary>  
-        /// 判断一个字符串是否为合法数字(指定整数位数和小数位数)  
-        /// </summary>  
-        /// <param name="s">字符串</param>  
-        /// <param name="precision">整数位数</param>  
-        /// <param name="scale">小数位数</param>  
-        /// <returns></returns>  
         public bool IsNumber(string s, int precision, int scale)
         {
             if ((precision == 0) && (scale == 0))

@@ -4113,7 +4113,7 @@
             this.Appearance.Options.UseForeColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1036, 692);
+            this.ClientSize = new System.Drawing.Size(990, 692);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.labelControl111);
             this.Controls.Add(this.labelControl2);
