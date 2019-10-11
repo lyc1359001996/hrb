@@ -1102,7 +1102,11 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
             }
             catch (Exception e1) { Log4NetHelper.WriteErrorLog(e1.Message); }
         }
-
+        /// <summary>
+        /// 串口读取
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void serialPort1_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
         {
             try
@@ -2128,6 +2132,11 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
         private void simpleButton22_MouseLeave(object sender, EventArgs e)
         {
             Control.ButtonStyle(simpleButton22);
+        }
+
+        private void panelControl9_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

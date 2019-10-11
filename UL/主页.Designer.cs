@@ -82,6 +82,7 @@
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.winFormPage1 = new WinFormPage.WinFormPage();
             this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
@@ -327,7 +328,6 @@
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit3)).BeginInit();
@@ -1183,6 +1183,15 @@
             this.xtraTabPage3.Name = "xtraTabPage3";
             this.xtraTabPage3.Size = new System.Drawing.Size(811, 691);
             this.xtraTabPage3.Text = "订单";
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Appearance.Image = global::DXApplication2.Properties.Resources.暂无数据;
+            this.labelControl8.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl8.Location = new System.Drawing.Point(256, 273);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(237, 315);
+            this.labelControl8.TabIndex = 43;
             // 
             // winFormPage1
             // 
@@ -2233,6 +2242,7 @@
             this.panelControl9.Name = "panelControl9";
             this.panelControl9.Size = new System.Drawing.Size(795, 347);
             this.panelControl9.TabIndex = 3;
+            this.panelControl9.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl9_Paint);
             // 
             // panelControl10
             // 
@@ -4103,15 +4113,6 @@
             this.labelControl1.Size = new System.Drawing.Size(24, 17);
             this.labelControl1.TabIndex = 43;
             this.labelControl1.Text = "姓名";
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Appearance.Image = global::DXApplication2.Properties.Resources.暂无数据;
-            this.labelControl8.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl8.Location = new System.Drawing.Point(256, 273);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(237, 315);
-            this.labelControl8.TabIndex = 43;
             // 
             // Main
             // 
