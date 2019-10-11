@@ -153,11 +153,8 @@
     <Reference Include="WinFormPage, Version=1.0.7205.25890, Culture=neutral, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HELP\3des.cs" />
-    <Compile Include="HELP\AspriseOCR.cs" />
     <Compile Include="HELP\Calculator.cs" />
     <Compile Include="HELP\Chuankou.cs" />
-    <Compile Include="HELP\Class1.cs" />
     <Compile Include="HELP\ComUtility.cs" />
     <Compile Include="HELP\ControlHelp.cs" />
     <Compile Include="HELP\ConvertJson.cs" />
@@ -194,6 +191,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
+    <Compile Include="UL\UserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UL\UserInfo.Designer.cs">
+      <DependentUpon>UserInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="UL\WaitForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +259,9 @@
     <Compile Include="UL\退款.Designer.cs">
       <DependentUpon>退款.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UL\UserInfo.resx">
+      <DependentUpon>UserInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UL\WaitForm.resx">
       <DependentUpon>WaitForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -857,6 +863,78 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\images\LBG2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\icon-member-search1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\icon_member_store_fukuanma1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\icon_member_store_shoukuan1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_member_store_shoukuan1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\icon_member_store_value_mobile1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\icon_member_stored_value_card1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\icon_member_stored_value_card_big1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\icon_minimize_black1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\icon_minimize_gray1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\icon-cursor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\icon-drag-money-pop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\icon-set-foucs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\lbg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\lg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\logo_f.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\付款码.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\收款.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\暂无数据.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\welcome1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\bg11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\bg22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\bg33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\loginh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\sybt.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

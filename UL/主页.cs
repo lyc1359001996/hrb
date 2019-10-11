@@ -17,7 +17,6 @@ using java.security;
 using KellComUtility;
 using Maticsoft.Common;
 using Microsoft.Win32;
-using OCR.ImageRecognition;
 using OCR.TesseractWrapper;
 using QQ截图工具;
 using ScanningAfter;
@@ -68,7 +67,6 @@ namespace DXApplication2
         public decimal totalAmount;
         public bool ishoudo = false;
         private string strPath = System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase;
-        AspriseOCR ocr = new AspriseOCR();
         //Cutter cutter = null;
         public int curPage = 1;
         public int pageSize = 100;
@@ -234,7 +232,6 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
             {
                 xuanfu.Hide();
             }
-            timer2.Start();
             ini.IniWriteValue("mySqlCon2", "jietu", "");
             ini.IniWriteValue("mySqlCon2", "jubing", "");
             timer1.Start();
@@ -461,7 +458,7 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
                         winFormPage1.PageCount = winFormPage1.PageCount + 1;
                 }
             }
-            catch { MessageBox.Show("暂无数据");gridControl2.DataSource = null; }
+            catch { gridControl2.DataSource = null;labelControl8.Visible = true; }
         }
 
         public void bind1()
@@ -907,6 +904,7 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
                 radioGroup1.SelectedIndex = 1;
                 ini.IniWriteValue("mySqlCon2", "jietu", "");
                 timer2.Stop();
+
             }
         }
 
@@ -942,12 +940,6 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
 comboBoxEdit4, comboBoxEdit6, comboBoxEdit5, spinEdit1, toggleSwitch2, textEdit4, textEdit5, toggleSwitch3, spinEdit2, textEdit6,
 comboBoxEdit7, textEdit7, comboBoxEdit8, textEdit8, comboBoxEdit9, textEdit9, comboBoxEdit10, textEdit10, comboBoxEdit11,
 textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
-                if (xtraTabControl3.SelectedTabPageIndex == 2)
-                {
-                    radioGroup1.SelectedIndex = 2;
-                    timer2.Start();
-                    timer1.Stop();
-                }
             }
             catch (Exception e1) { MessageBox.Show("当前网络状态不佳，请检查网络。"); Class11.captureWindowUsingPrintWindow(this).Save(Application.StartupPath + @"\log\image\" + DateTime.Now.ToString() + ".jpg"); Log4NetHelper.WriteErrorLog(e1.Message); }
         }
@@ -1419,6 +1411,14 @@ textEdit11, comboBoxEdit12, checkEdit1, comboBoxEdit13, this.name);
                 Process pro = Process.Start(info);
                 var info1 = System.IO.File.ReadAllText(Application.StartupPath + "\\rectConfig.txt").Replace("price:", "").Replace("(", "").Replace(")", "");
                 Class11.captureScreen(int.Parse(info1.Split(',')[0]), int.Parse(info1.Split(',')[1]), int.Parse(info1.Split(',')[2]),int.Parse(info1.Split(',')[3])).Save(Application.StartupPath+"\\info.png");
+            Thread.Sleep(4000);
+            MessageBox.Show("获取成功");
+            if (xtraTabControl3.SelectedTabPageIndex == 2)
+            {
+                radioGroup1.SelectedIndex = 2;
+                timer2.Start();
+                timer1.Stop();
+            }
         }
 
         public void shibie()

@@ -204,7 +204,6 @@
             this.Name = "登录";
             this.ShowInTaskbar = false;
             this.Text = "登录";
-            this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.登录_FormClosing);
             this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();

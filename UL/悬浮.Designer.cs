@@ -42,7 +42,7 @@
             this.labelControl1.Appearance.BorderColor = System.Drawing.Color.Transparent;
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 30F);
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.labelControl1.Appearance.Image = global::DXApplication2.Properties.Resources.icon_drag_money_pop;
+            this.labelControl1.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("labelControl1.Appearance.Image")));
             this.labelControl1.Appearance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
@@ -65,7 +65,7 @@
             this.labelControl2.Appearance.BackColor = System.Drawing.Color.White;
             this.labelControl2.Appearance.BackColor2 = System.Drawing.Color.White;
             this.labelControl2.Appearance.BorderColor = System.Drawing.Color.White;
-            this.labelControl2.Appearance.Image = global::DXApplication2.Properties.Resources.zbg2;
+            this.labelControl2.Appearance.Image = global::DXApplication2.Properties.Resources.sybt;
             this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
             this.labelControl2.LineLocation = DevExpress.XtraEditors.LineLocation.Right;
@@ -73,7 +73,7 @@
             this.labelControl2.Location = new System.Drawing.Point(2, 1);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(68, 56);
+            this.labelControl2.Size = new System.Drawing.Size(58, 56);
             this.labelControl2.TabIndex = 1;
             this.labelControl2.Click += new System.EventHandler(this.labelControl2_Click);
             this.labelControl2.DoubleClick += new System.EventHandler(this.labelControl2_DoubleClick);

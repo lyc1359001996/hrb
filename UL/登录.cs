@@ -3,6 +3,7 @@ using DemoMessageBox;
 using DevExpress.XtraEditors.Controls;
 using DXApplication2.HELP;
 using DXApplication2.MODEL;
+using DXApplication2.Properties;
 using GalaSoft.MvvmLight.Messaging;
 using System;
 using System.Collections.Generic;
@@ -243,10 +244,13 @@ namespace DXApplication2.UL
                         ini.IniWriteValue("mySqlCon3", "roleId", StoreName.roleId.ToString());
                         ini.IniWriteValue("mySqlCon3", "storeName", StoreName.storeName);
                         ini.IniWriteValue("mySqlCon3", "userAccount", StoreName.userAccount);
-                        MessageBox.Show(this,"登录成功","提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Main main = new Main();
                         this.Visible = false;
-                        main.Show();
+                    UserInfo info = new UserInfo();
+                    info.Show();
+                    Thread.Sleep(2500);
+                    info.Dispose();
+                    main.Show();
                     }
                 }
         }
@@ -258,17 +262,12 @@ namespace DXApplication2.UL
 
         private void labelControl6_MouseMove(object sender, MouseEventArgs e)
         {
-            labelControl6.Appearance.BackColor = Color.FromArgb(14, 144, 254);
-            labelControl6.Appearance.BackColor = Color.FromArgb(14, 144, 254);
-            labelControl6.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            //labelControl6.BorderStyle = BorderStyles.Simple;
+            labelControl6.Appearance.Image = Resources.loginh;
         }
 
         private void labelControl6_MouseLeave(object sender, EventArgs e)
         {
-            labelControl6.Appearance.BackColor = Color.White;
-            labelControl6.Appearance.BackColor = Color.White;
-            //labelControl6.BorderStyle = BorderStyles.Simple;
+            labelControl6.Appearance.Image = Resources.lg;
         }
     }
 }
